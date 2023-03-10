@@ -1,0 +1,203 @@
+{
+    "type": "container",
+    "sections": {
+        "inputArea": {
+            "type": "container",
+            "sections": {
+                "input": {
+                    "type": "input",
+                    "placeholder": "Type your delivery location",
+                    "bind": "searchLocation",
+                    "style": {
+                        "border": "none",
+                        "outline": "none",
+                        "flex": "1",
+                        "fontSize": "inherit"
+                    }
+                },
+                "pinIcn": {
+                    "type": "image-button",
+                    "url": "http://localhost:3000/themes/elementary/img/locateMe.svg",
+                    "action": "useCurrentLocation",
+                    "style": {
+                        "border": "none",
+                        "background": "transparent",
+                        "width": "35px",
+                        "height": "35px",
+                        "cursor": "pointer"
+                    }
+                }
+            },
+            "order": [
+                "input",
+                "pinIcn"
+            ],
+            "style": {
+                "width": "450px",
+                "padding": "10px",
+                "border": "none",
+                "outline": "none",
+                "fontSize": "inherit",
+                "borderTopLeftRadius": 4,
+                "alignItems": "center",
+                "borderBottomLeftRadius": 4
+            }
+        },
+        "explore": {
+            "type": "button",
+            "text": "Explore Menu",
+            "action": "confirmLocation",
+            "style": {
+                "fontSize": "inherit",
+                "background": "rgb(233, 110, 181)",
+                "color": "rgb(255, 255, 255)",
+                "borderTopRightRadius": 4,
+                "borderBottomRightRadius": 4,
+                "border": "none",
+                "padding": "0px 20px",
+                "cursor": "pointer"
+            }
+        }
+    },
+    "order": [
+        "inputArea",
+        "explore"
+    ],
+    "style": {
+        "display": "flex",
+        "flexDirection": "row",
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(233, 110, 181)",
+        "borderRadius": 4,
+        "border": "1px solid rgb(233, 110, 181)",
+        "boxShadow": "rgb(56 56 56 / 75%) 0px 20px 64px 1px",
+        "height": 70,
+        "fontSize": 16,
+        "boderRadius": 6,
+        "position": "relative"
+    },
+    "embeddedTemplates": {
+        "notServiceable": {
+            "type": "container",
+            "sections": {
+                "noServiceIcn": {
+                    "type": "image",
+                    "url": "http://localhost:3000/themes/elementary/img/noServiceAvailable.svg",
+                    "style": {
+                        "width": "100px"
+                    }
+                },
+                "noServiceTitle": {
+                    "type": "text",
+                    "text": "We are unable to deliver to this location",
+                    "style": {
+                        "marginTop": "10px"
+                    }
+                },
+                "noServiceSubTitle": {
+                    "type": "text",
+                    "text": "Please try different location",
+                    "style": {
+                        "margin": "10px 0px"
+                    }
+                }
+            },
+            "order": [
+                "noServiceIcn",
+                "noServiceTitle",
+                "noServiceSubTitle"
+            ],
+            "style": {
+                "top": "72px",
+                "position": "absolute",
+                "zIndex": "2",
+                "minHeight": "50px",
+                "color": "black",
+                "background": "white",
+                "borderRadius": "12px",
+                "width": "100%",
+                "padding": "10px",
+                "flexDirection": "column",
+                "boxShadow": "rgb(0 0 0 / 16%) 0px 8px 24px",
+                "border": "1px solid rgb(233, 110, 181)",
+                "display": "flex",
+                "alignItems": "center",
+                "justifyContent": "center"
+            }
+        },
+        "suggestionList": {
+            "type": "container",
+            "sections": {
+                "currentLocation": {
+                    "type": "text",
+                    "text": "Use Current Location",
+                    "action": "useCurrentLocation",
+                    "style": {
+                        "fontWeight": "700",
+                        "cursor": "pointer"
+                    }
+                }
+            },
+            "children": "suggestionElements",
+            "style": {
+                "top": "72px",
+                "position": "absolute",
+                "zIndex": "3",
+                "minHeight": "50px",
+                "color": "black",
+                "background": "white",
+                "borderRadius": "12px",
+                "width": "100%",
+                "padding": "10px",
+                "flexDirection": "column",
+                "boxShadow": "rgb(0 0 0 / 16%) 0px 8px 24px",
+                "border": "1px solid rgb(233, 110, 181)"
+            },
+            "order": [
+                "currentLocation"
+            ]
+        },
+        "suggestion": {
+            "type": "container",
+            "sections": {
+                "pinIcn": {
+                    "type": "image",
+                    "url": "http://localhost:3000/themes/elementary/img/locationPin.svg"
+                },
+                "locationTxt": {
+                    "type": "container",
+                    "sections": {
+                        "title": {
+                            "type": "text",
+                            "text": "{{locationSuggestion.mainText}}"
+                        },
+                        "subtitle": {
+                            "type": "text",
+                            "text": "{{locationSuggestion.secondaryText}}"
+                        }
+                    },
+                    "order": [
+                        "title",
+                        "subtitle"
+                    ],
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "color": "black",
+                        "marginLeft": "12px"
+                    }
+                }
+            },
+            "action": "confirmLocation",
+            "order": [
+                "pinIcn",
+                "locationTxt"
+            ],
+            "style": {
+                "display": "flex",
+                "marginTop": "10px",
+                "cursor": "pointer"
+            }
+        }
+    }
+}

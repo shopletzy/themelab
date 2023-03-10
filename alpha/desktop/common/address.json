@@ -1,0 +1,11 @@
+{
+    "sections": {
+        "name": {
+            "type": "text",
+            "text": ""
+        }
+    },
+    "order": [
+        "name"
+    ]
+}

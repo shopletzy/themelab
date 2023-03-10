@@ -1,0 +1,84 @@
+{
+    "type": "container",
+    "interval": 6000,
+    "items": [
+        {
+            "id": 0,
+            "alt": "First alt",
+            "url": "https://images.pexels.com/photos/416430/pexels-photo-416430.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+            "id": 1,
+            "alt": "Second alt",
+            "url": "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+            "id": 2,
+            "alt": "Third alt",
+            "url": "https://images.pexels.com/photos/1103966/pexels-photo-1103966.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+            "id": 3,
+            "alt": "Fourth alt",
+            "url": "https://images.pexels.com/photos/1103956/pexels-photo-1103956.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        }
+    ],
+    "sections": {
+        "content": {
+            "type": "carousel-child",
+            "style": {
+                "color": "#FFF",
+                "height": "420px",
+                "width": "100%"
+            }
+        },
+        "next": {
+            "type": "image-button",
+            "text": "Next",
+            "action": "onNext",
+            "style": {
+                "display": "flex",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "border": "none",
+                "fontSize": "16px",
+                "background": "transparent",
+                "cursor": "pointer",
+                "color": "#FFF",
+                "padding": "10px",
+                "borderRadius": "4px"
+            }
+        },
+        "previous": {
+            "type": "image-button",
+            "text": "Previous",
+            "action": "onPrev",
+            "style": {
+                "display": "flex",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "border": "none",
+                "fontSize": "16px",
+                "background": "transparent",
+                "cursor": "pointer",
+                "color": "#FFF",
+                "padding": "10px",
+                "borderRadius": "4px"
+            }
+        }
+    },
+    "order": [
+        "previous",
+        "content",
+        "next"
+    ],
+    "style": {
+        "backgroundColor": "#000",
+        "justifyContent": "space-between",
+        "display": "flex",
+        "alignItems": "center",
+        "position": "relative",
+        "height": "420px",
+        "width": "100%"
+    }
+}

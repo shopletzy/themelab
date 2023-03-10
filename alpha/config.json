@@ -1,0 +1,12 @@
+{
+    "css": {
+        "primary-color": {
+            "type": "color",
+            "value": "red"
+        },
+        "accent-color": {
+            "type": "color",
+            "value": "green"
+        }
+    }
+}

@@ -1,0 +1,330 @@
+{
+    "imports": [
+        "common/product.css",
+        "pages/home/location-selector.json",
+        "common/category.json",
+        "common/product.json",
+        "common/cart/cart-sidebar.json",
+        "common/cart/cart-item.json",
+        "common/signin.json",
+        "common/carousel.json"
+    ],
+    "className": "slz-home",
+    "sections": {
+        "header": {
+            "type": "container",
+            "sections": {
+                "left": {
+                    "type": "container",
+                    "sections": {
+                        "logo": {
+                            "type": "image",
+                            "url": "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
+                            "style": {
+                                "width": "84px",
+                                "objectFit": "contain",
+                                "marginLeft": "10px"
+                            }
+                        },
+                        "locationSelector": {
+                            "type": "location-selector",
+                            "refTemplate": "home/location-selector"
+                        }
+                    },
+                    "order": [
+                        "logo",
+                        "locationSelector"
+                    ]
+                },
+                "right": {
+                    "type": "container",
+                    "sections": {
+                        "search": {
+                            "type": "search-products",
+                            "sections": {
+                                "pinGrayIcn": {
+                                    "type": "image",
+                                    "url": "http://localhost:3000/themes/elementary/img/search.svg",
+                                    "style": {
+                                        "height": 20
+                                    }
+                                },
+                                "input": {
+                                    "type": "input",
+                                    "placeholder": "Search for products",
+                                    "bind": "searchProducts",
+                                    "action": "searchProducts",
+                                    "style": {
+                                        "width": "300px",
+                                        "height": "22px",
+                                        "marginLeft": "10px",
+                                        "fontSize": "15px",
+                                        "border": "none",
+                                        "outline": "none",
+                                        "background": "#fafafa",
+                                        "alignItems": "center"
+                                    }
+                                }
+                            },
+                            "style": {
+                                "display": "flex",
+                                "padding": "6px 10px",
+                                "outline": "none",
+                                "background": "#fafafa",
+                                "borderRadius": "20px",
+                                "border": "1px solid #cccccc",
+                                "alignItems": "center",
+                                "justifyContent": "space-between"
+                            },
+                            "order": [
+                                "pinGrayIcn",
+                                "input"
+                            ]
+                        },
+                        "cartIcn": {
+                            "type": "image-button",
+                            "url": "http://localhost:3000/themes/elementary/img/cart.svg",
+                            "text": "Cart",
+                            "action": "toggleCartViewer",
+                            "style": {
+                                "padding": "5px 10px",
+                                "display": "flex",
+                                "justifyContent": "center",
+                                "alignItems": "center",
+                                "border": "none",
+                                "cursor": "pointer",
+                                "fontSize": "16px",
+                                "background": "#FFF",
+                                "color": "#232631"
+                            }
+                        },
+                        "signin": {
+                            "type": "signin-button",
+                            "embeddedTemplates": {
+                                "beforeLogin": {
+                                    "action": "signin",
+                                    "text": "Sign In",
+                                    "type": "button",
+                                    "style": {
+                                        "color": "#ffffff",
+                                        "justifyContent": "left",
+                                        "height": "40px",
+                                        "width": "100px",
+                                        "borderRadius": "4px",
+                                        "background": "#47a75c",
+                                        "border": "none",
+                                        "cursor": "pointer",
+                                        "fontWeight": 600
+                                    }
+                                },
+                                "afterLogin": {
+                                    "action": "signout",
+                                    "text": "Sign Out",
+                                    "type": "button",
+                                    "style": {
+                                        "color": "#ffffff",
+                                        "justifyContent": "left",
+                                        "height": "40px",
+                                        "width": "100px",
+                                        "cursor": "pointer",
+                                        "borderRadius": "4px",
+                                        "background": "#FF0000",
+                                        "border": "none",
+                                        "fontWeight": 600
+                                    }
+                                }
+                            },
+                            "style": {
+                                "width": "170px",
+                                "background": "orange",
+                                "color": "white",
+                                "height": "20px"
+                            }
+                        }
+                    },
+                    "order": [
+                        "search",
+                        "cartIcn",
+                        "signin"
+                    ],
+                    "style": {
+                        "alignItems": "center",
+                        "justifyContent": "center"
+                    }
+                }
+            },
+            "style": {
+                "justifyContent": "space-between",
+                "background": "#FFF",
+                "padding": "0px 40px",
+                "alignItems": "center",
+                "height": "64px"
+            },
+            "order": [
+                "left",
+                "right"
+            ]
+        },
+        "carousel-container": {
+            "type": "carousel"
+        },
+        "content": {
+            "type": "container",
+            "sections": {
+                "category": {
+                    "type": "container",
+                    "sections": {
+                        "categoryCollection": {
+                            "type": "category-collection",
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "margin": "10px",
+                                "flexGrow": 1,
+                                "justifyContent": "center"
+                            }
+                        }
+                    },
+                    "order": [
+                        "categoryCollection"
+                    ],
+                    "style": {
+                        "height": "600px",
+                        "width": "20vw",
+                        "background": "#FFF",
+                        "padding": "10px"
+                    }
+                },
+                "content": {
+                    "type": "container",
+                    "sections": {
+                        "topPicks": {
+                            "type": "container",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Top Picks",
+                                    "style": {
+                                        "fontWeight": "800",
+                                        "textDecorationLine": "underline",
+                                        "fontSize": "24px",
+                                        "color": "#6f79d7"
+                                    }
+                                },
+                                "productCollection": {
+                                    "type": "product-collection",
+                                    "highlightKey": "Top Picks",
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "margin": "10px",
+                                        "flexGrow": 1,
+                                        "flexWrap": "wrap"
+                                    }
+                                }
+                            },
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "padding": "25px 0px"
+                            },
+                            "order": [
+                                "title",
+                                "productCollection"
+                            ]
+                        },
+                        "bestSellers": {
+                            "type": "container",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Best Sellers",
+                                    "style": {
+                                        "fontWeight": "800",
+                                        "textDecorationLine": "underline",
+                                        "fontSize": "24px",
+                                        "color": "#6f79d7"
+                                    }
+                                },
+                                "productCollection": {
+                                    "type": "product-collection",
+                                    "highlightKey": "Whats New",
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "margin": "10px",
+                                        "flexGrow": 1,
+                                        "flexWrap": "wrap"
+                                    }
+                                }
+                            },
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "padding": "25px 0px"
+                            },
+                            "order": [
+                                "title",
+                                "productCollection"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "topPicks",
+                        "bestSellers"
+                    ],
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "column"
+                    }
+                }
+            },
+            "style": {
+                "height": "auto",
+                "width": "100%",
+                "background": "#FFF"
+            },
+            "order": [
+                "category",
+                "content"
+            ]
+        },
+        "footer": {
+            "type": "container",
+            "sections": {
+                "tags": {
+                    "type": "tag-search",
+                    "tags": [
+                        "Arabian Nights",
+                        "Coffee"
+                    ],
+                    "delimiter": {
+                        "value": "|",
+                        "style": {
+                            "padding": "0px 10px",
+                            "color": "#232631"
+                        }
+                    },
+                    "style": {
+                        "color": "#6f79d7",
+                        "display": "flex"
+                    }
+                }
+            },
+            "order": [
+                "tags"
+            ],
+            "style": {
+                "height": "200px",
+                "width": "100%",
+                "background": "#FFF"
+            }
+        }
+    },
+    "order": [
+        "header",
+        "carousel-container",
+        "content",
+        "footer"
+    ]
+}
