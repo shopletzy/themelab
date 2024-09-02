@@ -1,0 +1,89 @@
+{
+    "imports": [
+        "common/header.json",
+        "common/product.json",
+        "common/product.css",
+        "common/footer.json",
+        "common/product-details-view.json",
+        "common/product-details-view.css",
+        "common/testimonials.json"
+    ],
+    "className": "slz-detailPage",
+    "initialUiState": {},
+    "meta": {
+        "keywords": "{{themeConfig.productDetailSEOConfig.metaKeywords}}"
+    },
+    "sections": {
+        "pr": {
+            "type": "text",
+            "text": "{{$string(pages)}}",
+            "style": {
+                "color": "#000000"
+            }
+        },
+        "header": {
+            "type": "template",
+            "templateName": "header",
+            "className": "header"
+        },
+        "main": {
+            "type": "container",
+            "className": "main",
+            "sections": {
+                "product-details-view": {
+                    "type": "template",
+                    "templateName": "product-details-view",
+                    "className": "product-details-view"
+                },
+                "fold-3": {
+                    "type": "container",
+                    "className": "fold-1",
+                    "sections": {
+                        "content": {
+                            "type": "container",
+                            "className": "content",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "className": "title",
+                                    "text": "{{themeConfig.productDetailPage.similarProductsTitle}}"
+                                },
+                                "description": {
+                                    "type": "text",
+                                    "className": "description",
+                                    "text": "{{themeConfig.productDetailPage.SimilarProductsSubTitle}}"
+                                },
+                                "top-products": {
+                                    "className": "top-products",
+                                    "type": "product-collection",
+                                    "highlightKey": "Top Picks"
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "description",
+                                "top-products"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "content"
+                    ]
+                }
+            },
+            "order": [
+                "product-details-view",
+                "fold-3"
+            ]
+        },
+        "footer": {
+            "type": "template",
+            "templateName": "footer"
+        }
+    },
+    "order": [
+        "header",
+        "main",
+        "footer"
+    ]
+}

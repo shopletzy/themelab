@@ -1,0 +1,34 @@
+{
+    "type": "container",
+    "sections": {
+        "image": {
+            "type": "product-image",
+            "url": "{{category.image}}",
+            "style": {
+                "height": "100px",
+                "width": "70px"
+            }
+        },
+        "title": {
+            "type": "text",
+            "text": "{{category.title}}",
+            "style": {
+                "marginTop": "10px",
+                "textAlign": "center"
+            }
+        }
+    },
+    "order": [
+        "image",
+        "title"
+    ],
+    "style": {
+        "display": "flex",
+        "flexDirection": "row",
+        "boxShadow": "0 2px 5px rgb(104 111 137 / 20%)",
+        "borderRadius": "19px",
+        "height": "80px",
+        "width": "100%",
+        "backgroundColor": "#fff"
+    }
+}

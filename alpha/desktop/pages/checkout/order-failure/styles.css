@@ -1,0 +1,80 @@
+.order-failure {
+    background-color: var(--background-color);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.order-failure .header {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid var(--stroke-color);
+}
+
+.order-failure .content {
+    
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    background-color: transparent;
+   
+}
+
+.order-failure .content .addressList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    
+}
+
+.order-failure .content .addressList .title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #e41c48;
+    font-family: 'Noto Sans';
+}
+.order-failure .content .addressList .subTitle {
+    display: block;
+    font-size: 16px;
+    color: #7e808c;
+    font-weight: 400;
+    margin-bottom: 36px;
+    padding-top: 10px;
+    margin-top: 15px;
+    font-family: 'Noto Sans';
+}
+
+/* CSS media query for screens larger than 768px */
+@media (max-width: 768px) {
+   
+    .order-failure .content {
+       width: 95%; 
+   }
+}
+
+@media (min-width: 1024px) {
+    .order-failure .content{
+       width: 85%; 
+   }
+}
+
+@media (min-width: 1440px) {
+    .order-failure .content{
+       width: 85%; 
+   }
+}
+
+@media (min-width: 1600px) {
+    .order-failure .content{
+       width: 65%; 
+   }
+}

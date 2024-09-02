@@ -1,0 +1,184 @@
+{
+    "imports": [
+        "common/header.css",
+        "common/triggered/account-login.json",
+        "common/category.json",
+        "common/category.css",
+        "common/triggered/cart-viewer.json",
+        "common/cart-item.json",
+        "common/triggered/addon-selector.json",
+        "common/triggered/addon-selections.json"
+    ],
+    "type": "container",
+    "className": "header",
+    "initialUiState": {
+        "showLocation": false
+    },
+    "sections": {
+       
+        "logo": {
+            "type": "container",
+            "className": "header-logo",
+            "sections": {
+                "left": {
+                    "type": "container",
+                    "className": "header-left",
+                    "sections": {
+                        "logo": {
+                            "type": "image",
+                            "url": "{{themeConfig.logo.logoBlack}}",
+                            "className": "header-logo-image",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "'/'"
+                            }
+                        }
+                    },
+                    "order": [
+                        "logo"
+                    ]
+                },
+                "center": {
+                    "type": "container",
+                    "className": "header-center",
+                    "sections": {
+                        "search": {
+                            "type": "search-products",
+                            "className": "header-search",
+                            "sections": {
+                                "searchIcon": {
+                                    "type": "image",
+                                    "url": "{{themeUrl}}/img/common/search.svg",
+                                    "className": "header-search-icon"
+                                },
+                                "searchInput": {
+                                    "type": "input",
+                                    "className": "header-search-input",
+                                    "placeholder": "{{i18n.placeholders.search}}",
+                                    "bind": "searchProducts",
+                                    "action": "searchProducts"
+                                }
+                            },
+                            "order": [
+                                "searchIcon",
+                                "searchInput"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "search"
+                    ]
+                },
+                "right": {
+                    "type": "container",
+                    "className": "header-right",
+                    "sections": {
+                        "account": {
+                            "type": "container",
+                            "className": "header-account",
+                            "sections": {
+                                "login": {
+                                    "type": "button",
+                                    "text": "{{i18n.page_titles.login}}",
+                                    "className": "header-account-button",
+                                    "action": "setUiState",
+                                    "actionParams": {
+                                        "showLogin": "true"
+                                    },
+                                    "showIf": "$not($exists(customer.id) and customer.id)"
+                                },
+                                "loggedIn": {
+                                    "type": "container",
+                                    "className": "header-account-logged-in",
+                                    "sections": {
+                                        "name": {
+                                            "type": "text",
+                                            "text": "{{customer.fullName}}",
+                                            "className": "header-account-name"
+                                        }
+                                    },
+                                    "showIf": "customer.id",
+                                    "action": "navigateTo",
+                                    "actionParams": {
+                                        "url": "'/account'"
+                                    },
+                                    "order": [
+                                        "name"
+                                    ]
+                                }
+                            },
+                            "order": [
+                                "loggedIn",
+                                "login"
+                            ]
+                        },
+                        "cart": {
+                            "type": "container",
+                            "className": "header-cart",
+                            "action": "toggleCartViewer",
+                            "sections": {
+                                "cartButton": {
+                                    "type": "image-button",
+                                    "text": "",
+                                    "url": "{{themeUrl}}/img/common/cart.svg",
+                                    "className": "header-cart-icon-button"
+                                },
+                                "cartCount": {
+                                    "type": "text",
+                                    "text": "{{$not(cart.itemCount > 0) ? '0': cart.itemCount}}",
+                                    "showIf": "cart.itemCount > 0",
+                                    "className": "header-cart-count"
+                                }
+                            },
+                            "order": [
+                                "cartButton",
+                                "cartCount"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "cart",
+                        "account"
+                    ]
+                }
+            },
+            "order": [
+                "left",
+                "center",
+                "right"
+            ]
+        },
+        "categories": {
+            "type": "container",
+            "className": "header-categories",
+            "sections": {
+                "left": {
+                    "type": "container",
+                    "className": "header-left",
+                    "sections": {
+                        "category-list": {
+                            "type": "category-collection",
+                            "className": "category-list"
+                        }
+                    },
+                    "order": [
+                        "category-list"
+                    ]
+                },
+                "center": {
+                    "type": "container",
+                    "className": "header-center"
+                }
+            },
+            "order": [
+                "center",
+                "left"
+            ]
+        }
+    },
+    "order": [
+      
+        "logo",
+        "categories"
+    ]
+}

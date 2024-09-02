@@ -1,0 +1,53 @@
+{
+    "imports": [
+        "common/header.css"
+    ],
+    "type": "container",
+    "className": "header",
+    "sections": {
+        "container": {
+            "type": "container",
+            "className": "h_container",
+            "sections": {
+                "view-2": {
+                    "type": "container",
+                    "className": "view-2",
+                    "sections": {
+                        "back": {
+                            "type": "image",
+                            "url": "{{themeUrl}}/img/common/backArrow.svg",
+                            "action": "goBack"
+                        },
+                        "left": {
+                            "className": "logo",
+                            "type": "image",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "'/'"
+                            },
+                            "url": "{{themeConfig.logo.logoBlack}}",
+                            "style": {
+                                "height": "24px",
+                                "overflow": "hidden",
+                                "paddingLeft": "20px"
+                            },
+                            "order": [
+                                "logo"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "back",
+                        "left"
+                    ]
+                }
+            },
+            "order": [
+                "view-2"
+            ]
+        }
+    },
+    "order": [
+        "container"
+    ]
+}

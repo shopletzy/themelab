@@ -1,0 +1,80 @@
+.order-success {
+    background-color: var(--background-color);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.order-success .header {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid var(--stroke-color);
+}
+.order-success .content {
+    
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    background-color: transparent;
+   
+}
+
+.order-success .content .addressList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    
+}
+
+.order-success .content .addressList .title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-family: 'Noto Sans';
+}
+.order-success .content .addressList .orderNo {
+    display: block;
+    font-size: 16px;
+    color: #7e808c;
+    font-weight: 400;
+    margin-bottom: 36px;
+    margin-top: 10px;
+    font-family: 'Noto Sans';
+}
+
+/* CSS media query for screens larger than 768px */
+@media (max-width: 768px) {
+   
+    .order-success .content {
+       width: 95%; 
+   }
+}
+
+@media (min-width: 1024px) {
+    .order-success .content{
+       width: 85%; 
+   }
+}
+
+@media (min-width: 1440px) {
+    .order-success .content{
+       width: 85%; 
+   }
+}
+
+@media (min-width: 1600px) {
+    .order-success .content{
+       width: 65%; 
+   }
+}

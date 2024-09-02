@@ -1,0 +1,238 @@
+{
+    "type": "container",
+    "sections": {
+        "search": {
+            "type": "container",
+            "sections": {
+                "pinGrayIcn": {
+                    "type": "image",
+                    "url": "{{themeUrl}}/img/desktop/pin.svg",
+                    "style": {
+                        "height": 14,
+                        "display": "flex",
+                        "alignItems": "center",
+                        "background": "#fff",
+                        "marginTop": "0px"
+                    }
+                },
+                "arrowDown": {
+                    "type": "image",
+                    "url": "{{themeUrl}}/img/desktop/dropArrow.svg",
+                    "style": {
+                        "height": 8,
+                        "display": "flex",
+                        "alignItems": "center",
+                        "background": "#fff",
+                        "marginTop": "0px"
+                    }
+                },
+                "input": {
+                    "type": "input",
+                    "placeholder": "search your location",
+                    "bind": "searchLocation",
+                    "style": {
+                        "width": "250px",
+                        "height": "22px",
+                        "marginLeft": "10px",
+                        "border": "none",
+                        "outline": "none",
+                        "fontFamily": "Noto Sans",
+                        "fontSize": "14px",
+                        "background": "#fff",
+                        "alignItems": "center",
+                        "fontWeight": 200,
+                        "color": "#696b78",
+                        "textOverflow": "ellipsis",
+                        "overflow": "hidden",
+                        "whiteSpace": "nowrap"
+                    }
+                }
+            },
+            "order": [
+                "pinGrayIcn",
+                "input",
+                "arrowDown"
+            ],
+            "style": {
+                "width": "100%",
+                "height": "100%",
+                "padding": "0px 0px",
+                "border": "none",
+                "outline": "none",
+                "backgroundColor": "#fff",
+                "display": "flex",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "justifyContent": "space-between"
+            }
+        }
+    },
+    "embeddedTemplates": {
+        "notServiceable": {
+            "type": "container",
+            "sections": {
+                "noServiceIcn": {
+                    "type": "image",
+                    "url": "http://localhost:3000/themes/elementary/img/noServiceAvailable.svg",
+                    "style": {
+                        "width": "100px"
+                    }
+                },
+                "noServiceTitle": {
+                    "type": "text",
+                    "text": "{{themeConfig.common.deliveryUnavailableText}}",
+                    "style": {
+                        "marginTop": "10px",
+                        "fontFamily": "Noto Sans",
+                        "fontSize": "14px"
+                    }
+                },
+                "noServiceSubTitle": {
+                    "type": "text",
+                    "text": "{{themeConfig.common.deliveryUnavailableSubText}}",
+                    "style": {
+                        "margin": "10px 0px",
+                        "fontFamily": "Noto Sans",
+                        "fontSize": "12px"
+                    }
+                }
+            },
+            "order": [
+                "noServiceIcn",
+                "noServiceTitle",
+                "noServiceSubTitle"
+            ],
+            "style": {
+                "top": "40px",
+                "position": "absolute",
+                "zIndex": "2",
+                "minHeight": "50px",
+                "color": "black",
+                "background": "white",
+                "borderRadius": "12px",
+                "width": "100%",
+                "padding": "10px",
+                "flexDirection": "column",
+                "boxShadow": "rgb(0 0 0 / 16%) 0px 8px 24px",
+                "border": "1px solid #196cb0",
+                "display": "flex",
+                "alignItems": "center",
+                "justifyContent": "center"
+            }
+        },
+        "suggestionList": {
+            "type": "container",
+            "sections": {
+                "currentLocation": {
+                    "type": "text",
+                    "text": "{{themeConfig.common.userLocationText}}",
+                    "action": "useCurrentLocation",
+                    "style": {
+                        "fontSize": "14px",
+                        "fontWeight": "700",
+                        "cursor": "pointer"
+                    }
+                }
+            },
+            "children": "suggestionElements",
+            "style": {
+                "top": "40px",
+                "position": "absolute",
+                "zIndex": "3",
+                "minHeight": "50px",
+                "color": "black",
+                "background": "white",
+                "borderRadius": "12px",
+                "width": "100%",
+                "padding": "10px",
+                "flexDirection": "column",
+                "boxShadow": "rgb(0 0 0 / 16%) 0px 8px 24px",
+                "border": "#196cb0"
+            },
+            "order": [
+                "currentLocation"
+            ]
+        },
+        "suggestion": {
+            "type": "container",
+            "sections": {
+                "pinIcn": {
+                    "type": "image",
+                    "url": "{{themeUrl}}/img/desktop/pin.svg",
+                    "style": {
+                        "height": 14
+                    }
+                },
+                "locationTxt": {
+                    "type": "container",
+                    "sections": {
+                        "title": {
+                            "type": "text",
+                            "text": "{{locationSuggestion.mainText}}",
+                            "style": {
+                                "whiteSpace": "nowrap",
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "width": "inherit",
+                                "fontFamily": "Noto Sans",
+                                "fontSize": "14px",
+                                "fontWeight": 400,
+                                "color": "#2a2a2a"
+                            }
+                        },
+                        "subtitle": {
+                            "type": "text",
+                            "text": "{{locationSuggestion.secondaryText}}",
+                            "style": {
+                                "whiteSpace": "nowrap",
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "width": "inherit",
+                                "fontFamily": "Noto Sans",
+                                "fontSize": "13px",
+                                "fontWeight": 200,
+                                "color": "#696b78"
+                            }
+                        }
+                    },
+                    "order": [
+                        "title",
+                        "subtitle"
+                    ],
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "color": "black",
+                        "marginLeft": "12px",
+                        "overflow": "hidden"
+                    }
+                }
+            },
+            "action": "confirmLocation",
+            "order": [
+                "pinIcn",
+                "locationTxt"
+            ],
+            "style": {
+                "display": "flex",
+                "marginTop": "10px",
+                "cursor": "pointer"
+            }
+        }
+    },
+    "style": {
+        "display": "flex",
+        "flexDirection": "row",
+        "background": "#fff",
+        "height": "38px",
+        "position": "relative",
+        "alignItems": "center",
+        "margin": "0px 0px",
+        "width": "240px",
+        "padding": "0px 5px",
+        "justifyContent": "space-between"
+    },
+    "order": [
+        "search"
+    ]
+}

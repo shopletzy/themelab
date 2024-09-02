@@ -1,0 +1,77 @@
+{
+    "imports": [
+        "common/header.json"
+    ],
+    "sections": {
+        "header": {
+            "type": "template",
+            "templateName": "header"
+        },
+        "content": {
+            "type": "container",
+            "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "flexGrow": "1",
+                "paddingTop": "0px",
+                "paddingBottom": "50px",
+                "overflowY": "auto",
+                "color": "#FFFFFF",
+                "fontWeight": 300
+            },
+            "sections": {
+                "featureImage": {
+                    "type": "image",
+                    "url": "{{post.featureImage}}",
+                    "showIf": "$exists(post.featureImage) and post.featureImage != 'https://storage.googleapis.com/null' and post.featureImage != 'https://storage.googleapis.com/'",
+                    "style": {
+                        "width": "100%",
+                        "height": "250px",
+                        "objectFit": "cover",
+                        "marginBottom": "30px"
+                    }
+                },
+                "title": {
+                    "type": "heading",
+                    "level": "h1",
+                    "text": "{{post.title}}",
+                    "style": {
+                        "display": "flex",
+                        "marginLeft": "20px",
+                        "marginBottom": "20px",
+                        "justifyContent": "left",
+                        "alignItems": "center",
+                        "fontSize": "30px",
+                        "fontWeight": "bold",
+                        "color": "#FFFFFF"
+                    }
+                },
+                "blogPost": {
+                    "type": "post",
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "flexGrow": "1",
+                        "marginLeft": "20px",
+                        "alignItems": "center",
+                        "marginRight": "20px",
+                        "overflowY": "auto"
+                    }
+                }
+            },
+            "order": [
+                "featureImage",
+                "title",
+                "blogPost"
+            ]
+        }
+    },
+    "style": {
+        "height": "100vh"
+    },
+    "order": [
+        "header",
+        "content"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "type": "container",
+    "sections": {
+        "image": {
+            "type": "product-image",
+            "url": "{{category.image}}",
+            "style": {
+                "height": "70px",
+                "width": "70px",
+                "borderRadius": "70px"
+            }
+        },
+        "title": {
+            "type": "text",
+            "text": "{{category.title}}",
+            "style": {
+                "marginTop": "10px",
+                "textAlign": "center"
+            }
+        }
+    },
+    "order": ["title"],
+    "className": "category"
+}

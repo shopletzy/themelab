@@ -1,0 +1,147 @@
+{
+    "style": {
+        "background": "#ffffff",
+        "flexDirection": "column",
+        "display": "flex",
+        "width": "500px",
+        "height": "100%",
+        "boxShadow": "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+        "bottom": "0px",
+        "right": "10px",
+        "zIndex": "10000"
+    },
+    "contentDisplay": {
+        "type": "drawer",
+        "placement": "right",
+        "trigger": "ui.showAddonSelections"
+    },
+    "sections": {
+        "header": {
+            "type": "container",
+            "sections": {
+                "cartTitle": {
+                    "type": "container",
+                    "sections": {
+                        "pTitle": {
+                            "type": "text",
+                            "text": "{{ui.product.title}}",
+                            "style": {
+                                "fontWeight": "400",
+                                "fontFamily": "Noto Sans",
+                                "fontSize": "13px",
+                                "textTransform": "captialize",
+                                "color": "var(--white-text-color)",
+                                "display": "-webkit-box",
+                                "WebkitLineClamp": "1",
+                                "WebkitBoxOrient": "vertical",
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "width": "80%"
+                            }
+                        },
+                        "cartTitle": {
+                            "type": "text",
+                            "text": "Your Customizations",
+                            "style": {
+                                "fontWeight": "400",
+                                "fontFamily": "Noto Sans",
+                                "fontSize": "16px",
+                                "color": "var(--white-text-color)"
+                            }
+                        }
+                    },
+                    "order": [
+                        "pTitle",
+                        "cartTitle"
+                    ],
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "column"
+                    }
+                },
+                "close": {
+                    "type": "text",
+                    "text": "Close",
+                    "action": "setUiState",
+                    "actionParams": {
+                        "showAddonSelections": false,
+                        "product": null
+                    },
+                    "style": {
+                        "cursor": "pointer",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "fontFamily": "Noto Sans",
+                        "color": "var(--white-text-color)",
+                        "textTransform": "uppercase"
+                    }
+                }
+            },
+            "order": [
+                "cartTitle",
+                "close"
+            ],
+            "style": {
+                "display": "flex",
+                "justifyContent": "space-between",
+                "flexShrink": "0",
+                "height": "64px",
+                "alignItems": "center",
+                "color": "var(--white-text-color)",
+                "borderBottom": "0px solid #ccc",
+                "padding": "25px 18px",
+                "background": "var(--primary-color)"
+            }
+        },
+        "content": {
+            "type": "container",
+            "sections": {
+                "customizations": {
+                    "type": "cart-item-list",
+                    "refTemplate": "cart-item",
+                    "filterProduct": true,
+                    "style": {
+                        "overflowY": "auto",
+                        "flexGrow": "1"
+                    }
+                },
+                "addNewCustomization": {
+                    "type": "button",
+                    "text": "Add New Customization",
+                    "action": "setUiState",
+                    "actionParams": {
+                        "showAddonSelector": true,
+                        "product": "ui.product"
+                    },
+                    "style": {
+                        "border": "1px dashed var(--primary-color)",
+                        "borderRadius": "6px",
+                        "background": "none",
+                        "cursor": "pointer",
+                        "fontFamily": "Noto Sans",
+                        "fontWeight": "400",
+                        "fontSize": "13px",
+                        "color": "var(--primary-text-color)",
+                        "padding": "10px 0px",
+                        "textTransform": "uppercase",
+                        "margin": "50px 70px"
+                    }
+                }
+            },
+            "order": [
+                "customizations",
+                "addNewCustomization"
+            ],
+            "style": {
+                "color": "var(--primary-text-color)",
+                "flexGrow": 1,
+                "display": "flex",
+                "flexDirection": "column"
+            }
+        }
+    },
+    "order": [
+        "header",
+        "content"
+    ]
+}

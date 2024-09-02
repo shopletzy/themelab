@@ -1,0 +1,149 @@
+.promotion-list {
+    background: #FFF;
+    flex-direction: column;
+    display: flex;
+    width: 450px;
+    height: 100%;
+    box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+    bottom: 0px;
+    right: 10px;
+    z-index: 10000;
+}
+
+.promotion-list .content {
+    color: #202020;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.promotion-list .content .list .promotion-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    flex-grow: 1;
+    margin-bottom: 15px;
+    padding: 0px;
+    border-bottom: 1px dashed #a9abb2;
+}
+
+.promotion-list .content .list .promotion-container .coupon-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 0px 10px;
+    font-family: 'Noto Sans';
+
+}
+
+.promotion-list .content .list .promotion-container .coupon-header .code {
+    font-weight: 600;
+    font-family: Noto Sans;
+    font-size: 13px;
+    color: var(--white-text-color);
+    min-width: 115px;
+    max-width: 200px;
+    height: 30px;
+    transform: skew(-20deg);
+    border: 1px solid var(--select-color);
+    outline: 1px dashed var(--select-color);
+    background-color: var(--select-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Sans';
+}
+
+.promotion-list .content .list .promotion-container .coupon-header .code-notEligible {
+    font-weight: 600;
+    font-family: Noto Sans;
+    font-size: 13px;
+    color: #aaaaaa;
+    min-width: 115px;
+    max-width: 200px;
+    height: 30px;
+    transform: skew(-20deg);
+    border: 1px solid #FFF;
+    outline: 1px dashed #aaaaaa;
+    background-color: #dadada18;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Sans';
+}
+
+.promotion-list .content .list .promotion-container .coupon-header .applyBtn {                             
+    font-weight: 600;
+    font-family: Noto Sans;
+    font-size: 13px;
+    color: var(--primary-color);
+    min-width: 115px;
+    max-width: 200px;
+    height: 30px;
+    border: 1px solid var(--primary-color);
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Noto Sans';
+}
+
+.promotion-list .content .list .promotion-container .coupon-header .applyBtn:hover {                             
+    font-weight: 600;
+    font-family: Noto Sans;
+    font-size: 13px;
+    color: #FFF;
+    min-width: 115px;
+    max-width: 200px;
+    height: 30px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    transition: ease-in 0.3s;
+    box-shadow: 0 4px 12px 0 rgba(100, 100, 111, 0.2);
+    cursor: pointer;
+    font-family: 'Noto Sans';
+}
+
+.promotion-list .content .list .promotion-container .description {
+    font-weight: 400;
+    font-family: Noto Sans;
+    font-size: 13px;
+    color: #202020;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    line-height: 1.75;
+    text-align: justify;
+    font-family: 'Noto Sans';
+}
+
+.promotion-list .content .list .promotion-container .description-notEligible {
+    font-weight: 400;
+    font-family: Noto Sans;
+    font-size: 13px;
+    color: #aaaaaa;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.75;
+    text-align: justify;
+    font-family: 'Noto Sans';
+}
+
+.promotion-list .content .list .promotion-container .offerNotEligible {
+    font-weight: 400;
+    font-family: Noto Sans;
+    font-size: 13px;
+    color: #aaaaaa;
+    margin-top: 20px;
+    line-height: 1.75;
+    text-align: justify;
+    font-family: 'Noto Sans';
+}

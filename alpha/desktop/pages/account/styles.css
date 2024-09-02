@@ -1,0 +1,264 @@
+.slz-account {
+    display:flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.slz-account .header {
+    display: flex;
+    width: 100%;
+    height: 114px;
+    border-bottom: 1px solid var(--stroke-color);
+}
+
+.slz-account .customer-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    background-color: var(--background-color);
+    padding: 20px 0px;
+}
+
+.slz-account .customer-details .customer-card {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+}
+
+.slz-account .customer-details .customer-card .user-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.slz-account .customer-details .customer-card .user-view .userIcon {
+    width: 75px;
+    height: 75px;
+    border-radius: calc(75px / 2);
+    background-color: var(--select-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    color: var(--white-text-color);
+    font-size: 30px;
+    font-family: 'Noto Sans';
+    font-weight: 700;
+}
+
+.slz-account .customer-details .customer-card .user-view .personal-info {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.slz-account .customer-details .customer-card .user-view .personal-info .title {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    font-size: 28px;
+    font-family: 'Noto Sans';
+    font-weight: 500;
+    color: var(--primary-text-color);
+    margin-left: 15px;
+}
+
+.slz-account .customer-details .customer-card .user-view .personal-info .mobile-number {
+    display: flex;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 15px;
+    margin-top: 8px;
+    font-size: 15px;
+    font-family: 'Noto Sans';
+    font-weight: 500;
+    color: var(--primary-text-color);
+}
+
+.slz-account .customer-details .customer-card .logout{
+
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: 'Noto Sans';
+    color: var(--btn-secondary-text-color);
+    border: none;
+    background: var(--btn-primary-background-color);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.slz-account .content{
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 180px);
+    background-color: transparent;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.slz-account .content .content-body {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 180px);
+    background-color: transparent;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.slz-account .content .col-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 25%;
+    background-color: transparent;
+    padding: 15px 10px;
+}
+
+.slz-account .content .col-left .menu-view {
+
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--stroke-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px;
+}
+
+.slz-account .content .col-left .menu-view .profile {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--btn-secondary-background-color);
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: 'Noto Sans';
+    color: var(--btn-tertiary-text-color);
+    border: none;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.slz-account .content .col-left .menu-view .profileActive {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--btn-primary-background-color-secondary);
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: 'Noto Sans';
+    color: var(--btn-primary-text-color);
+    border: none;
+    padding-left: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.slz-account .content .col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 100%;
+    background-color: transparent;
+    padding: 10px 10px 10px 0px;
+}
+
+.slz-account .content .col-right .detail-view {
+
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 8px;
+    overflow: auto;
+    border: 1px solid var(--stroke-color);
+}
+
+.slz-account .content .col-right .detail-view .profile-view {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    padding: 10px;
+    
+}
+
+.slz-account .content .col-right .detail-view .address-view {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    padding: 10px;
+}
+
+.slz-account .content .col-right .detail-view .orders-view {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    padding: 10px;
+}
+
+
+/* CSS media query for screens larger than 768px */
+@media (max-width: 768px) {
+    .slz-account .customer-details,
+    .slz-account .content .content-content-body {
+       width: 95%; 
+   }
+}
+
+@media (min-width: 1024px) {
+    .slz-account .customer-details,
+    .slz-account .content .content-body {
+       width: 85%; 
+   }
+}
+
+@media (min-width: 1440px) {
+    .slz-account .customer-details,
+    .slz-account .content .content-body {
+       width: 85%; 
+   }
+}
+
+@media (min-width: 1600px) {
+    .slz-account .customer-details,
+    .slz-account .content .content-body {
+       width: 65%; 
+   }
+}

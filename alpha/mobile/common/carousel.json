@@ -1,0 +1,89 @@
+{
+    "type": "container",
+    "interval": 6000,
+    "items": [
+        {
+            "id": 0,
+            "alt": "Banner 2",
+            "url": "{{themeUrl}}/img/banner-2.webp"
+        },
+        {
+            "id": 1,
+            "alt": "Banner 3",
+            "url": "{{themeUrl}}/img/mobile/mbanner.svg"
+        },
+        {
+            "id": 2,
+            "alt": "Banner 4",
+            "url": "{{themeUrl}}/img/banner-4.webp"
+        }
+    ],
+    "sections": {
+        "content": {
+            "type": "carousel-child",
+            "style": {
+                "color": "#FFF",
+                "height": "140px",
+                "width": "100%"
+            }
+        },
+        "next": {
+            "type": "image-button",
+            "text": "",
+            "action": "onNext",
+            "style": {
+                "display": "flex",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "border": "none",
+                "fontFamily": "Noto Sans",
+                "fontSize": "16px",
+                "background": "transparent",
+                "cursor": "pointer",
+                "color": "#FFF",
+                "padding": "10px",
+                "borderRadius": "4px",
+                "position": "absolute",
+                "right": "0px"
+            }
+        },
+        "previous": {
+            "type": "image-button",
+            "text": "",
+            "action": "onPrev",
+            "style": {
+                "display": "flex",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "border": "none",
+                "fontFamily": "Noto Sans",
+                "fontSize": "16px",
+                "background": "transparent",
+                "cursor": "pointer",
+                "color": "#FFF",
+                "padding": "10px",
+                "borderRadius": "4px",
+                "position": "absolute",
+                "left": "0px"
+            }
+        }
+    },
+    "order": [
+        "previous",
+        "content",
+        "next"
+    ],
+    "style": {
+        "backgroundColor": "#fafafa",
+        "justifyContent": "space-between",
+        "display": "flex",
+        "alignItems": "center",
+        "position": "relative",
+        "height": "140px",
+        "marginTop": "90px",
+        "width": "100%",
+        "overflow": "hidden",
+        "borderRadius": "6px",
+        "boxShadow": "0px 0px 10px 0px rgba(0,0,0,0.2)"
+    }
+}

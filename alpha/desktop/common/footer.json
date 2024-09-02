@@ -1,0 +1,328 @@
+{
+    "imports": [
+        "common/footer.json",
+        "common/footer.css"
+    ],
+    "className": "footer",
+    "type": "container",
+    "sections": {
+        "f_container": {
+            "className": "f_container",
+            "type": "container",
+            "sections": {
+                "col-0": {
+                    "className": "col-1",
+                    "type": "container",
+                    "sections": {
+                        "title1": {
+                            "className": "title1",
+                            "type": "text",
+                            "text": "Category"
+                        },
+                        "f_stringArt": {
+                            "className": "subTitle",
+                            "type": "button",
+                            "text": "Category 1",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "''"
+                            }
+                        },
+                        "f_3dPaperCraft": {
+                            "className": "subTitle",
+                            "type": "button",
+                            "text": "Category 2",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "''"
+                            }
+                        },
+                        "f_3dOrigami": {
+                            "className": "subTitle",
+                            "type": "button",
+                            "text": "Category 3",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "''"
+                            }
+                        },
+                        "f_faceStringArt": {
+                            "className": "subTitle",
+                            "type": "button",
+                            "text": "Category 4",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "''"
+                            }
+                        },
+                        "f_silkThreadBangles": {
+                            "className": "subTitle",
+                            "type": "button",
+                            "text": "Category 5",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "''"
+                            }
+                        }
+                    },
+                    "order": [
+                        "title1",
+                        "f_stringArt",
+                        "f_3dPaperCraft",
+                        "f_faceStringArt",
+                        "f_silkThreadBangles"
+                    ]
+                },
+                "col-1": {
+                    "className": "col-1",
+                    "type": "container",
+                    "sections": {
+                        "title1": {
+                            "className": "title1",
+                            "type": "text",
+                            "text": "company"
+                        },
+                        "f_aboutUs": {
+                            "className": "subTitle",
+                            "type": "button",
+                            "text": "About Us",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "'/pages/about-us'"
+                            }
+                        },
+                        "f_blogs": {
+                            "className": "subTitle",
+                            "type": "button",
+                            "text": "Blogs",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "'/blog/'"
+                            }
+                        }
+                    },
+                    "order": [
+                        "title1",
+                        "f_aboutUs",
+                        "f_blogs"
+                    ]
+                },
+                "col-2": {
+                    "className": "col-2",
+                    "type": "container",
+                    "sections": {
+                        "title1": {
+                            "className": "title1",
+                            "type": "text",
+                            "text": "contact"
+                        },
+                        "f_help": {
+                            "className": "subTitle",
+                            "type": "button",
+                            "text": "FAQ",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "'/pages/frequently-asked-questions'"
+                            }
+                        },
+                        "f_partner": {
+                            "className": "subTitle",
+                            "type": "button",
+                            "text": "Contact Us",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "'/pages/contact-us'"
+                            }
+                        }
+                    },
+                    "order": [
+                        "title1",
+                        "f_help",
+                        "f_partner"
+                    ]
+                },
+                "col-3": {
+                    "className": "col-3",
+                    "type": "container",
+                    "sections": {
+                        "title1": {
+                            "className": "title1",
+                            "type": "text",
+                            "text": "Legal"
+                        },
+                        "f_terms": {
+                            "className": "subTitle",
+                            "type": "button",
+                            "text": "Terms of service",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "'/pages/terms-of-service'"
+                            }
+                        },
+                        "f_refund": {
+                            "className": "subTitle",
+                            "type": "button",
+                            "text": "Return Policy",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "'/pages/return-policy'"
+                            }
+                        },
+                        "f_privacy": {
+                            "className": "subTitle",
+                            "type": "button",
+                            "text": "Privacy Policy",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "'/pages/privacy-policy'"
+                            }
+                        }
+                    },
+                    "order": [
+                        "title1",
+                        "f_terms",
+                        "f_refund",
+                        "f_privacy"
+                    ]
+                },
+                "col-4": {
+                    "className": "col-4",
+                    "type": "container",
+                    "sections": {
+                        "title1": {
+                            "className": "img1-io",
+                            "type": "image",
+                            "url": "{{themeUrl}}/img/common/iosIco.svg",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "newTab": "true",
+                                "url": "'https://apps.apple.com/us/app'"
+                            }
+                        },
+                        "title2": {
+                            "className": "img-pl",
+                            "type": "image",
+                            "url": "{{themeUrl}}/img/common/androidIco.svg",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "newTab": "true",
+                                "url": "'https://play.google.com/store/apps'"
+                            }
+                        }
+                    },
+                    "order": [
+                        "title2",
+                        "title1"
+                    ]
+                }
+            },
+            "order": [
+                "col-0",
+                "col-1",
+                "col-2",
+                "col-3",
+                "col-4"
+            ]
+        },
+        "f_payments": {
+            "className": "f_payments",
+            "type": "container",
+            "sections": {
+                "icon1": {
+                    "className": "icon1",
+                    "type": "image",
+                    "url": "{{themeConfig.paymentMethod.visa}}"
+                },
+                "icon2": {
+                    "className": "icon1",
+                    "type": "image",
+                    "url": "{{themeConfig.paymentMethod.masterCard}}"
+                },
+                "icon3": {
+                    "className": "icon1",
+                    "type": "image",
+                    "url": "{{themeConfig.paymentMethod.rupay}}"
+                },
+                "icon4": {
+                    "className": "icon1",
+                    "type": "image",
+                    "url": "{{themeConfig.paymentMethod.maestro}}"
+                },
+                "icon5": {
+                    "className": "icon1",
+                    "type": "image",
+                    "url": "{{themeConfig.paymentMethod.upi}}"
+                }
+            },
+            "order": [
+                "icon1",
+                "icon2",
+                "icon3",
+                "icon4",
+                "icon5"
+            ]
+        },
+        "f_copyRight": {
+            "className": "f_copyRight",
+            "type": "container",
+            "sections": {
+                "col-3": {
+                    "className": "col-3",
+                    "type": "image",
+                    "url": "{{themeUrl}}/img/logo/logo-white.svg",
+                    "action": "navigateTo",
+                    "actionParams": {
+                        "url": "'/'"
+                    }
+                },
+                "col-1": {
+                    "className": "col-1",
+                    "type": "text",
+                    "text": "{{themeConfig.common.footerCopyRightText}}",
+                    "style": {
+                        "color": "var(--white-text-color)"
+                    }
+                },
+                "col-2": {
+                    "className": "col-2",
+                    "type": "container",
+                    "sections": {
+                        "icon1": {
+                            "className": "icon1",
+                            "type": "image",
+                            "url": "{{themeUrl}}/img/common/fb.svg",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "newTab": "true",
+                                "url": "'https://www.facebook.com/'"
+                            }
+                        },
+                        "icon3": {
+                            "className": "icon3",
+                            "type": "image",
+                            "url": "{{themeUrl}}/img/common/insta.svg",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "newTab": "true",
+                                "url": "'https://www.instagram.com/'"
+                            }
+                        }
+                    },
+                    "order": [
+                        "icon3"
+                    ]
+                }
+            },
+            "order": [
+                "col-3",
+                "col-1",
+                "col-2"
+            ]
+        }
+    },
+    "order": [
+        "f_container",
+        "f_payments",
+        "f_copyRight"
+    ]
+}

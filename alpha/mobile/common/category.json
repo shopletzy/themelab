@@ -1,0 +1,75 @@
+{
+    "type": "container",
+    "sections": {
+        "pr": {
+            "type": "text",
+            "text": "{{$string(category)}}",
+            "style": {
+                "background": "#0fff",
+                "color": "#000"
+            }
+        },
+        "image": {
+            "type": "product-image",
+            "url": "{{category.image}}",
+            "showIf": "category.image != null",
+            "style": {
+                "height": "100px",
+                "width": "100px",
+                "objectFit": "cover",
+                "borderRadius": "6px",
+                "overflow": "hidden"
+            }
+        },
+        "productPlaceHolder": {
+            "type": "image",
+            "showIf": "category.image = null",
+            "url": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/a07453e9-7ab8-4b25-8b9b-fabe59bce718/images/cbee6645-dc61-4fbc-81fe-5bd416dd136f.png",
+            "style": {
+                "height": "100px",
+                "width": "100px",
+                "objectFit": "cover",
+                "borderRadius": "6px",
+                "overflow": "hidden"
+            }
+        },
+        "title": {
+            "type": "text",
+            "text": "{{category.title}}",
+            "style": {
+                "textAlign": "center",
+                "fontFamily": "Noto Sans",
+                "fontSize": "18px",
+                "fontWeight": "400",
+                "color": "var(--primary-text-primary)",
+                "marginTop": "8px",
+                "marginLeft": "10px"
+            }
+        }
+    },
+    "order": [
+        "image",
+        "productPlaceHolder",
+        "title"
+    ],
+    "className": "category",
+    "style": {
+        "display": "flex",
+        "flexDirection": "row",
+        "alignItems": "center",
+        "justifyContent": "flex-start",
+        "flex": "0 0 auto",
+        "background": "var(--background-color)",
+        "textAlign": "center",
+        "borderRadius": "6px",
+        "border": "1px solid var(--stroke-color)",
+        "width": "100%",
+        "height": "115px",
+        "padding": "12px",
+        "marginTop": "0px",
+        "marginBottom": "20px",
+        "scrollBehavior": "smooth",
+        "overflowY": "auto",
+        "overflow": "hidden"
+    }
+}

@@ -1,0 +1,295 @@
+
+/* Footer CSS */
+
+.footer {
+    width: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-top: 0.5px solid var(--stroke-color);
+    padding: 0px 35px 0px 35px;
+}
+
+.footer .f_container {
+    margin: 0 auto; 
+    width: 100%;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.footer .f_container .col-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.footer .f_container .col-1 .title1{
+    color: var(--secondary-text-color);
+    font-size: 15px;
+    font-family: 'Noto Sans';
+    text-transform: uppercase;
+    font-weight: 400;
+    padding-bottom: 20px;
+    background-color: transparent;
+}
+
+.footer .f_container .col-1 .subTitle{
+    color: var(--btn-secondary-text-color);
+    font-size: 17px;
+    font-family: 'Noto Sans';
+    text-transform: capitalize;
+    padding-top: 6px;
+    padding-bottom: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 300;
+}
+
+
+.footer .f_container .col-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.footer .f_container .col-2 .title1{
+    color: var(--secondary-text-color);
+    font-size: 15px;
+    font-family: 'Noto Sans';
+    text-transform: uppercase;
+    font-weight: 400;
+    padding-bottom: 20px;
+    background-color: transparent;
+}
+
+.footer .f_container .col-2 .subTitle{
+    color: var(--btn-secondary-text-color);
+    font-size: 17px;
+    font-family: 'Noto Sans';
+    text-transform: capitalize;
+    padding-top: 6px;
+    padding-bottom: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 300;
+}
+
+
+.footer .f_container .col-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.footer .f_container .col-3 .title1{
+    color: var(--secondary-text-color);
+    font-size: 15px;
+    font-family: 'Noto Sans';
+    text-transform: uppercase;
+    font-weight: 400;
+    padding-bottom: 20px;
+    background-color: transparent;
+}
+.footer .f_container .col-3 .subTitle{
+    color: var(--btn-secondary-text-color);
+    font-size: 17px;
+    font-family: 'Noto Sans';
+    text-transform: capitalize;
+    font-weight: 300;
+    padding-top: 6px;
+    padding-bottom: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.footer .f_container .col-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+
+.footer .f_container .col-4 .img1-io {
+    margin-bottom: 15px;
+    transition: transform .2s; /* Animation */
+    cursor: pointer;
+    height: 55px;
+}
+
+.footer .f_container .col-4 .img-pl {
+    margin-bottom: 15px;
+    transition: transform .2s; /* Animation */
+    cursor: pointer;
+    height: 55px;
+}
+
+.footer .f_container .col-4 .img-qr-code {
+    margin-bottom: 15px;
+    transition: transform .2s; /* Animation */
+    cursor: pointer;
+    height: 165px;
+}
+
+.footer .f_container .col-4 .img1-io:hover{
+    transform: scale(1.05);
+}
+
+.footer .f_container .col-4 .img-pl:hover{
+    transform: scale(1.05);
+}
+
+.footer .f_payments {
+
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .f_payments .icon1{
+
+    display: flex;
+    margin-right: 10px;
+    height: 24px;
+    
+}
+
+/* copy rights */
+.footer .f_copyRight {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto; 
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 0.5px solid gray;
+    align-items: center;
+    width: 100%;
+}
+.footer .f_copyRight .col-1{
+    color: #ffffff70;
+    font-family: 'Noto Sans';
+    font-size: 14px;
+    font-weight: 200;
+    width: 275px;
+    text-align: center;
+}
+
+.footer .f_copyRight .col-2{
+
+    display: flex;
+    flex-direction: row;
+    width: 255px;
+    height: 40px;
+    align-items: center;
+    justify-content: end;
+}
+.footer .f_copyRight .col-3{
+
+    display: flex;
+    flex-direction: row;
+    width: 255px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.footer .f_copyRight .col-2 .icon1{
+
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.footer .f_copyRight .col-2 .icon2{
+
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.footer .f_copyRight .col-2 .icon3{
+
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+.footer .f_copyRight .col-2 .icon4{
+
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+/* CSS media query for screens larger than 768px */
+/* @media (max-width: 768px) {
+
+    .footer .f_container {
+        width: 95%; 
+    }
+    .footer .f_copyRight{
+        width: 95%; 
+    }
+    .footer .deliveryLocation{
+        width: 95%; 
+    }
+   
+}
+
+@media (min-width: 1024px) {
+    .footer .f_container {
+        width: 85%; 
+    }
+    .footer .f_copyRight{
+        width: 85%; 
+    }
+    .footer .deliveryLocation{
+        width: 85%; 
+    }
+}
+
+@media (min-width: 1440px) {
+    .footer .f_container {
+        width: 85%;
+    }
+    .footer .f_copyRight{
+        width: 85%;
+    }
+    .footer .deliveryLocation{
+        width: 85%; 
+    }
+}
+
+@media (min-width: 1600px) {
+    .footer .f_container {
+        width: 65%; 
+    }
+    .footer .f_copyRight{
+        width: 65%; 
+    }
+    .footer .deliveryLocation{
+        width: 65%; 
+    }
+} */

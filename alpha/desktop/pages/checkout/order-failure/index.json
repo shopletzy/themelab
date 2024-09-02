@@ -1,0 +1,115 @@
+{
+    "imports": [
+        "common/address.json",
+        "common/header-checkout.json",
+        "common/footer.json",
+        "pages/checkout/order-failure/styles.css"
+    ],
+    "className": "order-failure",
+    "sections": {
+        "header": {
+            "type": "template",
+            "templateName": "header-checkout"
+        },
+        "content": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "addressList": {
+                    "className": "addressList",
+                    "type": "container",
+                    "sections": {
+                        "text": {
+                            "type": "text",
+                            "className": "title",
+                            "text": "{{themeConfig.errorMessages.paymentErrorTitleText}}",
+                            "style": {
+                                "color": "var(--primary-text-color)",
+                                "fontSize": "24px",
+                                "fontWeight": "400",
+                                "fontFamily": "Noto Sans",
+                                "marginTop": "20px",
+                                "marginBottom": "0px"
+                            }
+                        },
+                        "subTitle": {
+                            "type": "text",
+                            "className": "orderNo",
+                            "text": "{{themeConfig.errorMessages.paymentErrorSubText}}",
+                            "style": {
+                                "width": "60%",
+                                "color": "var(--primary-text-color)",
+                                "fontSize": "16px",
+                                "fontWeight": "300",
+                                "fontFamily": "Noto Sans",
+                                "marginTop": "20px",
+                                "marginBottom": "20px",
+                                "textAlign": "center",
+                                "lineHeight": "1.75rem"
+                            }
+                        },
+                        "successBanner": {
+                            "type": "lottie",
+                            "src": "{{themeConfig.errorMessages.paymentErrorImage}}",
+                            "style": {
+                                "width": "300px",
+                                "height": "200px",
+                                "display": "flex",
+                                "justifyContent": "center",
+                                "alignItems": "center",
+                                "padding": "20px"
+                            }
+                        },
+                        "btn": {
+                            "type": "button",
+                            "text": "{{themeConfig.errorMessages.paymentErrorButtonText}}",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "'/'"
+                            },
+                            "style": {
+                                "display": "flex",
+                                "justifyContent": "center",
+                                "alignItems": "center",
+                                "borderRadius": "8px",
+                                "border": "none",
+                                "width": "170px",
+                                "overflow": "hidden",
+                                "marginTop": "40px",
+                                "paddingLeft": "20px",
+                                "paddingRight": "20px",
+                                "paddingTop": "12px",
+                                "paddingBottom": "12px",
+                                "background": "var(--btn-primary-background-color)",
+                                "color": "var(--btn-secondary-text-color)",
+                                "fontWeight": "400",
+                                "fontSize": "14px",
+                                "fontFamily": "Noto Sans",
+                                "textTransform": "capitalize",
+                                "cursor": "pointer"
+                            }
+                        }
+                    },
+                    "order": [
+                        "successBanner",
+                        "text",
+                        "subTitle",
+                        "btn"
+                    ]
+                }
+            },
+            "order": [
+                "addressList"
+            ]
+        },
+        "footer": {
+            "type": "template",
+            "templateName": "footer"
+        }
+    },
+    "order": [
+        "header",
+        "content",
+        "footer"
+    ]
+}

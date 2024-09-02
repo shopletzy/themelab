@@ -1,0 +1,78 @@
+{
+    "imports": [
+        "common/location-selector.json",
+        "common/headerLanding.json"
+    ],
+    "meta": {
+        "title": "{{themeConfig.landingPage.metaTitle}}",
+        "description": "{{themeConfig.landingPage.metaDescription}}",
+        "keywords": "{{themeConfig.landingPage.metaKeywords}}"
+    },
+    "className": "slz-landing",
+    "sections": {
+        "header": {
+            "type": "template",
+            "templateName": "headerLanding",
+            "className": "header"
+        },
+        "col": {
+            "type": "container",
+            "className": "containerView",
+            "sections": {
+                "col-left": {
+                    "type": "container",
+                    "className": "col-left",
+                    "sections": {
+                        "content": {
+                            "type": "container",
+                            "className": "content",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.landingPage.h1Description}}",
+                                    "className": "title"
+                                },
+                                "description": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.landingPage.h1Title}}",
+                                    "className": "description"
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "description"
+                            ]
+                        },
+                        "locationContainer": {
+                            "type": "container",
+                            "className": "locationCard",
+                            "sections": {
+                                "locationInput": {
+                                    "type": "location-selector"
+                                }
+                            },
+                            "order": [
+                                "locationInput"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "content",
+                        "locationContainer"
+                    ]
+                },
+                "col-right": {
+                    "type": "container",
+                    "className": "col-right"
+                }
+            },
+            "order": [
+                "col-left"
+            ]
+        }
+    },
+    "order": [
+        "header",
+        "col"
+    ]
+}

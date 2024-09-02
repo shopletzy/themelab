@@ -1,0 +1,657 @@
+{
+    "imports": [
+        "common/header-checkout.json",
+        "common/footer.json",
+        "pages/checkout/choose-address/styles.css",
+        "common/cart-item-address.json",
+        "common/triggered/address-editor.json",
+        "common/address-editor.json",
+        "common/address.json",
+        "common/order-item-checkout.json",
+        "common/triggered/promotion-list.json"
+    ],
+    "className": "make-payment",
+    "initialUiState": {
+        "outletPickup": false,
+        "showAddressEditor": false
+    },
+    "meta": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+    },
+    "sections": {
+        "header": {
+            "type": "template",
+            "templateName": "header-checkout",
+            "className": "header"
+        },
+        "main": {
+            "type": "container",
+            "className": "main",
+            "sections": {
+                "col-left": {
+                    "type": "container",
+                    "className": "col-left",
+                    "sections": {
+                        "login": {
+                            "type": "container",
+                            "className": "login",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.deliverTo}}",
+                                    "className": "title"
+                                },
+                                "description": {
+                                    "type": "text",
+                                    "text": "{{customer.fullName}} | {{customer.email}}",
+                                    "className": "description"
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "description"
+                            ]
+                        },
+                        "addressList": {
+                            "className": "addressList",
+                            "type": "container",
+                            "sections": {
+                                "view-1": {
+                                    "type": "container",
+                                    "className": "view-1",
+                                    "sections": {
+                                        "title": {
+                                            "type": "text",
+                                            "text": "{{themeConfig.checkoutPage.deliveryAddressText}}",
+                                            "className": "title"
+                                        },
+                                        "description": {
+                                            "type": "button",
+                                            "text": "{{i18n.buttons.change_address}}",
+                                            "action": "navigateTo",
+                                            "actionParams": {
+                                                "url": "'/checkout/address'"
+                                            },
+                                            "className": "changeBtn"
+                                        }
+                                    },
+                                    "order": [
+                                        "title",
+                                        "description"
+                                    ]
+                                },
+                                "address": {
+                                    "type": "container",
+                                    "className": "address",
+                                    "sections": {
+                                        "shippingAddress": {
+                                            "type": "container",
+                                            "className": "shippingAddress",
+                                            "showIf": "$exists(checkout.order.shippingAddress)",
+                                            "sections": {
+                                                "placeName": {
+                                                    "type": "text",
+                                                    "className": "description",
+                                                    "text": "{{checkout.order.shippingAddress.placeDetails.name}}"
+                                                },
+                                                "fullName": {
+                                                    "type": "text",
+                                                    "className": "title",
+                                                    "text": "{{checkout.order.shippingAddress.fullName}}"
+                                                },
+                                                "addressLine": {
+                                                    "type": "text",
+                                                    "className": "description",
+                                                    "text": "{{checkout.order.shippingAddress.houseName}}, {{checkout.order.shippingAddress.addressLine}}, {{checkout.order.shippingAddress.area}}, {{checkout.order.shippingAddress.city}} - {{checkout.order.shippingAddress.zipcode}}, {{checkout.order.shippingAddress.state}}"
+                                                }
+                                            },
+                                            "style": {
+                                                "width": "100%",
+                                                "display": "flex",
+                                                "flexDirection": "column"
+                                            },
+                                            "order": [
+                                                "fullName",
+                                                "addressLine",
+                                                "placeName"
+                                            ]
+                                        }
+                                    },
+                                    "order": [
+                                        "shippingAddress"
+                                    ]
+                                }
+                            },
+                            "order": [
+                                "view-1",
+                                "address"
+                            ]
+                        },
+                        "deliverySlot": {
+                            "className": "deliverySlot",
+                            "type": "container",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.deliveryTitle}}",
+                                    "className": "title"
+                                },
+                                "description": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.deliveryDescription}}",
+                                    "className": "description"
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "description"
+                            ]
+                        },
+                        "orderSummary": {
+                            "type": "container",
+                            "className": "orderSummary",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.orderSummaryText}}",
+                                    "className": "title"
+                                },
+                                "cartItems": {
+                                    "className": "cartItems",
+                                    "type": "container",
+                                    "sections": {
+                                        "cartContainer": {
+                                            "type": "container",
+                                            "className": "cartContainer",
+                                            "sections": {
+                                                "title": {
+                                                    "type": "text",
+                                                    "text": "{{themeConfig.checkoutPage.yourItemsText}}",
+                                                    "className": "title",
+                                                    "style": {
+                                                        "fontSize": "16px",
+                                                        "fontWeight": "400",
+                                                        "fontFamily": "Noto Sans",
+                                                        "color": "var(--primary-text-color)"
+                                                    }
+                                                },
+                                                "subtitle": {
+                                                    "type": "text",
+                                                    "showIf": "cart.subTotal < siteConfig.settings.minOrderValue",
+                                                    "text": "Below minimum order value ₹ {{siteConfig.settings.minOrderValue}}",
+                                                    "className": "subtitle",
+                                                    "style": {
+                                                        "fontSize": "14px",
+                                                        "fontWeight": "400",
+                                                        "fontFamily": "Noto Sans",
+                                                        "color": "var(--error-text-color)",
+                                                        "marginTop": "5px"
+                                                    }
+                                                },
+                                                "cartList": {
+                                                    "type": "order-item-list",
+                                                    "refTemplate": "order-item-checkout",
+                                                    "className": "cartList"
+                                                }
+                                            },
+                                            "order": [
+                                                "title",
+                                                "subtitle",
+                                                "cartList"
+                                            ]
+                                        }
+                                    },
+                                    "style": {
+                                        "marginTop": "20px",
+                                        "width": "100%"
+                                    },
+                                    "order": [
+                                        "cartContainer"
+                                    ]
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "cartItems"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "login",
+                        "addressList",
+                        "deliverySlot",
+                        "orderSummary"
+                    ]
+                },
+                "col-right": {
+                    "type": "container",
+                    "className": "col-right",
+                    "sections": {
+                        "heading": {
+                            "type": "text",
+                            "text": "{{themeConfig.checkoutPage.priceDetails}}",
+                            "className": "priceDetails"
+                        },
+                        "subtitle": {
+                            "type": "text",
+                            "showIf": "cart.subTotal < siteConfig.settings.minOrderValue",
+                            "text": "Below minimum order value ₹ {{siteConfig.settings.minOrderValue}}",
+                            "className": "orderWarning"
+                        },
+                        "separator": {
+                            "type": "container",
+                            "className": "separator",
+                            "style": {
+                                "height": "1px",
+                                "width": "100%",
+                                "backgroundColor": "transparent",
+                                "marginTop": "10px",
+                                "marginBottom": "10px",
+                                "border": "1px dashed var(--stroke-color)"
+                            }
+                        },
+                        "promotion": {
+                            "type": "promotion",
+                            "className": "promotion",
+                            "sections": {
+                                "applyPromotion": {
+                                    "type": "container",
+                                    "className": "titleCard",
+                                    "showIf": "$not($exists(checkout.order.billing.promoCode))",
+                                    "sections": {
+                                        "title": {
+                                            "type": "text",
+                                            "text": "{{i18n.buttons.apply_promo_code}}",
+                                            "style": {
+                                                "fontSize": "16px",
+                                                "fontWeight": "bold",
+                                                "textTransform": "uppercase",
+                                                "fontFamily": "Noto Sans",
+                                                "color": "var(--primary-text-color)",
+                                                "paddingLeft": 10
+                                            }
+                                        },
+                                        "icon": {
+                                            "type": "image",
+                                            "url": "{{themeConfig.checkoutPage.discountIcon}}",
+                                            "style": {
+                                                "height": 20,
+                                                "width": 20
+                                            }
+                                        }
+                                    },
+                                    "order": [
+                                        "icon",
+                                        "title"
+                                    ],
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "justifyContent": "center",
+                                        "alignItems": "center",
+                                        "height": 50,
+                                        "borderRadius": 4,
+                                        "padding": 10,
+                                        "width": "100%",
+                                        "cursor": "pointer",
+                                        "background": "var(--secondary-color)",
+                                        "border": "1px dashed var(--select-color)",
+                                        "boxShadow": "0px 0px 8px 1px #FE436520"
+                                    },
+                                    "action": "setUiState",
+                                    "actionParams": {
+                                        "showPromotions": true
+                                    }
+                                },
+                                "promoApplied": {
+                                    "type": "container",
+                                    "className": "promoApplied",
+                                    "showIf": "checkout.order.billing.promoCode",
+                                    "sections": {
+                                        "content": {
+                                            "type": "container",
+                                            "className": "promoContent",
+                                            "sections": {
+                                                "promotionText": {
+                                                    "type": "text",
+                                                    "text": "{{checkout.order.billing.promoCode}} applied",
+                                                    "showIf": "checkout.order.billing.promoCode",
+                                                    "className": "promotionText",
+                                                    "style": {
+                                                        "fontSize": "14px",
+                                                        "fontWeight": "600",
+                                                        "fontFamily": "Noto Sans",
+                                                        "color": "var(--primary-text-color)"
+                                                    }
+                                                },
+                                                "promoDescription": {
+                                                    "type": "text",
+                                                    "text": "{{themeConfig.checkoutPage.offerAppliedText}}",
+                                                    "showIf": "checkout.order.billing.promoCode",
+                                                    "className": "promoDescription",
+                                                    "style": {
+                                                        "fontSize": "14px",
+                                                        "fontWeight": "400",
+                                                        "fontFamily": "Noto Sans",
+                                                        "color": "var(--primary-text-color)"
+                                                    }
+                                                }
+                                            },
+                                            "order": [
+                                                "promotionText",
+                                                "promoDescription"
+                                            ]
+                                        },
+                                        "removePromotion": {
+                                            "type": "button",
+                                            "text": "{{themeConfig.checkoutPage.removeText}}",
+                                            "showIf": "checkout.order.billing.promoCode",
+                                            "action": "removePromotion",
+                                            "className": "removeBtn",
+                                            "style": {
+                                                "fontSize": "14px",
+                                                "fontWeight": "400",
+                                                "fontFamily": "Noto Sans",
+                                                "color": "var(--white-text-color)",
+                                                "padding": "8px 12px",
+                                                "borderRadius": "4px",
+                                                "cursor": "pointer",
+                                                "border": "1px solid var(--stroke-color)",
+                                                "background": "var(--primary-color)"
+                                            }
+                                        }
+                                    },
+                                    "order": [
+                                        "content",
+                                        "removePromotion"
+                                    ],
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "justifyContent": "space-between",
+                                        "alignItems": "center",
+                                        "width": "100%"
+                                    }
+                                }
+                            },
+                            "style": {
+                                "display": "flex",
+                                "width": "100%",
+                                "flexDirection": "row",
+                                "justifyContent": "center",
+                                "borderBottom": "1px solid var(--stroke-color)",
+                                "paddingBottom": "15px",
+                                "alignItems": "center",
+                                "marginTop": "10px"
+                            },
+                            "order": [
+                                "applyPromotion",
+                                "promoApplied"
+                            ]
+                        },
+                        "subTotal": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Sub Total ({{cart.itemCount}} items)",
+                                    "className": "title"
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "₹{{cart.subTotal}}",
+                                    "className": "amount"
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "amount"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "width": "100%"
+                            }
+                        },
+                        "tax": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "sections": {
+                                "total": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.taxText}}",
+                                    "className": "title"
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "{{checkout.order.billing.tax ? checkout.order.billing.tax : 'Inclusive all taxes'}}",
+                                    "className": "amount"
+                                }
+                            },
+                            "order": [
+                                "total",
+                                "amount"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "padding": "5px 0px"
+                            }
+                        },
+                        "additionalChargesSubtotal": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "sections": {
+                                "total": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.additionalChargesText}}",
+                                    "className": "title"
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "₹{{checkout.order.billing.additionalChargesSubtotal ? checkout.order.billing.additionalChargesSubtotal : '0'}}",
+                                    "className": "amount"
+                                }
+                            },
+                            "order": [
+                                "total",
+                                "amount"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "padding": "5px 0px"
+                            }
+                        },
+                        "discount": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "showIf": "checkout.order.billing.discount",
+                            "sections": {
+                                "total": {
+                                    "type": "text",
+                                    "text": "Discount",
+                                    "className": "title",
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "fontWeight": "400",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "var(--primary-text-color)",
+                                        "paddingTop": "10px",
+                                        "paddingBottom": "10px"
+                                    }
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "- ₹{{checkout.order.billing.discount}}",
+                                    "className": "amount",
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "fontWeight": "500",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "var(--primary-text-color)",
+                                        "paddingTop": "10px",
+                                        "paddingBottom": "10px"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "total",
+                                "amount"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "padding": "5px 0px",
+                                "width": "100%"
+                            }
+                        },
+                        "deliveryCharge": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.deliveryChargesText}}",
+                                    "className": "title"
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "₹{{checkout.order.billing.additionalChargesSubtotal ? checkout.order.billing.additionalChargesSubtotal : '0'}}",
+                                    "className": "amount"
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "amount"
+                            ]
+                        },
+                        "total": {
+                            "type": "container",
+                            "className": "total",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.totalAmountText}}",
+                                    "className": "title"
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "₹{{checkout.order.billing.toPay}}",
+                                    "className": "totalAmount"
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "amount"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "width": "100%",
+                                "borderTop": "1px dashed #ffffff30",
+                                "borderBottom": "1px solid #ffffff30"
+                            }
+                        },
+                      
+                        "btn": {
+                            "type": "button",
+                            "text": "{{i18n.buttons.place_order}}",
+                            "action": "placeOrder",
+                            "actionParams": {
+                                "paymentMode": "online"
+                            },
+                            "styleIf": [
+                                {
+                                    "condition": "$boolean(cart.subTotal < siteConfig.settings.minOrderValue) = true",
+                                    "style": {
+                                        "width": "100%",
+                                        "height": "44px",
+                                        "textAlign": "center",
+                                        "background": "var(--btn-stroke-color)",
+                                        "fontSize": "14px",
+                                        "color": "var(--btn-tertiary-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "500",
+                                        "outline": "none",
+                                        "border": "none",
+                                        "cursor": "not-allowed",
+                                        "borderRadius": "8px"
+                                    }
+                                },
+                                {
+                                    "default": {
+                                        "width": "100%",
+                                        "height": "44px",
+                                        "textAlign": "center",
+                                        "background": "var(--btn-primary-background-color)",
+                                        "fontSize": "14px",
+                                        "color": "var(--btn-secondary-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "500",
+                                        "outline": "none",
+                                        "border": "none",
+                                        "cursor": "pointer",
+                                        "borderRadius": "8px"
+                                    }
+                                }
+                            ]
+                        },
+                        "title": {
+                            "type": "text",
+                            "text": "Order confirmation email will be sent to {{customer.email}}",
+                            "className": "title",
+                            "style": {
+                                "fontSize": "14px",
+                                "fontWeight": "400",
+                                "fontFamily": "Noto Sans",
+                                "color": "var(--primary-text-color)",
+                                "paddingTop": "20px",
+                                "paddingBottom": "10px",
+                                "width": "100%",
+                                "textAlign": "center"
+                            }
+                        }
+                    },
+                    "order": [
+                        "heading",
+                        "promotion",
+                        "tax",
+                        "additionalChargesSubtotal",
+                        "discount",
+                        "deliveryCharge",
+                        "total",
+                        "separator",
+                        "btn",
+                        "subtitle",
+                        "title"
+                    ]
+                }
+            },
+            "order": [
+                "col-left",
+                "col-right"
+            ]
+        },
+        "footer": {
+            "type": "template",
+            "templateName": "footer"
+        }
+    },
+    "order": [
+        "header",
+        "main",
+        "footer"
+    ]
+}

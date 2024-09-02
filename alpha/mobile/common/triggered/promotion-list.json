@@ -1,0 +1,163 @@
+{
+    "imports": [
+        "common/promotion-list.css"
+    ],
+    "className": "promotion-list",
+    "contentDisplay": {
+        "type": "drawer",
+        "placement": "bottom",
+        "trigger": "ui.showPromotions"
+    },
+    "showIf": "ui.showPromotions = true",
+    "sections": {
+        "header": {
+            "type": "container",
+            "sections": {
+                "title": {
+                    "type": "container",
+                    "sections": {
+                        "title": {
+                            "type": "text",
+                            "text": "Promotions",
+                            "style": {
+                                "fontWeight": "600",
+                                "fontFamily": "Lato",
+                                "fontSize": "16px",
+                                "color": "var(--primary-color)"
+                            }
+                        }
+                    },
+                    "order": [
+                        "title"
+                    ],
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "column"
+                    }
+                },
+                "close": {
+                    "type": "text",
+                    "text": "Close",
+                    "action": "setUiState",
+                    "actionParams": {
+                        "showPromotions": false
+                    },
+                    "style": {
+                        "cursor": "pointer",
+                        "fontFamily": "Lato"
+                    }
+                }
+            },
+            "order": [
+                "title",
+                "close"
+            ],
+            "style": {
+                "display": "flex",
+                "height": "24px",
+                "alignItems": "center",
+                "color": "#202020",
+                "borderBottom": "1px solid #ccc",
+                "padding": "25px 18px",
+                "justifyContent": "space-between"
+            }
+        },
+        "content": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "promotions": {
+                    "type": "promotion-list",
+                    "className": "list",
+                    "embeddedTemplates": {
+                        "promotion": {
+                            "type": "container",
+                            "className": "promotion-container",
+                            "sections": {
+                                "coupon": {
+                                    "type": "container",
+                                    "className": "coupon-header",
+                                    "sections": {
+                                        "code": {
+                                            "type": "text",
+                                            "className": "code",
+                                            "text": "{{promotion.code}}",
+                                            "classNameIf": [
+                                                {
+                                                    "condition": "promotion.eligible",
+                                                    "className": "code"
+                                                },
+                                                {
+                                                    "condition": "$not{{promotion.eligible}}",
+                                                    "className": "code-notEligible"
+                                                }
+                                            ]
+                                        },
+                                        "apply": {
+                                            "type": "button",
+                                            "text": "Apply",
+                                            "className": "applyBtn",
+                                            "showIf": "promotion.eligible",
+                                            "actions": [
+                                                {
+                                                    "action": "applyPromotion"
+                                                },
+                                                {
+                                                    "action": "setUiState",
+                                                    "actionParams": {
+                                                        "showPromotions": false
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "order": [
+                                        "code",
+                                        "apply"
+                                    ]
+                                },
+                                "offerNotEligible": {
+                                    "type": "text",
+                                    "className": "offerNotEligible",
+                                    "showIf": "$not(promotion.eligible)",
+                                    "text": "You are not yet eligible to use these coupons"
+                                },
+                                "description": {
+                                    "type": "text",
+                                    "className": "description",
+                                    "text": "{{promotion.description}}",
+                                    "classNameIf": [
+                                        {
+                                            "condition": "promotion.eligible",
+                                            "className": "description"
+                                        },
+                                        {
+                                            "condition": "$not(promotion.eligible)",
+                                            "className": "description-notEligible"
+                                        }
+                                    ]
+                                }
+                            },
+                            "order": [
+                                "coupon",
+                                "offerNotEligible",
+                                "description"
+                            ]
+                        },
+                        "noData": {
+                            "type": "text",
+                            "text": "No promotions available"
+                        }
+                    }
+                }
+            },
+            "order": [
+                "promotions"
+            ]
+        }
+    },
+    "order": [
+        "header",
+        "content"
+    ]
+}

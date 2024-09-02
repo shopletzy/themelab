@@ -1,0 +1,563 @@
+.slz-home {
+    background-color: var(--background-color);
+    height: 100vh;
+    width: 100%;
+  
+}
+
+.slz-home .sections {
+    width: inherit;
+    height: inherit;
+}
+
+.slz-home .content {
+    height: 80vh;
+    width: inherit;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+}
+
+
+.slz-home .logo {
+    width: 100%;
+    padding: 0px 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    object-fit: contain;
+
+}
+
+.slz-home  .header-announcement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0px;
+  background: var(--primary-color);
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.slz-home .header-announcement .header-announcement-text {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--white-text-color);
+  font-family: "Noto Sans";
+  position: absolute;
+  white-space: nowrap;
+  left: 100%;
+  animation: textLoop 25s linear infinite;
+}
+
+@keyframes textLoop {
+  from { 
+    left: 100%;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+.slz-home .header-center {
+  height: 74px;
+  width: 100%;
+  padding: 12px 12px;
+  background-color: var(--background-color);
+}
+
+.slz-home .header-center .header-search {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 8px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--stroke-color);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.slz-home .header-center .header-search .header-search-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.slz-home .header-center .header-search .header-search-input {
+  width: 94%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--primary-text-color);
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "Noto Sans";
+}
+
+.slz-home .headerView{
+
+    text-align: left;
+    font-family: 'Noto Sans';
+    font-size: 16px;
+    font-weight: 300;
+    word-wrap: normal;
+    color: var(--dark-primary-color);
+    letter-spacing: 0.3px;
+    padding: 14px 14px 5px 14px;
+    width: 100%;
+    margin-top: 20px;
+    
+}
+
+.slz-home .category-view{
+    
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 125px;
+    padding: 12px 12px ;
+    overflow-x: scroll; /* Changed to scroll instead of auto */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    
+}
+
+.slz-home .category-view::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .slz-home .headerBanner {
+    
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-image: url("{{themeUrl}}/img/web/banner/bannerPlaceholder.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+  }
+
+  .slz-home .headerBanner .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    
+   
+  }
+
+  .slz-home .headerBanner .content .title{
+
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Noto Sans';
+    color: var(--white-text-color);
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  }
+
+/* Top products */
+.slz-home .topProductsContainer {
+    width: 100%;
+    
+}
+
+.slz-home .topProductsContainer .titleContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
+.slz-home .topProductsContainer .titleContainer .title {
+    font-family: 'Noto Sans';
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--primary-text-color);
+    letter-spacing: -0.3px;
+    margin-left: 8px;
+}
+
+.slz-home .topProductsContainer .productContainer {
+    /* display: flex;
+    width: 100%;
+    padding: 14px 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 14px; 
+    white-space: nowrap;  */
+       
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    grid-gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+  
+                                
+}
+
+/* .slz-home .topProductsContainer .productContainer::-webkit-scrollbar {
+    display: none;
+} */
+
+.slz-home .card-1{
+    margin-top: 20px;
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slz-home .card-1 .content{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    overflow: hidden;
+       background-image: url("{{themeUrl}}/img/web/banner/bannerPlaceholder.svg");
+    /* background-attachment: scroll; */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slz-home .card-1 .content .title{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Noto Sans';
+    padding: 14px 0px;
+    color: var(--dark-primary-color);
+    text-align: center;
+    overflow: hidden;
+   
+}
+.slz-home .card-1 .img-view{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slz-home .card-1 .content .btn{
+   
+    border: 1px solid var(--secondary-color);
+    outline: 1px solid #fff;
+    border: none;
+    width: 30%;
+    height: 36px;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Noto Sans';
+    color: var(--dark-primary-color);
+}
+
+.slz-home .slogan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    width: 100%;
+    height: 300px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.slz-home .slogan .img{
+   
+    height: 24px;
+    overflow: hidden;
+    object-fit: contain;
+    margin-bottom: 18px;
+}
+
+.slz-home .slogan .title{
+    font-size: 20px;
+    font-weight: 400;
+    color: #a2a2a2;
+    font-family: 'Noto Sans';
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.slz-home .bannerOffer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 64px;
+    
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    background-image: url("{{themeUrl}}/img/web/banner/bannerPlaceholder.svg");
+    /* background-attachment: scroll; */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slz-home .bannerOffer .bannerTitle{
+    font-size: 44px;
+    font-family: 'Noto Sans';
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+.slz-home .bannerOffer .subTitle {
+    font-size: 28px;
+    font-family: 'Noto Sans';
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.slz-home .bannerOffer .discountCode{
+    font-size: 26px;
+    font-family: 'Noto Sans';
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 28px;
+    position: relative;
+    display: inline-block;
+}
+
+.slz-home .bannerOffer .discountCode:hover{
+    background-color: var(--primary-color);
+    padding: 8px
+}
+
+.slz-home .bannerOffer .discountCode::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  
+  .slz-home .bannerOffer .discountCode:hover::after {
+    
+    opacity: 1;
+    transform: scaleX(1);
+    animation: dash-animation 1s linear infinite;
+  }
+  
+  @keyframes dash-animation {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 10px 0;
+    }
+    100% {
+      background-position: 20px 0;
+    }
+  }
+
+/* exploreBtn */
+.slz-home .bannerOffer .exploreBtn{
+    text-align: center;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    font-family: 'Noto Sans';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 45px;
+    max-width: 160px;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+    width: 100%;
+  }
+  
+  .slz-home .bannerOffer .exploreBtn:hover {
+    text-decoration: none;
+  }
+  
+  .slz-home .bannerOffer .effect01 {
+    color: #FFF;
+    border: 0px solid var(--secondary-color);
+    box-shadow: 0px 0px 0px 1px var(--secondary-color) inset;
+    background-color: var(--secondary-color);
+    overflow: hidden;
+    position: relative;
+    transition: all 1.3s ease-in-out;
+  }
+  
+  .slz-home .bannerOffer .effect01:hover {
+    border: 0px solid #666;
+    background-color: var(--secondary-color);
+    box-shadow: 0px 0px 0px 1px #EEE inset;
+
+  }
+  
+  .slz-home .bannerOffer .effect01::after {
+    background: var(--secondary-color);
+    border: 0px solid var(--secondary-color);
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: 0.8;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    width: 50px;
+    transition: all 3.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 1;
+  }
+  
+  .slz-home .bannerOffer .effect01:hover::after {
+    background: #fff;
+    border: 0px solid var(--secondary-color);
+    opacity: 0;
+    left: 120%;
+    transform: rotate(40deg);
+  }
+  .slz-home .offerBanner2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    
+    background-color: var(--background-color);
+    padding: 12px 12px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 60px;
+    /* border-bottom: 1px solid var(--stroke-color); */
+}
+
+.slz-home .offerBanner2 .banner1 {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 1px solid var(--stroke-color);
+}
+
+.slz-home .offerBanner2 .banner1:hover {
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.24);
+    transition: all 0.3s ease-in-out;
+}
+
+.slz-home .bottom-tabs-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    background-color: var(--background-color);
+    /* backdrop-filter: blur(10px); */
+    width: 100%;
+    border-radius: 0px;
+    box-shadow: var(--primary-color) 0px 0px 10px 0.2;
+    border-top: 1px solid var(--stroke-color);
+    padding: 0px 20px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.slz-home .bottom-tabs-nav .menu {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    width: 36px;
+    height: 36px;
+    background-color: var(--background-color);
+
+}
+
+.slz-home .bottom-tabs-nav .cartView{
+    display: flex;
+    align-items: center;
+}
+
+
+.slz-home .bottom-tabs-nav .cartView .icon {
+
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    width: 30px;
+}
+
+.slz-home .bottom-tabs-nav .cartView .title {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Noto Sans';
+    position: absolute;
+    color: var(--primary-text-color);
+    padding: 3px;
+    border-radius: 60%;
+    height: 20px;
+    width: 20px;
+    background: var(--select-color);
+    border: 1.5px solid var(--stroke-color);
+    margin-bottom: 15px;
+    margin-left: 12px;
+}

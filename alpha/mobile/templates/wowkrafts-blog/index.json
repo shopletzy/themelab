@@ -1,0 +1,114 @@
+{
+    "imports": [
+        "common/header.json"
+    ],
+    "sections": {
+        "header": {
+            "type": "template",
+            "templateName": "header"
+        },
+        "content": {
+            "type": "container",
+            "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "flexGrow": "1",
+                "paddingTop": "25px",
+                "paddingBottom": "25px",
+                "overflowY": "auto",
+                "color": "#202020"
+            },
+            "sections": {
+                "title": {
+                    "type": "text",
+                    "text": "{{blog.title}}",
+                    "style": {
+                        "fontSize": "20px",
+                        "fontWeight": "bold",
+                        "marginLeft": "20px",
+                        "color": "#FFFFFF"
+                    }
+                },
+                "featuredPosts": {
+                    "type": "post-collection",
+                    "collection": "featuredPosts",
+                    "embeddedTemplates": {
+                        "post": {
+                            "type": "container",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{post.title}}",
+                                    "style": {
+                                        "fontSize": "15px",
+                                        "paddingTop": "20px",
+                                        "paddingBottom": "10px",
+                                        "paddingLeft": "20px",
+                                        "paddingRight": "20px",
+                                        "fontWeight": "600",
+                                        "overflow": "hidden",
+                                        "width": "100%",
+                                        "color": "#FFFFFF"
+                                    }
+                                },
+                                "featureImage": {
+                                    "type": "image",
+                                    "url": "{{post.featureImage}}",
+                                    "style": {
+                                        "width": "100px",
+                                        "height": "100%",
+                                        "backgroundSize": "cover",
+                                        "backgroundPosition": "center",
+                                        "objectFit": "cover",
+                                        "overflow": "hidden"
+                                    }
+                                }
+                            },
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "justifyContent": "flex-start",
+                                "height": "100px",
+                                "overflow": "hidden",
+                                "width": "100%",
+                                "marginTop": "15px",
+                                "overflowY": "auto",
+                                "background": "var(--primary-color)",
+                                "borderRadius": "5px",
+                                "borderBottom": "0px solid #ccc"
+                            },
+                            "order": [
+                                "featureImage",
+                                "title"
+                            ]
+                        }
+                    },
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "flexWrap": "wrap",
+                        "width": "100%",
+                        "justifyContent": "flex-start",
+                        "marginBottom": "20px",
+                        "background": "var(--primary-color)",
+                        "padding": "20px"
+                    }
+                }
+            },
+            "order": [
+                "title",
+                "featuredPosts"
+            ]
+        }
+    },
+    "style": {
+        "height": "100vh",
+        "width": "100%",
+        "background": "var(--primary-color)"
+    },
+    "order": [
+        "header",
+        "content"
+    ]
+}

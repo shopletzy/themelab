@@ -1,0 +1,175 @@
+{
+    "imports": [
+        "common/testimonials.css"
+    ],
+    "type": "container",
+    "className": "slz-testimonials",
+    "sections": {
+        "card-1": {
+            "type": "container",
+            "className": "card-1",
+            "sections": {
+                "Name": {
+                    "type": "text",
+                    "className": "nameTitle",
+                    "text": "{{themeConfig.testimonials.testimonial1Name}}"
+                },
+                "country": {
+                    "type": "text",
+                    "className": "countryTitle",
+                    "text": "{{themeConfig.testimonials.testimonial1country}}"
+                },
+                "title": {
+                    "type": "text",
+                    "className": "feedbackTitle",
+                    "text": "{{themeConfig.testimonials.testimonial1}}"
+                },
+                "imgView": {
+                    "type": "image",
+                    "className": "imgView",
+                    "url": "{{themeConfig.testimonials.testimonial1Img}}"
+                }
+            },
+            "order": [
+                "Name",
+                "country",
+                "title",
+                "imgView"
+            ]
+        },
+        "card-2": {
+            "type": "container",
+            "className": "card-1",
+            "sections": {
+                "Name": {
+                    "type": "text",
+                    "className": "nameTitle",
+                    "text": "{{themeConfig.testimonials.testimonial2Name}}"
+                },
+                "country": {
+                    "type": "text",
+                    "className": "countryTitle",
+                    "text": "{{themeConfig.testimonials.testimonial2country}}"
+                },
+                "title": {
+                    "type": "text",
+                    "className": "feedbackTitle",
+                    "text": "{{themeConfig.testimonials.testimonial2}}"
+                },
+                "imgView": {
+                    "type": "image",
+                    "className": "imgView",
+                    "url": "{{themeConfig.testimonials.testimonial2Img}}"
+                }
+            },
+            "order": [
+                "Name",
+                "country",
+                "title",
+                "imgView"
+            ]
+        },
+        "card-3": {
+            "type": "container",
+            "className": "card-1",
+            "sections": {
+                "Name": {
+                    "type": "text",
+                    "className": "nameTitle",
+                    "text": "{{themeConfig.testimonials.testimonial3Name}}"
+                },
+                "country": {
+                    "type": "text",
+                    "className": "countryTitle",
+                    "text": "{{themeConfig.testimonials.testimonial3country}}"
+                },
+                "title": {
+                    "type": "text",
+                    "className": "feedbackTitle",
+                    "text": "{{themeConfig.testimonials.testimonial3}}"
+                },
+                "imgView": {
+                    "type": "image",
+                    "className": "imgView",
+                    "url": "{{themeConfig.testimonials.testimonial3Img}}"
+                }
+            },
+            "order": [
+                "Name",
+                "country",
+                "title",
+                "imgView"
+            ]
+        },
+        "card-4": {
+            "type": "container",
+            "className": "card-1",
+            "sections": {
+                "Name": {
+                    "type": "text",
+                    "className": "nameTitle",
+                    "text": "{{themeConfig.testimonials.testimonial4Name}}"
+                },
+                "country": {
+                    "type": "text",
+                    "className": "countryTitle",
+                    "text": "{{themeConfig.testimonials.testimonial4country}}"
+                },
+                "title": {
+                    "type": "text",
+                    "className": "feedbackTitle",
+                    "text": "{{themeConfig.testimonials.testimonial4}}"
+                },
+                "imgView": {
+                    "type": "image",
+                    "className": "imgView",
+                    "url": "{{themeConfig.testimonials.testimonial4Img}}"
+                }
+            },
+            "order": [
+                "Name",
+                "country",
+                "title",
+                "imgView"
+            ]
+        },
+        "card-5": {
+            "type": "container",
+            "className": "card-1",
+            "sections": {
+                "Name": {
+                    "type": "text",
+                    "className": "nameTitle",
+                    "text": "{{themeConfig.testimonials.testimonial4Name}}"
+                },
+                "country": {
+                    "type": "text",
+                    "className": "countryTitle",
+                    "text": "{{themeConfig.testimonials.testimonial4country}}"
+                },
+                "title": {
+                    "type": "text",
+                    "className": "feedbackTitle",
+                    "text": "{{themeConfig.testimonials.testimonial4}}"
+                },
+                "imgView": {
+                    "type": "image",
+                    "className": "imgView",
+                    "url": "{{themeConfig.testimonials.testimonial4Img}}"
+                }
+            },
+            "order": [
+                "Name",
+                "country",
+                "title",
+                "imgView"
+            ]
+        }
+    },
+    "order": [
+        "card-1",
+        "card-2",
+        "card-3",
+        "card-4"
+    ]
+}

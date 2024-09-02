@@ -1,11 +1,119 @@
 {
     "sections": {
-        "name": {
-            "type": "text",
-            "text": ""
+        "address": {
+            "type": "container",
+            "sections": {
+                "fullName": {
+                    "type": "text",
+                    "text": "{{address.fullName}}",
+                    "style": {
+                        "fontSize": "16px",
+                        "fontWeight": "600",
+                        "lineHeight": "16px",
+                        "color": "var(--primary-text-color)",
+                        "marginBottom": "5px",
+                        "textTransform": "capitalize",
+                        "fontFamily": "Noto Sans"
+                    }
+                },
+                "houseName": {
+                    "type": "text",
+                    "text": "{{address.houseName}}",
+                    "style": {
+                        "width": "100%",
+                        "fontSize": "14px",
+                        "fontWeight": "300",
+                        "lineHeight": "15px",
+                        "color": "var(--primary-text-color)",
+                        "fontFamily": "Noto Sans",
+                        "padding": "8px 0px"
+                    }
+                },
+                "addressLine": {
+                    "type": "text",
+                    "text": "{{address.addressLine}}, {{address.area}}, {{address.city}} - {{address.zipcode}}, {{address.state}}",
+                    "style": {
+                        "width": "100%",
+                        "fontSize": "14px",
+                        "fontWeight": "300",
+                        "lineHeight": "15px",
+                        "color": "var(--primary-text-color)",
+                        "paddingTop": "0px",
+                        "paddingBottom": "14px",
+                        "fontFamily": "Noto Sans"
+                    }
+                }
+            },
+            "style": {
+                "width": "100%",
+                "display": "flex",
+                "flexDirection": "column"
+            },
+            "order": [
+                "fullName",
+                "houseName",
+                "addressLine"
+            ]
+        },
+        "edit": {
+            "type": "button",
+            "text": "Edit",
+            "style": {
+                "width": "50px",
+                "height": "30px",
+                "background": "transparent",
+                "color": "var(--btn-primary-text-color)",
+                "borderRadius": "5px",
+                "border": "1px solid var(--btn-stroke-color)",
+                "cursor": "pointer",
+                "fontSize": "13px",
+                "fontWeight": "500",
+                "fontFamily": "Noto Sans"
+            },
+            "action": "setUiState",
+            "actionParams": {
+                "showAddressEditor": "true",
+                "editAddress": "address"
+            }
+        },
+        "notSelected": {
+            "type": "image",
+            "url": "{{themeUrl}}/img/common/unSelect.svg",
+            "showIf": "$not(address.selected)",
+            "style": {
+                "width": "25px",
+                "height": "25px",
+                "marginRight": "0px"
+            }
+        },
+        "selected": {
+            "type": "image",
+            "url": "{{themeUrl}}/img/common/Select.svg",
+            "showIf": "address.selected",
+            "style": {
+                "width": "25px",
+                "height": "25px",
+                "marginRight": "0px"
+            }
         }
     },
+    "style": {
+        "width": "100%",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "background": "transparent",
+        "fontSize": "13px",
+        "fontFamily": "Noto Sans",
+        "fontWeight": "300",
+        "lineHeight": "20px",
+        "overflow": "hidden",
+        "marginBottom": "20px",
+        "borderBottom": "1px solid var(--stroke-color)"
+    },
     "order": [
-        "name"
+        "address",
+        "notSelected",
+        "selected"
     ]
 }

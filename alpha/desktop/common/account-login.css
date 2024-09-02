@@ -1,0 +1,182 @@
+.account-login {
+  background-color: var(--background-color);
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  z-index: 10000;
+  padding: 10px;
+}
+
+.account-login .header {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--primary-text-color);
+  padding-left: 0px;
+  padding-right: 0px;
+  justify-content: flex-end;
+  cursor: pointer;
+  border-bottom: 0px solid var(--stroke-color);
+}
+
+.account-login .content {
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  padding: 20px;
+  width: 30%;
+  height: 100%;
+  border-radius: 10px;
+  margin-top: 75px;
+}
+
+.account-login .content .logo {
+  padding: 30px;
+  width: 244px;
+  margin-bottom: 40px;
+}
+
+.account-login .content .login {
+  color: var(--primary-text-color);
+  width: 100%;
+}
+
+.account-login .content .login .header {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--background-color);
+}
+
+.account-login .content .login .header .titleEmail {
+  font-weight: 700;
+  color: var(--primary-text-color);
+  font-size: 24px;
+  font-family: Noto Sans;
+}
+
+.account-login .content .login .header .titleVerifyOtp {
+  font-weight: 700;
+  color: var(--primary-text-color);
+  font-size: 24px;
+  font-family: Noto Sans;
+}
+
+.account-login .content .login .header .signUp {
+  font-weight: 700;
+  color: var(--primary-text-color);
+  font-size: 24px;
+  font-family: Noto Sans;
+}
+
+.account-login .content .login .header .titleVerifyMobile {
+  font-weight: 700;
+  color: var(--primary-text-color);
+  font-size: 24px;
+  font-family: Noto Sans;
+}
+
+
+.account-login .content .login .header2 .subTitleEmail{
+
+  margin-bottom: 10px;
+  line-height: 1.75rem;
+  font-size: 15px;
+  color: var(--primary-text-color);
+  font-family: Noto Sans;
+  font-weight: 400;
+}
+
+.account-login .content .login .login-container, .account-login .content .login .signup-container {
+
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  width: 100%;
+}
+
+.account-login .content .login .login-container .inputField, .account-login .content .login .signup-container .inputField {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px 0px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid var(--stroke-color);
+  background: transparent;
+  height: 40px;
+  outline: none;
+  font-size: 15px;
+  color: var(--primary-text-color);
+  font-family: Noto Sans;
+  font-weight: 400;
+}
+
+.account-login .content .login .login-container .errorView, .account-login .content .login .signup-container .errorView {
+  color: var(--error-text-color);
+  font-size: 14px;
+  font-family: Noto Sans;
+  font-weight: 400;
+  padding-bottom: 5px;
+}
+
+.account-login .content .login .login-container .submitBtn, .account-login .content .login .signup-container .submitBtn {
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 100%;
+  border-radius: 5px;
+  background: var(--primary-color);
+  font-size: 15px;
+  color: var(--white-text-color);
+  font-family: Noto Sans;
+  font-weight: 500;
+  outline: none;
+  border: none;
+}
+
+.account-login .content .login .login-container .or {
+  color: var(--secondary-text-color);
+  font-size: 14px;
+  font-family: Noto Sans;
+  font-weight: 400;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.account-login .content .login .login-container .signupBtn {
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 100%;
+  border-radius: 5px;
+  background: var(--background-color);
+  font-size: 15px;
+  color: var(--primary-text-color);
+  font-family: Noto Sans;
+  font-weight: 600;
+  outline: none;
+  border: 1.5px solid var(--stroke-color);
+}

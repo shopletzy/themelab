@@ -1,0 +1,139 @@
+{
+    "imports": [
+        "common/order.json",
+        "common/address.json",
+        "common/header.json",
+        "common/header.css",
+        "common/triggered/userInfo.css"
+    ],
+    "contentDisplay": {
+        "type": "drawer",
+        "placement": "bottom",
+        "trigger": "ui.showProfile"
+    },
+    "showIf": "ui.showProfile = true",
+    "className": "slz-userInfo",
+    "type": "container",
+    "sections": {
+        "headerView": {
+            "type": "container",
+            "className": "headerView",
+            "sections": {
+                "title": {
+                    "type": "text",
+                    "className": "title",
+                    "text": "Personal Information"
+                },
+                "backBtn": {
+                    "type": "image",
+                    "url": "{{themeUrl}}/img/common/backArrow.svg",
+                    "className": "back-btn",
+                    "action": "setUiState",
+                    "actionParams": {
+                        "showProfile": false
+                    },
+                    "style": {
+                        "height": "20px"
+                    }
+                }
+            },
+            "order": [
+                "backBtn",
+                "title"
+            ]
+        },
+        "content": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "detailView": {
+                    "type": "container",
+                    "className": "detailView",
+                    "sections": {
+                        "view-1": {
+                            "type": "container",
+                            "className": "view-1",
+                            "sections": {
+                                "firstNameLabel": {
+                                    "type": "text",
+                                    "className": "firstNameLabel",
+                                    "text": "First Name"
+                                },
+                                "firstName": {
+                                    "type": "text",
+                                    "className": "firstName",
+                                    "text": "{{customer.fullName}}"
+                                }
+                            },
+                            "order": [
+                                "firstNameLabel",
+                                "firstName"
+                            ]
+                        },
+                        "view-2": {
+                            "type": "container",
+                            "className": "view-1",
+                            "sections": {
+                                "emailLabel": {
+                                    "type": "text",
+                                    "className": "firstNameLabel",
+                                    "text": "Email"
+                                },
+                                "emailName": {
+                                    "type": "text",
+                                    "className": "firstName",
+                                    "text": "{{customer.email}}"
+                                }
+                            },
+                            "order": [
+                                "emailLabel",
+                                "emailName"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "view-1",
+                        "view-2"
+                    ]
+                },
+                "detailView-2": {
+                    "type": "container",
+                    "className": "detailView",
+                    "sections": {
+                        "view-1": {
+                            "type": "container",
+                            "className": "view-1",
+                            "sections": {
+                                "mobileLabel": {
+                                    "type": "text",
+                                    "className": "firstNameLabel",
+                                    "text": "Mobile Number"
+                                },
+                                "mobileNumber": {
+                                    "type": "text",
+                                    "className": "firstName",
+                                    "text": "{{customer.mobileNo}}"
+                                }
+                            },
+                            "order": [
+                                "mobileLabel",
+                                "mobileNumber"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "view-1"
+                    ]
+                }
+            },
+            "order": [
+                "detailView",
+                "detailView-2"
+            ]
+        }
+    },
+    "order": [
+        "headerView",
+        "content"
+    ]
+}

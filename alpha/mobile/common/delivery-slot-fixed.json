@@ -1,0 +1,119 @@
+{
+    "sections": {
+        "deliverySlot": {
+            "type": "container",
+            "sections": {
+                "slotName": {
+                    "type": "text",
+                    "text": "{{deliverySlot.name}}",
+                    "style": {
+                        "fontFamily": "Noto Sans",
+                        "color": "#000",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "padding": "5px 0px"
+                    }
+                },
+                "date": {
+                    "type": "text",
+                    "text": "{{deliverySlot.formattedDate}}",
+                    "style": {
+                        "fontFamily": "Noto Sans",
+                        "color": "#000",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "padding": "5px 0px"
+                    }
+                },
+                "time": {
+                    "type": "text",
+                    "text": "{{deliverySlot.formattedStartTime}} - {{deliverySlot.formattedEndTime}}{{deliverySlot.isClosed ? ' - Closed' : ''}}",
+                    "styleIf": [
+                        {
+                            "condition": "deliverySlot.isClosed",
+                            "style": {
+                                "fontFamily": "Noto Sans",
+                                "color": "#C70039",
+                                "fontWeight": "500",
+                                "fontSize": "14px",
+                                "padding": "5px 0px",
+                                "cursor": "not-allowed"
+                            }
+                        },
+                        {
+                            "condition": "deliverySlot.selected",
+                            "style": {
+                                "fontFamily": "Noto Sans",
+                                "color": "#196cb0",
+                                "fontWeight": "600",
+                                "fontSize": "14px",
+                                "padding": "5px 0px"
+                            }
+                        },
+                        {
+                            "default": {
+                                "fontFamily": "Noto Sans",
+                                "color": "#282c3f",
+                                "fontWeight": "500",
+                                "fontSize": "14px",
+                                "padding": "5px 0px"
+                            }
+                        }
+                    ]
+                }
+            },
+            "order": [
+                "time"
+            ],
+            "styleIf": [
+                {
+                    "condition": "deliverySlot.selected",
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "flexWrap": "wrap",
+                        "justifyContent": "flex-start",
+                        "alignItems": "center",
+                        "border": "1px solid #196cb0",
+                        "borderRadius": "8px",
+                        "padding": "5px 12px"
+                    }
+                },
+                {
+                    "default": {
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "flexWrap": "wrap",
+                        "justifyContent": "flex-start",
+                        "alignItems": "center",
+                        "border": "1px solid #93959f80",
+                        "borderRadius": "8px",
+                        "padding": "5px 12px"
+                    }
+                }
+            ]
+        },
+        "selected": {
+            "type": "image",
+            "url": "{{themeUrl}}/img/desktop/correct.png",
+            "showIf": "deliverySlot.selected",
+            "style": {
+                "marginLeft": "5px",
+                "width": "16px",
+                "height": "16px"
+            }
+        }
+    },
+    "style": {
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "overflow": "hidden",
+        "marginBottom": "10px",
+        "marginLeft": "10px"
+    },
+    "order": [
+        "deliverySlot"
+    ]
+}

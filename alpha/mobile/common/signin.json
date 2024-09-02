@@ -1,0 +1,69 @@
+{
+    "contentDisplay": {
+        "type": "modal"
+    },
+    "sections": {
+        "closeIcon": {
+            "type": "image-button",
+            "url": "",
+            "text": "CLOSE",
+            "action": "closeSignIn",
+            "style": {
+                "padding": "5px 10px",
+                "display": "flex",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "border": "none",
+                "fontSize": "14px",
+                "fontWeight": "bold",
+                "background": "#FFF",
+                "cursor": "pointer",
+                "color": "#232631",
+                "position": "absolute",
+                "right": "10px",
+                "top": "10px"
+            }
+        },
+        "image": {
+            "type": "image",
+            "url": "{{themeUrl}}/img/desktop/aa-c-48.svg",
+            "style": {
+                "height": "60px"
+            }
+        },
+        "iframe": {
+            "type": "signInIframe",
+            "style": {
+                "marginTop": "20px",
+                "height": "140px",
+                "background": "#FFFFFF00"
+            }
+        },
+        "heading": {
+            "type": "text",
+            "text": "{{siteConfig.brandName}}",
+            "style": {
+                "color": "#202020"
+            }
+        }
+    },
+    "order": ["image", "iframe", "closeIcon"],
+    "style": {
+        "display": "flex",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "flexDirection": "column",
+        "zIndex": "9999",
+        "width": "600px",
+        "height": "300px",
+        "background": "#FFF000",
+
+        "backgroundRepeat": "no-repeat",
+        "backgroundSize": "cover",
+        "top": "calc(50% - 300px)",
+        "left": "calc(50% - 300px)",
+        "borderRadius": "10px",
+        "overflow": "hidden",
+        "boxShadow": "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
+    }
+}

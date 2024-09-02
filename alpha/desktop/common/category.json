@@ -1,5 +1,6 @@
 {
     "type": "container",
+    "className": "category-container",
     "sections": {
         "image": {
             "type": "product-image",
@@ -12,29 +13,32 @@
         },
         "container1": {
             "type": "container",
+            "className": "category-title-container",
             "sections": {
                 "heading1": {
                     "type": "text",
-                    "text": "{{category.title}}"
+                    "text": "{{category.title}}",
+                    "className": "category-title"
                 }
             },
             "order": [
                 "heading1"
-            ],
+            ]
+        },
+        "slash": {
+            "type": "text",
+            "text": " / ",
             "style": {
-                "marginLeft": "10px",
-                "flexDirection": "column"
+                "width": "20%",
+                "textAlign": "center",
+                "fontFamily": "Noto Sans",
+                "fontSize": "14px",
+                "fontWeight": "500",
+                "color": "var(--placeholder-text-color)"
             }
         }
     },
     "order": [
-        "image",
         "container1"
-    ],
-    "style": {
-        "display": "flex",
-        "alignItems": "center",
-        "margin": "20px",
-        "flexDirection": "row"
-    }
+    ]
 }

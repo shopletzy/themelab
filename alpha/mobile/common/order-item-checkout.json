@@ -1,0 +1,128 @@
+{
+    "sections": {
+        "pImage": {
+            "type": "product-image",
+            "url": "{{orderItem.images[0]}}",
+            "style": {
+                "width": "100px",
+                "height": "100px"
+            }
+        },
+        "titleCard": {
+            "type": "container",
+            "sections": {
+                "pTitle": {
+                    "type": "text",
+                    "text": "{{orderItem.title}}",
+                    "style": {
+                        "color": "var(--primary-text-color)",
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "lineClamp": 1,
+                        "fontSize": "15px",
+                        "fontWeight": "600",
+                        "fontFamily": "Noto Sans"
+                    }
+                },
+                "pSubTitle": {
+                    "type": "text",
+                    "text": "{{orderItem.subtitle}}",
+                    "style": {
+                        "color": "var(--secondary-text-color)",
+                        "fontSize": "13px",
+                        "fontFamily": "Noto Sans"
+                    }
+                },
+                "pCustomizations": {
+                    "type": "text",
+                    "text": "{{orderItem.customizations}}",
+                    "style": {
+                        "color": "var(--secondary-text-color)",
+                        "fontSize": "13px",
+                        "fontFamily": "Noto Sans"
+                    }
+                },
+                "qty": {
+                    "type": "container",
+                    "sections": {
+                        "quantity": {
+                            "type": "text",
+                            "text": "Qty: {{orderItem.quantity}} | Price: ₹{{$boolean(orderItem.salePrice) ? orderItem.salePrice : orderItem.price}}",
+                            "style": {
+                                "color": "var(--secondary-text-color)",
+                                "fontSize": "13px",
+                                "fontWeight": "400",
+                                "fontFamily": "Noto Sans"
+                            }
+                        },
+                        "pPrice": {
+                            "type": "text",
+                            "text": "₹{{orderItem.quantity * ($boolean(orderItem.salePrice) ? orderItem.salePrice : orderItem.price)}}",
+                            "style": {
+                                "color": "var(--primary-text-color)",
+                                "fontSize": "13px",
+                                "marginLeft": "0px",
+                                "fontWeight": "600",
+                                "fontFamily": "Noto Sans"
+                            }
+                        },
+                        "pSalePrice": {
+                            "type": "text",
+                            "text": "₹{{$boolean(orderItem.salePrice) ? orderItem.salePrice : orderItem.price}}",
+                            "style": {
+                                "color": "var(--primary-text-color)",
+                                "fontSize": "14px",
+                                "fontWeight": "600",
+                                "fontFamily": "Noto Sans"
+                            }
+                        }
+                    },
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                        "padding": "10px 0px",
+                        "width": "100%"
+                    },
+                    "order": [
+                        "quantity",
+                        "pPrice"
+                    ]
+                },
+                "subtotal": {
+                    "type": "text",
+                    "text": "₹{{orderItem.quantity * orderItem.price}}",
+                    "style": {
+                        "color": "var(--primary-text-color)",
+                        "fontSize": "16px"
+                    }
+                }
+            },
+            "order": [
+                "pTitle",
+                "pCustomizations",
+                "qty"
+            ],
+            "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "padding:": "5px",
+                "width": "100%"
+            }
+        }
+    },
+    "style": {
+        "width": "100%",
+        "alignItems": "center",
+        "borderBottom": "0px solid var(--stroke-color)",
+        "background": "transparent",
+        "marginBottom": "10px",
+        "padding": "10px 0px",
+        "overflow": "hidden",
+        "display": "flex",
+        "flexDirection": "row"
+    },
+    "order": [
+        "titleCard"
+    ]
+}

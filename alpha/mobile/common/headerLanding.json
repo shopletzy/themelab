@@ -1,0 +1,56 @@
+{
+    "imports": [
+        "common/headerLanding.css"
+    ],
+    "type": "container",
+    "className": "header",
+    "initialUiState": {
+        "showLocation": false
+    },
+    "sections": {
+        "announcement": {
+            "type": "container",
+            "className": "header-announcement",
+            "sections": {
+                "announcementText": {
+                    "type": "text",
+                    "text": "{{themeConfig.homePage.announcementText2}}",
+                    "className": "header-announcement-text"
+                }
+            },
+            "order": [
+                "announcementText"
+            ]
+        },
+        "logo": {
+            "type": "container",
+            "className": "header-logo",
+            "sections": {
+                "left": {
+                    "type": "container",
+                    "className": "header-left",
+                    "sections": {
+                        "logo": {
+                            "type": "image",
+                            "url": "{{themeConfig.logo.logoBlack}}",
+                            "className": "header-logo-image",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "'/'"
+                            }
+                        }
+                    },
+                    "order": [
+                        "logo"
+                    ]
+                }
+            },
+            "order": [
+                "left"
+            ]
+        }
+    },
+    "order": [
+        "logo"
+    ]
+}

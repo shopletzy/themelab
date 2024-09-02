@@ -1,0 +1,284 @@
+{
+    "imports": [
+        "common/cart-viewer.css"
+    ],
+    "className": "cart-viewer",
+    "contentDisplay": {
+        "type": "drawer",
+        "placement": "right",
+        "trigger": "ui.cartOpen"
+    },
+    "sections": {
+        "main": {
+            "type": "container",
+            "className": "main",
+            "sections": {
+                "header": {
+                    "type": "container",
+                    "sections": {
+                        "cartTitle": {
+                            "type": "text",
+                            "text": "Cart ({{$not(cart.itemCount > 0) ? '0': cart.itemCount}})",
+                            "style": {
+                                "fontWeight": "600",
+                                "textTransform": "capitalize",
+                                "fontSize": "20px",
+                                "color": "var(--primary-text-color)",
+                                "fontFamily": "Noto Sans"
+                            }
+                        },
+                        "close": {
+                            "type": "text",
+                            "text": "Close",
+                            "action": "toggleCartViewer",
+                            "style": {
+                                "cursor": "pointer",
+                                "fontWeight": "600",
+                                "textTransform": "uppercase",
+                                "fontSize": "16px",
+                                "color": "var(--primary-text-color)",
+                                "fontFamily": "Noto Sans"
+                            }
+                        }
+                    },
+                    "order": [
+                        "cartTitle",
+                        "close"
+                    ],
+                    "style": {
+                        "display": "flex",
+                        "flexShrink": "0",
+                        "width": "100%",
+                        "height": "64px",
+                        "alignItems": "center",
+                        "color": "var(--primary-text-color)",
+                        "paddingLeft": "0px",
+                        "paddingRight": "0px",
+                        "justifyContent": "space-between",
+                        "borderBottom": "1px solid var(--stroke-color)"
+                    }
+                },
+                "cart-list": {
+                    "type": "container",
+                    "sections": {
+                        "showEmptyCart": {
+                            "type": "container",
+                            "showIf": "$not(cart.itemCount > 0)",
+                            "sections": {
+                                "emptyCart": {
+                                    "type": "lottie",
+                                    "src": "https://assets6.lottiefiles.com/packages/lf20_cxc3ktlp.json",
+                                    "style": {
+                                        "display": "flex"
+                                    }
+                                },
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{i18n.messages.cart_empty}}",
+                                    "style": {
+                                        "fontWeight": "600",
+                                        "textTransform": "capitalize",
+                                        "fontFamily": "Noto Sans",
+                                        "marginTop": "20px",
+                                        "fontSize": "20px",
+                                        "color": "var(--secondary-text-color)"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "emptyCart",
+                                "title"
+                            ],
+                            "style": {
+                                "height": "90%",
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "justifyContent": "center",
+                                "alignItems": "center",
+                                "marginBottom": "20px"
+                            }
+                        },
+                        "content": {
+                            "type": "cart-item-list",
+                            "refTemplate": "cart-item",
+                            "style": {
+                                "overflowY": "auto",
+                                "flexGrow": "1"
+                            }
+                        }
+                    },
+                    "order": [
+                        "showEmptyCart",
+                        "content"
+                    ],
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "height": "100%",
+                        "width": "100%",
+                        "background": "var(--background-color)",
+                        "overflow": "hidden",
+                        "overflowY": "auto",
+                        "scrollSnapType": "y mandatory",
+                        "scrollBehavior": "smooth",
+                        "marginBottom": "40px"
+                    }
+                },
+                "footer": {
+                    "type": "container",
+                    "showIf": "cart.itemCount > 0",
+                    "sections": {
+                        "footerContainer": {
+                            "type": "container",
+                            "sections": {
+                                "continueShopping": {
+                                    "type": "text",
+                                    "text": "{{i18n.buttons.continue_shopping}}",
+                                    "action": "navigateTo",
+                                    "actionParams": {
+                                        "url": "'/'"
+                                    },
+                                    "style": {
+                                        "cursor": "pointer",
+                                        "fontWeight": "400",
+                                        "textTransform": "capitalize",
+                                        "fontSize": "14px",
+                                        "color": "var(--primary-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "padding": "8px 0px",
+                                        "textAlign": "center",
+                                        "display": "flex",
+                                        "justifyContent": "center",
+                                        "alignItems": "center",
+                                        "width": "100%",
+                                        "background": "var(--warning-text-color)",
+                                        "borderRadius": "5px"
+                                    }
+                                },
+                                "cartTotal": {
+                                    "type": "container",
+                                    "sections": {
+                                        "totalContainer": {
+                                            "type": "container",
+                                            "sections": {
+                                                "subTotal": {
+                                                    "type": "text",
+                                                    "text": "Sub Total : ₹{{cart.subTotal}}",
+                                                    "style": {
+                                                        "textOverflow": "ellipsis",
+                                                        "fontWeight": "500",
+                                                        "fontSize": "16px",
+                                                        "paddingBottom": "15px",
+                                                        "color": "var(--primary-text-color)",
+                                                        "fontFamily": "Noto Sans"
+                                                    }
+                                                }
+                                            },
+                                            "order": [
+                                                "subTotal"
+                                            ],
+                                            "style": {
+                                                "alignItems": "center",
+                                                "display": "flex"
+                                            }
+                                        },
+                                        "checkout": {
+                                            "type": "button",
+                                            "text": "{{i18n.buttons.proceed_checkout}}",
+                                            "action": "checkout",
+                                            "style": {
+                                                "cursor": "pointer",
+                                                "marginTop": "10px",
+                                                "marginBottom": "10px",
+                                                "padding": "10px 14px",
+                                                "borderRadius": "5px",
+                                                "background": "var(--btn-primary-background-color)",
+                                                "fontSize": "14px",
+                                                "color": "var(--btn-secondary-text-color)",
+                                                "fontFamily": "Noto Sans",
+                                                "fontWeight": "400",
+                                                "outline": "none",
+                                                "border": "none"
+                                            }
+                                        }
+                                    },
+                                    "order": [
+                                        "totalContainer",
+                                        "checkout"
+                                    ],
+                                    "style": {
+                                        "alignItems": "flex-end",
+                                        "display": "flex",
+                                        "justifyContent": "space-between",
+                                        "width": "100%",
+                                        "padding": "8px 0px",
+                                        "flexShrink": "0",
+                                        "marginTop": "8px",
+                                        "borderTop": "0px solid var(--stroke-color)"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "cartTotal"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "justifyContent": "center",
+                                "alignItems": "center",
+                                "width": "100%",
+                                "padding": "0px 0px"
+                            }
+                        },
+                        "minOrderValue": {
+                            "type": "text",
+                            "showIf": "siteConfig.settings.minOrderValue and cart.subTotal < siteConfig.settings.minOrderValue",
+                            "text": "Minimum order value ₹ {{siteConfig.settings.minOrderValue}}",
+                            "style": {
+                                "width": "100%",
+                                "fontSize": "15px",
+                                "fontWeight": "400",
+                                "color": "var(--error-text-color)",
+                                "fontFamily": "Noto Sans",
+                                "padding": "0px 15px 15px 0px",
+                                "marginRight": "0px"
+                            }
+                        }
+                    },
+                    "order": [
+                        "footerContainer",
+                        "minOrderValue"
+                    ],
+                    "style": {
+                        "alignItems": "flex-start",
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "justifyContent": "space-between",
+                        "width": "100%",
+                        "padding": "0px",
+                        "flexShrink": "0",
+                        "borderTop": "1px solid var(--stroke-color)"
+                    }
+                }
+            },
+            "order": [
+                "header",
+                
+                "cart-list",
+                "footer"
+            ],
+            "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "height": "100%",
+                "width": "100%",
+                "background": "var(--background-color)"
+            }
+        }
+    },
+    "order": [
+        "main"
+    ]
+}

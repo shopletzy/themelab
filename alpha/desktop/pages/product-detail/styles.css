@@ -1,0 +1,200 @@
+.slz-detailPage {
+    display:flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    overflow: hidden;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+}
+
+.slz-detailPage .main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: var(--background-color);
+}
+
+/* fold-1 */
+
+.slz-detailPage .main .fold-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 100px;
+    background-color: var(--background-color);
+    padding: 20px 20px;
+}
+
+.slz-detailPage .main .fold-1 .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 40px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.slz-detailPage .main .fold-1 .content .title {
+    font-size: 28px;
+    font-weight: 500;
+    font-family: 'Noto Sans';
+    color: var(--primary-text-color);
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.slz-detailPage .main .fold-1 .content .description {
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Noto Sans';
+    color: var(--secondary-text-color);
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.slz-detailPage .main .fold-1 .top-products {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 35px 35px;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.slz-detailPage .main .fold-1 .content .testimonials-section {
+
+    width: 100%;
+    height: auto;
+    background-color: var(--background-color);
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 170px;
+    padding: 10px 0px;
+}
+
+.slz-detailPage .main .fold-1 .content .testimonials-section .title {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Noto Sans";
+    text-transform: uppercase;
+    color: var(--select-color);
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.slz-detailPage .main .fold-1 .content .testimonials-section .subTitle {
+    font-size: 28px;
+    font-weight: 500;
+    font-family: "Noto Sans";
+    color: var(--primary-text-color);
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 55px;
+    letter-spacing: 0.5px;
+}
+
+.slz-detailPage .main .fold-1 .content .testimonials-section .testimonials-list{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: all 0.3s ease-in;
+    background-color: var(--background-color);
+ 
+  
+}
+
+
+
+/* CSS media query for screens larger than 768px */
+@media (max-width: 768px) {
+  
+    .slz-detailPage .main .fold-1 .top-products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 35px 35px;
+   }
+}
+
+@media (min-width: 1024px) {
+  
+    .slz-detailPage .main .fold-1 .top-products{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 45px 45px;
+   }
+}
+
+@media (min-width: 1440px) {
+  
+    .slz-detailPage .main .fold-1 .top-products{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 45px 45px;
+   }
+}
+
+@media (min-width: 1600px) {
+  
+    .slz-detailPage .main .fold-1 .top-products{
+       
+       display: grid;
+       grid-template-columns: repeat(4, 1fr);
+       grid-gap: 35px 35px;
+   }
+}
+
+@media (min-width: 1920px) {
+  
+    .slz-detailPage .main .fold-1 .top-products{
+       
+       display: grid;
+       grid-template-columns: repeat(5, 1fr);
+       grid-gap: 35px 5px;
+   }
+}
+
+@media (min-width: 2560px) {
+  
+    .slz-detailPage .main .fold-1 .top-products{
+       
+       display: grid;
+       grid-template-columns: repeat(5, 1fr);
+       grid-gap: 35px 4px;
+   }
+}
+
+@media (min-width: 3840px) {
+  
+    .slz-detailPage .main .fold-1 .top-products{
+       
+       display: grid;
+       grid-template-columns: repeat(6, 1fr);
+       grid-gap: 35px 4px;
+   }
+}

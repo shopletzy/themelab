@@ -1,0 +1,563 @@
+{
+    "imports": [
+        "common/cart-item.json",
+        "common/menu-viewer.css",
+        "common/triggered/account-login.json",
+        "common/triggered/account-getStarted.json",
+        "common/order.json",
+        "common/address.json",
+        "common/header.json",
+        "common/header.css",
+        "common/triggered/profileOrders.json",
+        "common/triggered/profileAddress.json",
+        "common/triggered/userInfo.json",
+        "common/signin.json",
+        "common/layouts/footer.json"
+    ],
+    "initialUiState": {
+        "showProfile": false,
+        "showAddress": false,
+        "showOrders": false,
+        "showFarm": false,
+        "showAddressEditor": false,
+        "showLogin": false,
+        "showLoginGetStarted": false
+    },
+    "className": "slz-menu",
+    "contentDisplay": {
+        "type": "drawer",
+        "placement": "bottom",
+        "trigger": "ui.showMenu"
+    },
+    "sections": {
+        "headerView": {
+            "type": "container",
+            "className": "header-view",
+            "sections": {
+                "backBtn": {
+                    "type": "image",
+                    "url": "{{themeUrl}}/img/common/backArrow.svg",
+                    "className": "back-btn",
+                    "action": "setUiState",
+                    "actionParams": {
+                        "showMenu": false
+                    }
+                },
+                "account": {
+                    "type": "text",
+                    "text": "",
+                    "className": "account"
+                }
+            },
+            "order": [
+                "backBtn",
+                "account"
+            ]
+        },
+        "customerDetails": {
+            "type": "container",
+            "className": "customer-details",
+            "sections": {
+                "customerCard": {
+                    "type": "container",
+                    "className": "customer-card",
+                    "sections": {
+                        "title": {
+                            "type": "image",
+                            "url": "{{themeConfig.logo.logoBlack}}",
+                            "className": "title",
+                            "showIf": "$not($exists(customer.id) and customer.id)"
+                        },
+                        "sub-title": {
+                            "type": "text",
+                            "text": "{{i18n.mobile.menuViewer.loginTitle}}",
+                            "className": "subtitle",
+                            "showIf": "$not($exists(customer.id) and customer.id)"
+                        },
+                        "login1": {
+                            "className": "loginBtn",
+                            "type": "button",
+                            "text": "{{i18n.mobile.buttons.login}}",
+                            "action": "setUiState",
+                            "actionParams": {
+                                "showLogin": "true"
+                            },
+                            "showIf": "$not($exists(customer.id) and customer.id)"
+                        },
+                        "login": {
+                            "className": "loginBtn",
+                            "type": "button",
+                            "text": "{{i18n.mobile.buttons.login}}",
+                            "action": "setUiState",
+                            "actionParams": {
+                                "showLogin": "true"
+                            },
+                            "showIf": "$not($exists(customer.id) and customer.id)"
+                        },
+                        "userView": {
+                            "type": "container",
+                            "className": "user-view",
+                            "showIf": "customer.id",
+                            "sections": {
+                                "userIcon": {
+                                    "type": "text",
+                                    "className": "userIcon",
+                                    "text": "{{$substring(customer.fullName, 0, 1)}}"
+                                },
+                                "personalInfo": {
+                                    "type": "container",
+                                    "className": "personal-info",
+                                    "sections": {
+                                        "title": {
+                                            "type": "text",
+                                            "className": "title",
+                                            "text": "{{customer.fullName}}"
+                                        },
+                                        "mobileNumber": {
+                                            "type": "text",
+                                            "className": "mobile-number",
+                                            "text": "{{customer.mobileNo}}"
+                                        }
+                                    },
+                                    "order": [
+                                        "title",
+                                        "mobileNumber"
+                                    ]
+                                }
+                            },
+                            "order": [
+                                "userIcon",
+                                "personalInfo"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "title",
+                        "sub-title",
+                        "userView",
+                        "login"
+                    ]
+                }
+            },
+            "order": [
+                "customerCard"
+            ]
+        },
+        "content": {
+            "type": "container",
+            "className": "content",
+            "showIf": "customer.id",
+            "sections": {
+                "content-body": {
+                    "type": "container",
+                    "className": "content-body",
+                    "sections": {
+                        "col-left": {
+                            "type": "container",
+                            "className": "col-left",
+                            "sections": {
+                                "menuView": {
+                                    "type": "container",
+                                    "className": "menu-view",
+                                    "sections": {
+                                        "profile": {
+                                            "type": "container",
+                                            "className": "profile-view",
+                                            "sections": {
+                                                "icon": {
+                                                    "type": "image",
+                                                    "className": "profileImg",
+                                                    "url": "{{themeUrl}}/img/menu/userAccount.svg"
+                                                },
+                                                "title": {
+                                                    "type": "text",
+                                                    "text": "{{i18n.mobile.menuViewer.menuList.profile}}",
+                                                    "className": "profile"
+                                                }
+                                            },
+                                            "order": [
+                                                "icon",
+                                                "title"
+                                            ],
+                                            "action": "setUiState",
+                                            "actionParams": {
+                                                "showAddress": "false",
+                                                "showProfile": "true",
+                                                "showOrders": "false"
+                                            }
+                                        },
+                                        "orders": {
+                                            "type": "container",
+                                            "className": "profile-view",
+                                            "sections": {
+                                                "icon": {
+                                                    "type": "image",
+                                                    "className": "profileImg",
+                                                    "url": "{{themeUrl}}/img/menu/orders.svg"
+                                                },
+                                                "title": {
+                                                    "type": "text",
+                                                    "text": "{{i18n.mobile.menuViewer.menuList.orders}}",
+                                                    "className": "profile"
+                                                }
+                                            },
+                                            "order": [
+                                                "icon",
+                                                "title"
+                                            ],
+                                            "action": "setUiState",
+                                            "actionParams": {
+                                                "showAddress": "false",
+                                                "showProfile": "false",
+                                                "showOrders": "true"
+                                            }
+                                        },
+                                        "address": {
+                                            "type": "container",
+                                            "className": "profile-view",
+                                            "sections": {
+                                                "icon": {
+                                                    "type": "image",
+                                                    "className": "profileImg",
+                                                    "url": "{{themeUrl}}/img/menu/manageAddress.svg"
+                                                },
+                                                "title": {
+                                                    "type": "text",
+                                                    "text": "{{i18n.mobile.menuViewer.menuList.manageAddress}}",
+                                                    "className": "profile"
+                                                }
+                                            },
+                                            "order": [
+                                                "icon",
+                                                "title"
+                                            ],
+                                            "action": "setUiState",
+                                            "actionParams": {
+                                                "showAddress": "true",
+                                                "showAddressEditor": "false",
+                                                "showProfile": "false",
+                                                "showOrders": "false"
+                                            }
+                                        }
+                                    },
+                                    "order": [
+                                        "profile",
+                                        "orders",
+                                        "address"
+                                    ]
+                                }
+                            },
+                            "order": [
+                                "menuView"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "col-left"
+                    ]
+                }
+            },
+            "order": [
+                "content-body"
+            ]
+        },
+        "content-2": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "content-body": {
+                    "type": "container",
+                    "className": "content-body",
+                    "sections": {
+                        "col-left": {
+                            "type": "container",
+                            "className": "col-left",
+                            "sections": {
+                                "menuView": {
+                                    "type": "container",
+                                    "className": "menu-view",
+                                    "sections": {
+                                        "about-us": {
+                                            "type": "container",
+                                            "className": "profile-view",
+                                            "sections": {
+                                                "icon": {
+                                                    "type": "image",
+                                                    "className": "profileImg",
+                                                    "url": "{{themeUrl}}/img/menu/aboutUs.svg"
+                                                },
+                                                "title": {
+                                                    "type": "text",
+                                                    "text": "{{i18n.mobile.menuViewer.menuList.aboutUs}}",
+                                                    "className": "profile"
+                                                }
+                                            },
+                                            "order": [
+                                                "icon",
+                                                "title"
+                                            ],
+                                            "action": "navigateTo",
+                                            "actionParams": {
+                                                "url": "'/pages/about-us'"
+                                            }
+                                        },
+                                        "contact": {
+                                            "type": "container",
+                                            "className": "profile-view",
+                                            "sections": {
+                                                "icon": {
+                                                    "type": "image",
+                                                    "className": "profileImg",
+                                                    "url": "{{themeUrl}}/img/menu/Contact.svg"
+                                                },
+                                                "title": {
+                                                    "type": "anchor",
+                                                    "className": "contact",
+                                                    "text": "{{i18n.mobile.menuViewer.menuList.contactUs}}"
+                                                }
+                                            },
+                                            "order": [
+                                                "icon",
+                                                "title"
+                                            ],
+                                            "action": "navigateTo",
+                                            "actionParams": {
+                                                "url": "'/pages/contact-us'"
+                                            }
+                                        },
+                                        "faq": {
+                                            "type": "container",
+                                            "className": "profile-view",
+                                            "sections": {
+                                                "icon": {
+                                                    "type": "image",
+                                                    "className": "profileImg",
+                                                    "url": "{{themeUrl}}/img/menu/faq.svg"
+                                                },
+                                                "title": {
+                                                    "type": "text",
+                                                    "text": "{{i18n.mobile.menuViewer.menuList.faq}}",
+                                                    "className": "profile"
+                                                }
+                                            },
+                                            "order": [
+                                                "icon",
+                                                "title"
+                                            ],
+                                            "action": "navigateTo",
+                                            "actionParams": {
+                                                "url": "'/pages/frequently-asked-questions'"
+                                            }
+                                        },
+                                        "Terms": {
+                                            "type": "container",
+                                            "className": "profile-view",
+                                            "sections": {
+                                                "icon": {
+                                                    "type": "image",
+                                                    "className": "profileImg",
+                                                    "url": "{{themeUrl}}/img/menu/Terms.svg"
+                                                },
+                                                "title": {
+                                                    "type": "text",
+                                                    "text": "{{i18n.mobile.menuViewer.menuList.terms}}",
+                                                    "className": "profile"
+                                                }
+                                            },
+                                            "order": [
+                                                "icon",
+                                                "title"
+                                            ],
+                                            "action": "navigateTo",
+                                            "actionParams": {
+                                                "url": "'/pages/terms-of-service'"
+                                            }
+                                        },
+                                        "returnPolicy": {
+                                            "type": "container",
+                                            "className": "profile-view",
+                                            "sections": {
+                                                "icon": {
+                                                    "type": "image",
+                                                    "className": "profileImg",
+                                                    "url": "{{themeUrl}}/img/menu/returnPolicy.svg"
+                                                },
+                                                "title": {
+                                                    "type": "text",
+                                                    "text": "{{i18n.mobile.menuViewer.menuList.returnPolicy}}",
+                                                    "className": "profile"
+                                                }
+                                            },
+                                            "order": [
+                                                "icon",
+                                                "title"
+                                            ],
+                                            "action": "navigateTo",
+                                            "actionParams": {
+                                                "url": "'/pages/return-policy'"
+                                            }
+                                        },
+                                        "privacy": {
+                                            "type": "container",
+                                            "className": "profile-view",
+                                            "sections": {
+                                                "icon": {
+                                                    "type": "image",
+                                                    "className": "profileImg",
+                                                    "url": "{{themeUrl}}/img/menu/PrivacyPolicy.svg"
+                                                },
+                                                "title": {
+                                                    "type": "text",
+                                                    "text": "{{i18n.mobile.menuViewer.menuList.privacyPolicy}}",
+                                                    "className": "profile"
+                                                }
+                                            },
+                                            "order": [
+                                                "icon",
+                                                "title"
+                                            ],
+                                            "action": "navigateTo",
+                                            "actionParams": {
+                                                "url": "'/pages/privacy-policy'"
+                                            }
+                                        },
+                                        "logout": {
+                                            "type": "container",
+                                            "className": "profile-view",
+                                            "showIf": "customer.id",
+                                            "sections": {
+                                                "icon": {
+                                                    "type": "image",
+                                                    "className": "profileImg",
+                                                    "url": "{{themeUrl}}/img/menu/logout.svg"
+                                                },
+                                                "title": {
+                                                    "type": "text",
+                                                    "text": "{{i18n.mobile.menuViewer.menuList.signOut}}",
+                                                    "className": "profile"
+                                                }
+                                            },
+                                            "order": [
+                                                "icon",
+                                                "title"
+                                            ],
+                                            "action": "logout"
+                                        },
+                                        "bottomView": {
+                                            "type": "container",
+                                            "className": "profile-view",
+                                            "style": {
+                                                "width": "100%",
+                                                "height": "100px"
+                                            },
+                                            "action": "navigateTo",
+                                            "actionParams": {
+                                                "url": "'/pages/privacy-policy'"
+                                            }
+                                        }
+                                    },
+                                    "order": [
+                                        "about-us",
+                                        "contact",
+                                        "faq",
+                                        "Terms",
+                                        "returnPolicy",
+                                        "privacy",
+                                        "logout",
+                                        "bottomView"
+                                    ]
+                                }
+                            },
+                            "order": [
+                                "menuView"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "col-left"
+                    ]
+                }
+            },
+            "order": [
+                "content-body"
+            ]
+        },
+        "content-3": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "content-body": {
+                    "type": "container",
+                    "className": "content-body",
+                    "sections": {
+                        "col-left": {
+                            "type": "container",
+                            "className": "col-left",
+                            "sections": {
+                                "menuView": {
+                                    "type": "container",
+                                    "className": "menu-view",
+                                    "sections": {
+                                        "menu-container": {
+                                            "type": "container",
+                                            "className": "menu-container",
+                                            "sections": {
+                                                "icon": {
+                                                    "type": "image",
+                                                    "className": "profileImg",
+                                                    "url": "{{themeUrl}}/img/menu/blogs.svg"
+                                                },
+                                                "title": {
+                                                    "type": "text",
+                                                    "className": "profile",
+                                                    "text": "{{i18n.mobile.menuViewer.menuList.blog}}"
+                                                }
+                                            },
+                                            "order": [
+                                                "icon",
+                                                "title"
+                                            ],
+                                            "action": "navigateTo",
+                                            "actionParams": {
+                                                "url": "'/blog/exploring-Elite'"
+                                            }
+                                        }
+                                    },
+                                    "order": [
+                                        "menu-container"
+                                    ]
+                                }
+                            },
+                            "order": [
+                                "menuView"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "col-left"
+                    ]
+                }
+            },
+            "order": [
+                "content-body"
+            ]
+        },
+        "content-4": {
+            "type": "container",
+            "className": "content-3",
+            "style": {
+                "background-color": "var(--primary-color)",
+                "height": "300px",
+                "width": "100%"
+            }
+        }
+    },
+    "order": [
+        "headerView",
+        "customerDetails",
+        "content",
+        "content-3",
+        "content-2",
+        "content-4"
+    ]
+}

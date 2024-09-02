@@ -1,0 +1,164 @@
+.productDetailsView {
+    width: 100%;
+    height: auto;
+    background-color: var(--background-color);
+    padding: 20px 20px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px 120px;
+}
+
+.productDetailsView .left {
+    width: 50%;
+    
+    background-color: var(--background-color);
+    padding: 20px 20px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.productDetailsView .right {
+    width: 50%;
+    height: auto;
+    background-color: var(--background-color);
+    padding: 20px 20px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+.productDetailsView .right .title {
+    width: 100%;
+    font-family: "Noto Sans";
+    background-color: transparent;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--primary-text-color);
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    line-height: 1.75;
+    margin-bottom: 10px;
+  }
+  
+  .productDetailsView .right .sub-title {
+      width: 100%;
+      background-color: transparent;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--primary-text-color);
+      text-align: left;
+      font-family: "Noto Sans";
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;  
+      overflow: hidden;
+      line-height: 1.5;
+      margin-bottom: 20px;
+  }
+  
+  .productDetailsView .right .price {
+      width: 100%;
+      height: 45px;
+      background-color: transparent;
+      padding: 10px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row;
+      margin-bottom: 40px;
+  }
+  
+  .productDetailsView .right .price  .p-price {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--primary-text-color);
+      text-align: left;
+      text-decoration: line-through;
+      font-family: "Noto Sans";
+  }
+  
+  .productDetailsView .right .price  .p-sale-price {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--primary-text-color);
+      text-align: left;
+      font-family: "Noto Sans";
+      margin-right: 10px;
+  }
+  
+
+.productDetailsView .right .addToCart .addBtn{
+    width: 275px;
+    height: 44px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white-text-color);
+    text-align: center;
+    cursor: pointer;
+    font-family: "Noto Sans";
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    text-transform: capitalize;
+}
+
+.productDetailsView .right .addToCart .addBtn:hover {
+    width: 275px;
+    height: 44px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    color: var(--white-text-color);
+    text-align: center;
+    cursor: pointer;
+    font-family: "Noto Sans";
+    overflow: hidden;
+}
+
+.productDetailsView .right .addToCart .addBtn:active {
+    width: 275px;
+    height: 44px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    color: var(--white-text-color);
+    text-align: center;
+    cursor: pointer;
+    font-family: "Noto Sans";
+    overflow: hidden;
+}
+
+.productDetailsView .right .description {
+    margin-top: 64px;
+    margin-bottom: 64px;
+    width: 100%;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Noto Sans";
+    color: var(--primary-text-color);
+    text-align: justify;
+    line-height: 1.75;
+    margin-bottom: 20px;
+
+}

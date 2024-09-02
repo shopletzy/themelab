@@ -1,0 +1,228 @@
+{
+    "imports": [
+        "common/triggered/order-summary.json"
+    ],
+    "initialUiState": {
+        "showOrderDetail": false
+    },
+    "sections": {
+        "address": {
+            "type": "container",
+            "sections": {
+                "view-1": {
+                    "type": "container",
+                    "sections": {
+                        "orderNo": {
+                            "type": "text",
+                            "text": "ORDER #{{order.orderNo}}",
+                            "style": {
+                                "fontSize": "18px",
+                                "fontFamily": "Noto Sans",
+                                "fontWeight": "400",
+                                "color": "var(--primary-color)"
+                            }
+                        },
+                        "awaitingFulfilment": {
+                            "type": "text",
+                            "text": "{{i18n.orderStatus.awaitingFulfilment}}",
+                            "className": "awaitingFulfilment",
+                            "showIf": "order.status = 'awaitingFulfilment'",
+                            "style": {
+                                "color": "#1A8FE3",
+                                "background": "#1A8FE320",
+                                "display": "flex",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "fontSize": "14px",
+                                "fontFamily": "Noto Sans",
+                                "fontWeight": "400",
+                                "width": "100px",
+                                "height": "32px",
+                                "borderRadius": "8px"
+                            }
+                        },
+                        "awaitingPickup": {
+                            "type": "text",
+                            "text": "{{i18n.orderStatus.awaitingPickup}}",
+                            "className": "awaitingPickup",
+                            "showIf": "order.status = 'awaitingPickup'",
+                            "style": {
+                                "color": "#ffd166",
+                                "background": "#ffd16620",
+                                "display": "flex",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "fontSize": "14px",
+                                "fontFamily": "Noto Sans",
+                                "fontWeight": "400",
+                                "width": "100px",
+                                "height": "32px",
+                                "borderRadius": "8px"
+                            }
+                        },
+                        "shipped": {
+                            "type": "text",
+                            "text": "{{i18n.orderStatus.shipped}}",
+                            "className": "shipped",
+                            "showIf": "order.status = 'shipped'",
+                            "style": {
+                                "color": "#fb8500",
+                                "background": "#fb850020",
+                                "display": "flex",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "fontSize": "14px",
+                                "fontFamily": "Noto Sans",
+                                "fontWeight": "400",
+                                "width": "100px",
+                                "height": "32px",
+                                "borderRadius": "8px"
+                            }
+                        },
+                        "completed": {
+                            "type": "text",
+                            "text": "{{i18n.orderStatus.completed}}",
+                            "className": "completed",
+                            "showIf": "order.status = 'completed'",
+                            "style": {
+                                "color": "#06d6a0",
+                                "background": "#06d6a020",
+                                "display": "flex",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "fontSize": "14px",
+                                "fontFamily": "Noto Sans",
+                                "fontWeight": "400",
+                                "width": "100px",
+                                "height": "32px",
+                                "borderRadius": "8px"
+                            }
+                        },
+                        "cancelled": {
+                            "type": "text",
+                            "text": "{{i18n.orderStatus.cancelled}}",
+                            "className": "cancelled",
+                            "showIf": "order.status = 'cancelled'",
+                            "style": {
+                                "color": "#e63946",
+                                "background": "#e6394620",
+                                "display": "flex",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "fontSize": "14px",
+                                "fontFamily": "Noto Sans",
+                                "fontWeight": "400",
+                                "width": "100px",
+                                "height": "32px",
+                                "borderRadius": "8px"
+                            }
+                        },
+                        "returned": {
+                            "type": "text",
+                            "text": "{{i18n.orderStatus.returned}}",
+                            "className": "returned",
+                            "showIf": "order.status = 'returned'",
+                            "style": {
+                                "color": "#00bdff",
+                                "background": "#00bdff20",
+                                "display": "flex",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "fontSize": "14px",
+                                "fontFamily": "Noto Sans",
+                                "fontWeight": "400",
+                                "width": "100px",
+                                "height": "32px",
+                                "borderRadius": "8px"
+                            }
+                        }
+                    },
+                    "style": {
+                        "width": "100%",
+                        "margin": "10px 0px",
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                        "alignItems": "center"
+                    },
+                    "order": [
+                        "orderNo",
+                        "awaitingFulfilment",
+                        "awaitingPickup",
+                        "shipped",
+                        "completed",
+                        "cancelled",
+                        "returned"
+                    ]
+                },
+                "view-2": {
+                    "type": "container",
+                    "sections": {
+                        "amount": {
+                            "type": "text",
+                            "text": "₹{{order.billing.toPay}}",
+                            "style": {
+                                "color": "var(--primary-color)",
+                                "fontSize": "18px",
+                                "fontFamily": "Noto Sans",
+                                "fontWeight": "600",
+                                "padding": "10px 0px"
+                            }
+                        },
+                        "viewOrderDetail": {
+                            "type": "button",
+                            "text": "View Order",
+                            "style": {
+                                "width": "100px",
+                                "height": "32px",
+                                "background": "var(--background-color-secondary)",
+                                "color": "var(--primary-color)",
+                                "borderRadius": "8px",
+                                "border": "none",
+                                "cursor": "pointer"
+                            },
+                            "action": "setUiState",
+                            "actionParams": {
+                                "showOrderDetail": "true",
+                                "orderIdForDetail": "order.id"
+                            }
+                        }
+                    },
+                    "style": {
+                        "width": "100%",
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                        "alignItems": "center",
+                        "marginBottom": "15px"
+                    },
+                    "order": [
+                        "amount",
+                        "viewOrderDetail"
+                    ]
+                }
+            },
+            "style": {
+                "width": "100%",
+                "display": "flex",
+                "flexDirection": "column"
+            },
+            "order": [
+                "view-1",
+                "view-2"
+            ]
+        }
+    },
+    "style": {
+        "marginTop": "15px",
+        "display": "flex",
+        "flexDirection": "column",
+        "width": "100%",
+        "background": "transparent",
+        "padding": "0px",
+        "borderBottom": "1px solid var(--stroke-color)"
+    },
+    "order": [
+        "address"
+    ]
+}

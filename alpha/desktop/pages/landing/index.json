@@ -1,51 +1,78 @@
 {
     "imports": [
-        "common/location-selector.json"
+        "common/location-selector.json",
+        "common/headerLanding.json"
     ],
+    "meta": {
+        "title": "{{themeConfig.landingPageSEOConfig.metaTitle}}",
+        "description": "{{themeConfig.landingPageSEOConfig.metaDescription}}",
+        "keywords": "{{themeConfig.landingPageSEOConfig.metaKeywords}}"
+    },
+    "className": "slz-landing",
     "sections": {
-        "main": {
+        "header": {
+            "type": "template",
+            "templateName": "headerLanding",
+            "className": "header"
+        },
+        "col": {
             "type": "container",
+            "className": "containerView",
             "sections": {
-                "contain": {
+                "col-left": {
                     "type": "container",
+                    "className": "col-left",
                     "sections": {
-                        "logo": {
-                            "type": "image",
-                            "url": "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-                            "style": {
-                                "height": 110,
-                                "marginBottom": 60
-                            }
+                        "content": {
+                            "type": "container",
+                            "className": "content",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.landingPage.h1Description}}",
+                                    "className": "title"
+                                },
+                                "description": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.landingPage.h1Title}}",
+                                    "className": "description"
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "description"
+                            ]
                         },
-                        "locationSelector": {
-                            "type": "location-selector"
+                        "locationContainer": {
+                            "type": "container",
+                            "className": "locationCard",
+                            "sections": {
+                                "locationInput": {
+                                    "type": "location-selector"
+                                }
+                            },
+                            "order": [
+                                "locationInput"
+                            ]
                         }
                     },
                     "order": [
-                        "logo",
-                        "locationSelector"
-                    ],
-                    "style": {
-                        "display": "flex",
-                        "flexDirection": "column",
-                        "alignItems": "center",
-                        "justifyContent": "center"
-                    }
+                        "content",
+                        "locationContainer"
+                    ]
+                },
+                "col-right": {
+                    "type": "container",
+                    "className": "col-right"
                 }
             },
             "order": [
-                "contain"
-            ],
-            "style": {
-                "height": "100vh",
-                "width": "100vw",
-                "display": "flex",
-                "alignItems": "center",
-                "justifyContent": "center"
-            }
+                "col-left"
+            ]
         }
     },
     "order": [
-        "main"
+        "header",
+        "col"
     ]
 }

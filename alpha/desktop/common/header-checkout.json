@@ -1,0 +1,118 @@
+{
+    "imports": [
+        "common/header-checkout.css",
+        "common/triggered/account-login.json",
+        "common/category.json",
+        "common/category.css",
+        "common/triggered/cart-viewer.json",
+        "common/cart-item.json"
+    ],
+    "type": "container",
+    "className": "header",
+    "initialUiState": {
+        "showLocation": false
+    },
+    "sections": {
+       
+        "logo": {
+            "type": "container",
+            "className": "header-logo",
+            "sections": {
+                "left": {
+                    "type": "container",
+                    "className": "header-left",
+                    "sections": {
+                        "logo": {
+                            "type": "image",
+                            "url": "{{themeConfig.logo.logoBlack}}",
+                            "className": "header-logo-image",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "'/'"
+                            }
+                        }
+                    },
+                    "order": [
+                        "logo"
+                    ]
+                },
+                "center": {
+                    "type": "container",
+                    "className": "checkoutTitle",
+                    "sections": {
+                        "checkoutTitle": {
+                            "type": "text",
+                            "className": "header-search",
+                            "text": "Secure Checkout",
+                            "style": {
+                                "color": "var(--primary-text-color)",
+                                "font-size": "20px",
+                                "font-weight": "600",
+                                "text-align": "center",
+                                "textTransform": "uppercase"
+                            }
+                        }
+                    },
+                    "order": []
+                },
+                "right": {
+                    "type": "container",
+                    "className": "header-right",
+                    "sections": {
+                        "account": {
+                            "type": "container",
+                            "className": "header-account",
+                            "sections": {
+                                "login": {
+                                    "type": "button",
+                                    "text": "Login",
+                                    "className": "header-account-button",
+                                    "action": "setUiState",
+                                    "actionParams": {
+                                        "showLogin": "true"
+                                    },
+                                    "showIf": "$not($exists(customer.id) and customer.id)"
+                                },
+                                "loggedIn": {
+                                    "type": "container",
+                                    "className": "header-account-logged-in",
+                                    "sections": {
+                                        "name": {
+                                            "type": "text",
+                                            "text": "{{customer.fullName}}",
+                                            "className": "header-account-name"
+                                        }
+                                    },
+                                    "showIf": "customer.id",
+                                    "action": "navigateTo",
+                                    "actionParams": {
+                                        "url": "'/account'"
+                                    },
+                                    "order": [
+                                        "name"
+                                    ]
+                                }
+                            },
+                            "order": [
+                                "loggedIn",
+                                "login"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "account"
+                    ]
+                }
+            },
+            "order": [
+                "left",
+                "center",
+                "right"
+            ]
+        }
+    },
+    "order": [
+        
+        "logo"
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "imports": [
+        "common/order.json",
+        "common/address.json",
+        "common/header.json",
+        "common/header.css",
+        "common/triggered/profileOrders.css"
+    ],
+    "contentDisplay": {
+        "type": "drawer",
+        "placement": "bottom",
+        "trigger": "ui.showOrders"
+    },
+    "showIf": "ui.showOrders = true",
+    "className": "slz-profile-orders",
+    "type": "container",
+    "sections": {
+        "headerView": {
+            "type": "container",
+            "className": "headerView",
+            "sections": {
+                "title": {
+                    "type": "text",
+                    "className": "title",
+                    "text": "Your Orders"
+                },
+                "backBtn": {
+                    "type": "image",
+                    "url": "{{themeUrl}}/img/common/backArrow.svg",
+                    "className": "back-btn",
+                    "action": "setUiState",
+                    "actionParams": {
+                        "showOrders": false
+                    },
+                    "style": {
+                        "height": "20px"
+                    }
+                }
+            },
+            "order": [
+                "backBtn",
+                "title"
+            ]
+        },
+        "content": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "detailView": {
+                    "type": "order-list",
+                    "className": "detailView"
+                }
+            },
+            "order": [
+                "detailView"
+            ]
+        }
+    },
+    "order": [
+        "headerView",
+        "content"
+    ]
+}

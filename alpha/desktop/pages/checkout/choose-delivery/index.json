@@ -1,0 +1,298 @@
+{
+    "imports": [
+        "common/header-checkout.json",
+        "common/footer.json",
+        "pages/checkout/choose-address/styles.css",
+        "common/cart-item-address.json",
+        "common/triggered/address-editor.json",
+        "common/address-editor.json",
+        "common/address.json"
+    ],
+    "className": "delivery-slot-list",
+    "initialUiState": {
+        "outletPickup": false,
+        "showAddressEditor": false
+    },
+    "meta": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+    },
+    "sections": {
+        "header": {
+            "type": "template",
+            "templateName": "header-checkout",
+            "className": "header"
+        },
+        "main": {
+            "type": "container",
+            "className": "main",
+            "sections": {
+                "col-left": {
+                    "type": "container",
+                    "className": "col-left",
+                    "sections": {
+                        "login": {
+                            "type": "container",
+                            "className": "login",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.deliverTo}}",
+                                    "className": "title"
+                                },
+                                "description": {
+                                    "type": "text",
+                                    "text": "{{customer.fullName}} | {{customer.email}}",
+                                    "className": "description"
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "description"
+                            ]
+                        },
+                        "addressList": {
+                            "className": "addressList",
+                            "type": "container",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.deliveryAddressText}}",
+                                    "className": "title"
+                                },
+                                "description": {
+                                    "type": "button",
+                                    "text": "{{i18n.buttons.change_address}}",
+                                    "action": "navigateTo",
+                                    "className": "changeBtn",
+                                    "actionParams": {
+                                        "url": "'/checkout/address'"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "description"
+                            ]
+                        },
+                        "deliverySlot": {
+                            "className": "deliverySlot",
+                            "type": "container",
+                            "showIf": "$exists(deliverySlots.flexibleSlots[slotType = 'flexible'])",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.deliveryTitle}}",
+                                    "className": "title"
+                                },
+                                "description": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.deliveryDescription}}",
+                                    "className": "description"
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "description"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "login",
+                        "addressList",
+                        "deliverySlot"
+                    ]
+                },
+                "col-right": {
+                    "type": "container",
+                    "className": "col-right",
+                    "sections": {
+                        "heading": {
+                            "type": "text",
+                            "text": "{{themeConfig.checkoutPage.priceDetails}}",
+                            "className": "priceDetails"
+                        },
+                        "subtitle": {
+                            "type": "text",
+                            "showIf": "cart.subTotal < siteConfig.settings.minOrderValue",
+                            "text": "Below minimum order value ₹ {{siteConfig.settings.minOrderValue}}",
+                            "className": "orderWarning"
+                        },
+                        "separator": {
+                            "type": "container",
+                            "className": "separator",
+                            "style": {
+                                "height": "1px",
+                                "width": "100%",
+                                "backgroundColor": "transparent",
+                                "marginTop": "10px",
+                                "marginBottom": "10px",
+                                "border": "1px dashed var(--stroke-color)"
+                            }
+                        },
+                        "subTotal": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Sub Total ({{cart.itemCount}} items)",
+                                    "className": "title"
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "₹{{cart.subTotal}}",
+                                    "className": "amount"
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "amount"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "width": "100%"
+                            }
+                        },
+                        "tax": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "sections": {
+                                "total": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.taxText}}",
+                                    "className": "title"
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "{{checkout.order.billing.tax ? checkout.order.billing.tax : 'Inclusive all taxes'}}",
+                                    "className": "amount"
+                                }
+                            },
+                            "order": [
+                                "total",
+                                "amount"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "padding": "5px 0px"
+                            }
+                        },
+                        "additionalChargesSubtotal": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "sections": {
+                                "total": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.additionalChargesText}}",
+                                    "className": "title"
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "₹{{checkout.order.billing.additionalChargesSubtotal ? checkout.order.billing.additionalChargesSubtotal : '0'}}",
+                                    "className": "amount"
+                                }
+                            },
+                            "order": [
+                                "total",
+                                "amount"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "padding": "5px 0px"
+                            }
+                        },
+                        "deliveryCharge": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.deliveryChargesText}}",
+                                    "className": "title"
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "₹{{checkout.order.billing.additionalChargesSubtotal ? checkout.order.billing.additionalChargesSubtotal : '0'}}",
+                                    "className": "amount"
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "amount"
+                            ]
+                        },
+                        "total": {
+                            "type": "container",
+                            "className": "total",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.checkoutPage.totalAmountText}}",
+                                    "className": "title"
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "₹{{cart.subTotal}}",
+                                    "className": "totalAmount"
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "amount"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "width": "100%",
+                                "borderTop": "1px dashed #ffffff30",
+                                "borderBottom": "1px solid #ffffff30"
+                            }
+                        },
+                        "btn": {
+                            "type": "button",
+                            "className": "placeOrderBtn",
+                            "text": "{{i18n.buttons.continue}}",
+                            "disabled": "$exists(deliverySlots.error) or $not($exists(checkout.selectedDeliverySlot))",
+                            "action": "chooseDeliverySlot"
+                        }
+                    },
+                    "order": [
+                        "heading",
+                        
+                        "subtitle",
+                        "tax",
+                        "additionalChargesSubtotal",
+                        "deliveryCharge",
+                        "total",
+                        "separator",
+                        "btn"
+                    ]
+                }
+            },
+            "order": [
+                "col-left",
+                "col-right"
+            ]
+        },
+        "footer": {
+            "type": "template",
+            "templateName": "footer"
+        }
+    },
+    "order": [
+        "header",
+        "main",
+        "footer"
+    ]
+}

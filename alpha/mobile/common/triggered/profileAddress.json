@@ -1,0 +1,97 @@
+{
+    "imports": [
+        "common/order.json",
+        "common/address.json",
+        "common/header.json",
+        "common/header.css",
+        "common/triggered/profileAddress.css",
+        "common/triggered/address-editor.json",
+        "common/address-profile-edit.json"
+    ],
+    "contentDisplay": {
+        "type": "drawer",
+        "placement": "bottom",
+        "trigger": "ui.showAddress"
+    },
+    "showIf": "ui.showAddress = true",
+    "className": "slz-profile-address",
+    "type": "container",
+    "sections": {
+        "headerView": {
+            "type": "container",
+            "className": "headerView",
+            "sections": {
+                "col-left": {
+                    "type": "container",
+                    "className": "col-left",
+                    "sections": {
+                        "title": {
+                            "type": "text",
+                            "className": "title",
+                            "text": "Manage Address"
+                        },
+                        "backBtn": {
+                            "type": "image",
+                            "url": "{{themeUrl}}/img/common/backArrow.svg",
+                            "className": "back-btn",
+                            "action": "setUiState",
+                            "actionParams": {
+                                "showAddress": false
+                            },
+                            "style": {
+                                "height": "20px"
+                            }
+                        }
+                    },
+                    "order": [
+                        "backBtn",
+                        "title"
+                    ]
+                },
+                "col-right": {
+                    "type": "container",
+                    "className": "col-right",
+                    "sections": {
+                        "add": {
+                            "type": "image",
+                            "url": "{{themeConfig.common.addIcon}}",
+                            "className": "add",
+                            "style": {
+                                "height": "20px"
+                            },
+                            "action": "setUiState",
+                            "actionParams": {
+                                "showAddressEditor": true
+                            }
+                        }
+                    },
+                    "order": [
+                        "add"
+                    ]
+                }
+            },
+            "order": [
+                "col-left",
+                "col-right"
+            ]
+        },
+        "content": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "detailView": {
+                    "type": "address-list",
+                    "className": "detailView",
+                    "refTemplate": "address-profile-edit"
+                }
+            },
+            "order": [
+                "detailView"
+            ]
+        }
+    },
+    "order": [
+        "headerView",
+        "content"
+    ]
+}

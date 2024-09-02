@@ -1,0 +1,152 @@
+{
+    "imports": [
+        "common/address.json",
+        "common/header.json",
+        "common/footer.json",
+        "pages/checkout/order-success/styles.css"
+    ],
+    "className": "order-success",
+    "sections": {
+        "header": {
+            "type": "container",
+            "sections": {
+                "backBtn": {
+                    "type": "image",
+                    "url": "{{themeUrl}}/img/common/backArrow.svg",
+                    "className": "back-btn",
+                    "action": "goBack"
+                },
+                "cartTitle": {
+                    "type": "text",
+                    "text": "Make Payment",
+                    "style": {
+                        "fontWeight": "400",
+                        "textTransform": "uppercase",
+                        "fontSize": "16px",
+                        "color": "var(--dark-primary-color)"
+                    }
+                },
+                "close": {
+                    "type": "text",
+                    "text": "Close",
+                    "action": "toggleCartViewer",
+                    "style": {
+                        "cursor": "pointer"
+                    }
+                }
+            },
+            "order": [],
+            "style": {
+                "display": "flex",
+                "flexShrink": "0",
+                "width": "100%",
+                "height": "65px",
+                "alignItems": "center",
+                "borderBottom": "0.75px solid #ffffff38",
+                "color": "var(--dark-primary-color)",
+                "paddingLeft": "15px",
+                "paddingRight": "15px",
+                "justifyContent": "space-between"
+            }
+        },
+        "content": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "addressList": {
+                    "className": "addressList",
+                    "type": "container",
+                    "sections": {
+                        "text": {
+                            "type": "text",
+                            "className": "title",
+                            "text": "Order Placed Successfully",
+                            "style": {
+                                "color": "#fff",
+                                "fontSize": "24px",
+                                "fontWeight": "400",
+                                "fontFamily": "Noto Sans",
+                                "marginTop": "20px",
+                                "marginBottom": "0px"
+                            }
+                        },
+                        "orderNo": {
+                            "type": "text",
+                            "className": "orderNo",
+                            "text": "Order No: {{order.orderNo}}",
+                            "style": {
+                                "width": "100%",
+                                "color": "#fff",
+                                "fontSize": "16px",
+                                "fontWeight": "300",
+                                "fontFamily": "Noto Sans",
+                                "marginTop": "20px",
+                                "marginBottom": "20px",
+                                "textAlign": "center",
+                                "lineHeight": "1.75rem"
+                            }
+                        },
+                        "successBanner": {
+                            "type": "lottie",
+                            "src": "https://lottie.host/31638443-0a48-4944-8d7c-1fa149958f80/Izy4WPOKfj.json",
+                            "style": {
+                                "width": "300px",
+                                "height": "200px",
+                                "display": "flex",
+                                "justifyContent": "center",
+                                "alignItems": "center",
+                                "padding": "20px"
+                            }
+                        },
+                        "btn": {
+                            "type": "button",
+                            "text": "Back to Home",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "'/'"
+                            },
+                            "style": {
+                                "display": "flex",
+                                "justifyContent": "center",
+                                "alignItems": "center",
+                                "borderRadius": "3px",
+                                "border": "1px solid var(--secondary-color)",
+                                "width": "170px",
+                                "overflow": "hidden",
+                                "marginTop": "40px",
+                                "paddingLeft": "20px",
+                                "paddingRight": "20px",
+                                "paddingTop": "12px",
+                                "paddingBottom": "12px",
+                                "background": "var(--primary-color)",
+                                "color": "var(--secondary-color)",
+                                "fontWeight": "400",
+                                "fontSize": "14px",
+                                "fontFamily": "Noto Sans",
+                                "textTransform": "capitalize",
+                                "cursor": "pointer"
+                            }
+                        }
+                    },
+                    "order": [
+                        "successBanner",
+                        "text",
+                        "orderNo",
+                        "btn"
+                    ]
+                }
+            },
+            "order": [
+                "addressList"
+            ]
+        },
+        "footer": {
+            "type": "template",
+            "templateName": "footer"
+        }
+    },
+    "order": [
+        "header",
+        "content"
+    ]
+}

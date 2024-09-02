@@ -1,0 +1,109 @@
+{
+    "app_name": "Elite",
+    "page_titles": {
+        "home": "Home",
+        "products": "Products",
+        "product": "Product Details",
+        "cart": "Shopping Cart",
+        "checkout": "Checkout",
+        "account": "My Account",
+        "login": "Login",
+        "register": "Create Account",
+        "orders": "Order History"
+    },
+    "buttons": {
+        "shop_now": "Shop Now",
+        "buy_now": "Buy Now",
+        "add_to_cart": "Add to Cart",
+        "view_cart": "View Cart",
+        "continue_shopping": "Continue Shopping",
+        "proceed_checkout": "Proceed to Checkout",
+        "deliverHere": "Deliver Here",
+        "place_order": "Place Order",
+        "save": "Save",
+        "edit": "Edit",
+        "delete": "Delete",
+        "login": "Login",
+        "logout": "Logout",
+        "register": "Register",
+        "add_new_address": "Add New Address",
+        "change_address": "Change Address",
+        "continue": "Continue",
+        "apply_promo_code": "Apply Promo Code"
+    },
+    "placeholders": {
+        "search": "Search for products...",
+        "email": "Enter your email..."
+    },
+    "messages": {
+        "added_to_cart": "Added to cart!",
+        "order_confirmed": "Your order has been placed!",
+        "in_stock": "In Stock",
+        "out_of_stock": "Out of Stock",
+        "login_error": "Invalid email or password",
+        "email_error": "Please enter a valid email",
+        "returns_policy": "Returns accepted within 14 days",
+        "contact_us": "Contact Us",
+        "cart_empty": "Your cart is empty"
+    },
+    "account": {
+        "details": "Account Details",
+        "orders": "Order History"
+    },
+    "menus": {
+        "profile": "Profile",
+        "orders": "Orders",
+        "manageAddress": "Manage Address",
+        "aboutUs": "About Us",
+        "contactUs": "Contact Us",
+        "faq": "FAQ",
+        "terms": "Terms of Service",
+        "returnPolicy": "Return Policy",
+        "privacyPolicy": "Privacy Policy",
+        "signOut": "Sign Out",
+        "blog": "Exploring Elite Blog"
+    },
+    "orderStatus": {
+        "awaitingFulfilment": "Awaiting Fulfilment",
+        "awaitingPickup": "Awaiting Pickup",
+        "shipped": "Shipped",
+        "completed": "Completed",
+        "cancelled": "Cancelled",
+        "returned": "Returned"
+    },
+    "imageUrl": {
+        "landingPage": {
+            "bgImg": "slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/e16f0511-f905-4508-a866-b108eeb3cd19.jpeg"
+        }
+    },
+    "mobile": {
+        "homePage": {
+            "slogan": "slogan title here",
+            "title": "Categories",
+            "topPicks": "Top recommended product for you",
+            "newArrivals": "New Arrivals",
+            "featured": "Featured Products",
+            "bestSellers": "Best Sellers"
+
+        },
+        "menuViewer": {
+            "loginTitle": "Manage orders, addresses, and more seamlessly.",
+            "menuList": {
+                "profile": "Profile",
+                "orders": "Orders",
+                "manageAddress": "Manage Address",
+                "aboutUs": "About Us",
+                "contactUs": "Contact Us",
+                "faq": "FAQ",
+                "terms": "Terms of Service",
+                "returnPolicy": "Return Policy",
+                "privacyPolicy": "Privacy Policy",
+                "signOut": "Sign Out",
+                "blog": "Exploring Alpha Blog"
+            }
+        },
+        "buttons": {
+            "login": "Login/Sign Up"
+        }
+    }
+}

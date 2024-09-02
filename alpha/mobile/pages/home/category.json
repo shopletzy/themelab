@@ -1,0 +1,39 @@
+{
+    "type": "container",
+    "sections": {
+        
+        "title": {
+            "type": "text",
+            "text": "{{category.title}}",
+            "style": {
+                "textAlign": "center",
+                "fontFamily": "Noto Sans",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "color": "var(--primary-text-color)"
+                
+            }
+        }
+    },
+    "order": [
+        
+        "title"
+    ],
+    "className": "category",
+    "style": {
+        "height": "50%",
+        "width": "fit-content",
+        "display": "flex",
+        "flexDirection": "column",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "flex": "0 0 auto",
+        "padding": "10px 20px",
+        "marginRight": "6px",
+        "background": "var(--background-color-secondary)",
+        "textAlign": "center",
+        "overFlow": "hidden",
+        "borderRadius": "8px",
+        "overflow": "hidden"
+    }
+}

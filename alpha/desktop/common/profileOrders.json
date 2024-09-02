@@ -1,0 +1,40 @@
+{
+    "imports": [
+        "common/order.json",
+        "common/address.json",
+        "common/header.json",
+        "common/header.css",
+        "common/profileOrders.css",
+        "common/triggered/address-editor.json",
+        "common/address-editor.json"
+    ],
+
+    "className": "slz-profile-orders",
+    "type": "container",
+    "sections": {
+        "headerView": {
+            "type": "container",
+            "className": "headerView",
+            "sections": {
+                "title": {
+                    "type": "text",
+                    "className": "title",
+                    "text": "Your Orders"
+                }
+            },
+            "order": ["title"]
+        },
+        "content": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "detailView": {
+                    "type": "order-list",
+                    "className": "detailView"
+                }
+            },
+            "order": ["detailView"]
+        }
+    },
+    "order": ["headerView", "content"]
+}

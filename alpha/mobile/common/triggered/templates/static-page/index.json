@@ -1,0 +1,48 @@
+{
+    "imports": [
+        "common/header.json"
+    ],
+    "sections": {
+        "header": {
+            "type": "template",
+            "templateName": "header"
+        },
+        "content": {
+            "type": "container",
+            "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "flexGrow": "1",
+                "paddingTop": "50px",
+                "paddingBottom": "50px",
+                "overflowY": "auto",
+                "color": "#202020"
+            },
+            "sections": {
+                "blogPost": {
+                    "type": "post",
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "flexGrow": "1",
+                        "marginLeft": "20px",
+                        "alignItems": "center",
+                        "marginRight": "20px",
+                        "overflowY": "auto"
+                    }
+                }
+            },
+            "order": [
+                "blogPost"
+            ]
+        }
+    },
+    "style": {
+        "height": "100vh"
+    },
+    "order": [
+        "header",
+        "content"
+    ]
+}

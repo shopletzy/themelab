@@ -1,12 +1,1205 @@
 {
-    "css": {
-        "primary-color": {
-            "type": "color",
-            "value": "red"
+    "name": "Alpha",
+    "description": "A modern theme for shopletzy",
+    "version": "1.0.1",
+    "author": "Shopletzy",
+    "defaultTemplates": {
+        "blog": "templates/elite-blog",
+        "post": "templates/static-page"
+    },
+    "sections": {
+        "colorScheme": {
+            "name": "Color Scheme",
+            "description": "Configure the colors used by the theme",
+            "fields": [
+                {
+                    "id": "primaryColor",
+                    "name": "Primary Color",
+                    "type": "color",
+                    "cssVar": "primary-color",
+                    "defaultValue": "#006d77",
+                    "description": "The main color used for buttons, links, and other interactive elements."
+                },
+                {
+                    "id": "secondaryColor",
+                    "name": "Secondary Color",
+                    "type": "color",
+                    "cssVar": "secondary-color",
+                    "defaultValue": "#e29578",
+                    "description": "A secondary color used for borders, backgrounds, and other non-interactive elements."
+                },
+                {
+                    "id": "selectColor",
+                    "name": "Select Color",
+                    "type": "color",
+                    "cssVar": "select-color",
+                    "defaultValue": "#F6D219",
+                    "description": "Select used for borders, backgrounds, and other non-interactive elements."
+                },
+                {
+                    "id": "backgroundColor",
+                    "name": "Background Color",
+                    "type": "color",
+                    "cssVar": "background-color",
+                    "defaultValue": "#FFFFFF",
+                    "description": "Background color used for borders, backgrounds, and other non-interactive elements."
+                },
+                {
+                    "id": "backgroundColorsecondary",
+                    "name": "Background Color Secondary",
+                    "type": "color",
+                    "cssVar": "background-color-secondary",
+                    "defaultValue": "#F2F2F2",
+                    "description": "Background secondary color used for borders, backgrounds, and other non-interactive elements."
+                },
+                {
+                    "id": "backgroundColorTertiary",
+                    "name": "Background Color Tertiary",
+                    "type": "color",
+                    "cssVar": "background-color-tertiary",
+                    "defaultValue": "#006d77",
+                    "description": "Background Tertiary color used for borders, backgrounds, and other non-interactive elements."
+                },
+                {
+                    "id": "strokeColor",
+                    "name": "Stroke Color",
+                    "type": "color",
+                    "cssVar": "stroke-color",
+                    "defaultValue": "#CDCDCD",
+                    "description": "Stroke color used for borders, backgrounds, and other non-interactive elements."
+                }
+            ]
         },
-        "accent-color": {
-            "type": "color",
-            "value": "green"
+        "font": {
+            "name": "Font",
+            "description": "Configure the font used by the theme",
+            "fields": [
+                {
+                    "id": "fontName",
+                    "name": "Font Name",
+                    "type": "text",
+                    "defaultValue": "Noto sans",
+                    "description": "The name of the font used for text elements."
+                },
+                {
+                    "id": "primaryTextColor",
+                    "name": "Primary Text Color",
+                    "type": "color",
+                    "defaultValue": "#1a1b1b",
+                    "cssVar": "primary-text-color",
+                    "description": "Primary text color used for text elements. Such as headings and labels."
+                },
+                {
+                    "id": "secondaryTextColor",
+                    "name": "Secondary Text Color",
+                    "type": "color",
+                    "defaultValue": "#e29578",
+                    "cssVar": "secondary-text-color",
+                    "description": "Secondary text color used for text elements. Such as paragraphs and captions."
+                },
+                {
+                    "id": "whiteTextColor",
+                    "name": "White Text Color",
+                    "type": "color",
+                    "defaultValue": "#FFFFFF",
+                    "cssVar": "white-text-color",
+                    "description": "White text color used for text elements. Such as paragraphs and captions."
+                },
+                {
+                    "id": "placeholderTextColor",
+                    "name": "Placeholder Text Color",
+                    "type": "color",
+                    "defaultValue": "#AAAAAA",
+                    "cssVar": "placeholder-text-color",
+                    "description": "Placeholder text color used for text elements. Such as input placeholders."
+                },
+                {
+                    "id": "errorTextColor",
+                    "name": "Error Text Color",
+                    "type": "color",
+                    "defaultValue": "#FF334B",
+                    "cssVar": "error-text-color",
+                    "description": "Error text color used for text elements. Such as input placeholders, error messages."
+                },
+                {
+                    "id": "warningTextColor",
+                    "name": "Warning Text Color",
+                    "type": "color",
+                    "defaultValue": "#F79E1B",
+                    "cssVar": "warning-text-color",
+                    "description": "Warning text color used for text elements. Such as input placeholders."
+                },
+                {
+                    "id": "successTextColor",
+                    "name": "Success Text Color",
+                    "type": "color",
+                    "defaultValue": "#13A819",
+                    "cssVar": "success-text-color",
+                    "description": "Success text color used for text elements. Such as success messages."
+                }
+            ]
+        },
+        "buttons": {
+            "name": "Buttons",
+            "description": "Configure the buttons used by the theme",
+            "fields": [
+                {
+                    "id": "buttonPrimaryTextColor",
+                    "name": "Primary Text Color",
+                    "type": "color",
+                    "defaultValue": "#006d77",
+                    "cssVar": "btn-primary-text-color",
+                    "description": "Primary text color used for buttons."
+                },
+                {
+                    "id": "buttonPrimaryBackgroundColor",
+                    "name": "Primary Background Color",
+                    "type": "color",
+                    "defaultValue": "#006d77",
+                    "cssVar": "btn-primary-background-color",
+                    "description": "Primary background color used for buttons."
+                },
+                {
+                    "id": "buttonPrimaryHoverBackgroundColor",
+                    "name": "Primary Hover Background Color",
+                    "type": "color",
+                    "defaultValue": "#006d77",
+                    "cssVar": "btn-primary-hover-background-color",
+                    "description": "Primary hover background color used for buttons."
+                },
+                {
+                    "id": "buttonSecondaryTextColor",
+                    "name": "Secondary Text Color",
+                    "type": "color",
+                    "defaultValue": "#FFFFFF",
+                    "cssVar": "btn-secondary-text-color",
+                    "description": "Secondary text color used for buttons."
+                },
+                {
+                    "id": "buttonSecondaryBackgroundColor",
+                    "name": "Secondary Background Color",
+                    "type": "color",
+                    "defaultValue": "#FFFFFF",
+                    "cssVar": "btn-secondary-background-color",
+                    "description": "Secondary background color used for buttons."
+                },
+                {
+                    "id": "buttonSecondaryHoverBackgroundColor",
+                    "name": "Secondary Hover Background Color",
+                    "type": "color",
+                    "defaultValue": "#E1E1E1",
+                    "cssVar": "btn-secondary-hover-background-color",
+                    "description": "Secondary hover background color used for buttons."
+                },
+                {
+                    "id": "strokeColor",
+                    "name": "Stroke Color",
+                    "type": "color",
+                    "cssVar": "btn-stroke-color",
+                    "defaultValue": "#CDCDCD",
+                    "description": "Stroke color used for borders, backgrounds, and other non-interactive elements."
+                },
+                {
+                    "id": "buttonPrimaryBackgroundColorSecondary",
+                    "name": "Primary Background Color",
+                    "type": "color",
+                    "defaultValue": "#f2f2f2",
+                    "cssVar": "btn-primary-background-color-secondary",
+                    "description": "Primary background color used for buttons."
+                },
+                {
+                    "id": "buttonTertiaryTextColor",
+                    "name": "Tertiary text color",
+                    "type": "color",
+                    "defaultValue": "#606060",
+                    "cssVar": "btn-tertiary-text-color",
+                    "description": "Tertiary text color used for buttons."
+                }
+            ]
+        },
+        "logo": {
+            "name": "Logo",
+            "description": "Configure the logo used by the theme",
+            "fields": [
+                {
+                    "id": "logoBlack",
+                    "name": "Logo",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/6769bc40-8cfb-4e4c-a572-7629abd39cd2/images/ba97bfab-1e07-4b9f-8522-a86f2d731dc0.png",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "logoWhite",
+                    "name": "Logo White",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/6769bc40-8cfb-4e4c-a572-7629abd39cd2/images/ba97bfab-1e07-4b9f-8522-a86f2d731dc0.png",
+                    "description": "The logo used in the header"
+                }
+            ]
+        },
+        "showLocationConfig": {
+            "name": "Show Location",
+            "description": "Configure the location used by the theme",
+            "fields": [
+                {
+                    "id": "showLocation",
+                    "name": "Show Location",
+                    "type": "boolean",
+                    "defaultValue": true,
+                    "description": "Show Location"
+                }
+            ]
+        },
+        "landingPage": {
+            "name": "Landing Page",
+            "description": "Configure the landing page used by the theme",
+            "fields": [
+                {
+                    "id": "h1Title",
+                    "name": "H1 Title",
+                    "type": "text",
+                    "defaultValue": "Set your delivery location to get started.",
+                    "description": "Title used for SEO meta title"
+                },
+                {
+                    "id": "h1Description",
+                    "name": "H1 Description",
+                    "type": "text",
+                    "defaultValue": "Let's get ordering",
+                    "description": "Description used for SEO meta description"
+                },
+                {
+                    "id": "bgImg",
+                    "name": "background Image",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/fddf79cb-3e7b-4b25-97e0-dceccbcc99bc.jpeg",
+                    "description": "The logo used in the header"
+                }
+            ]
+        },
+        "homePage": {
+            "name": "Home Page",
+            "description": "Configure the home page SEO used by the theme",
+            "fields": [
+                {
+                    "id": "bannerTitle",
+                    "name": "Banner Title",
+                    "type": "text",
+                    "defaultValue": "Banner title goes here",
+                    "description": "Title used for SEO meta title"
+                },
+                {
+                    "id": "bannerDescription",
+                    "name": "Banner Description",
+                    "type": "text",
+                    "defaultValue": "Banner description goes here",
+                    "description": "Description used for SEO meta description"
+                },
+                {
+                    "id": "h1Title",
+                    "name": "H1 Title",
+                    "type": "text",
+                    "defaultValue": "H1 text goes here",
+                    "description": "Title used for SEO meta title"
+                },
+                {
+                    "id": "h1Description",
+                    "name": "H1 Description",
+                    "type": "text",
+                    "defaultValue": "Description text goes here",
+                    "description": "Description used for SEO meta description"
+                },
+                {
+                    "id": "topProductsTitle",
+                    "name": "Top Products Title",
+                    "type": "text",
+                    "defaultValue": "Top Selling Products",
+                    "description": "You can use this to display the top selling products on the home page."
+                },
+                {
+                    "id": "topProductsSubTitle",
+                    "name": "Top Products Sub Title",
+                    "type": "text",
+                    "defaultValue": "Check out our top selling products.",
+                    "description": "you can use this to display the top selling products subtitle on the home page."
+                },
+                {
+                    "id": "bestProductsTitle",
+                    "name": "Best Products Title",
+                    "type": "text",
+                    "defaultValue": "Shops we think you’ll love",
+                    "description": "you can use this to display the best products title on the home page."
+                },
+                {
+                    "id": "bestProductsSubTitle",
+                    "name": "Best Products Sub Title",
+                    "type": "text",
+                    "defaultValue": "Check out our best selling products.",
+                    "description": "you can use this to display the best products subtitle on the home page."
+                },
+                {
+                    "id": "categoryLeftTitle",
+                    "name": "Category Left Title",
+                    "type": "text",
+                    "defaultValue": "Title",
+                    "description": "you can use this to display the category left title on the home page."
+                },
+                {
+                    "id": "categoryLeftSubTitle",
+                    "name": "Category Left Sub Title",
+                    "type": "text",
+                    "defaultValue": "Sub Title",
+                    "description": "you can use this to display the category left subtitle on the home page."
+                },
+                {
+                    "id": "categoryRightTitle",
+                    "name": "Category Right Title",
+                    "type": "text",
+                    "defaultValue": "Title",
+                    "description": "you can use this to display the category right title on the home page."
+                },
+                {
+                    "id": "categoryRightSubTitle",
+                    "name": "Category Right Sub Title",
+                    "type": "text",
+                    "defaultValue": "Sub Title",
+                    "description": "you can use this to display the category right subtitle on the home page."
+                },
+                {
+                    "id": "categoryCenterTitle",
+                    "name": "Category Center Title",
+                    "type": "text",
+                    "defaultValue": "Title",
+                    "description": "you can use this to display the category center title on the home page."
+                },
+                {
+                    "id": "categoryCenterSubTitle",
+                    "name": "Category Center Sub Title",
+                    "type": "text",
+                    "defaultValue": "Sub Title",
+                    "description": "you can use this to display the category center subtitle on the home page."
+                },
+                {
+                    "id": "offerBannerTitle",
+                    "name": "Offer Banner Title",
+                    "type": "text",
+                    "defaultValue": "Offer Banner Title",
+                    "description": "You can use this to display the offer banner title on the home page."
+                },
+                {
+                    "id": "testimonialTitle",
+                    "name": "Testimonial Title",
+                    "type": "text",
+                    "defaultValue": "Testimonials",
+                    "description": "You can use this to display the testimonial title on the home page."
+                },
+                {
+                    "id": "testimonialSubTitle",
+                    "name": "Testimonial subtitle",
+                    "type": "text",
+                    "defaultValue": "What our customers say",
+                    "description": "You can use this to display the testimonial subtitle on the home page."
+                },
+                {
+                    "id": "mobileOfferBannerImg2",
+                    "name": "Offer Banner Image 4",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/c3f31d91-2f0d-496b-9349-e0764953a823.png",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "mobileOfferBannerImg3",
+                    "name": "Offer Banner Image 4",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/f66e1f43-2586-47bf-b08f-c6a596556782.png",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "mobileOfferBannerImg4",
+                    "name": "Offer Banner Image 4",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/91182f88-6066-4062-8d2a-560ebba472b6.png",
+                    "description": "The logo used in the header"
+                }
+            ]
+        },
+        "browsePage": {
+            "name": "Browse Page",
+            "description": "Configure the browse page SEO used by the theme",
+            "fields": [
+                {
+                    "id": "browsePageTitle",
+                    "name": "Browse Page H1 text",
+                    "type": "text",
+                    "defaultValue": "H1 text goes here",
+                    "description": "Title used for SEO meta title"
+                },
+                {
+                    "id": "browsePageDescription",
+                    "name": "Browse Page description text",
+                    "type": "text",
+                    "defaultValue": "Description text goes here",
+                    "description": "Description used for SEO meta description"
+                }
+            ]
+        },
+        "productDetailPage": {
+            "name": "Product Detail Page",
+            "description": "Configure the product detail page SEO used by the theme",
+            "fields": [
+                {
+                    "id": "similarProductsTitle",
+                    "name": "Similar Products Title",
+                    "type": "text",
+                    "defaultValue": "You may also like",
+                    "description": "You can use this to display the similar selling products on the home page."
+                },
+                {
+                    "id": "SimilarProductsSubTitle",
+                    "name": "Similar Products Sub Title",
+                    "type": "text",
+                    "defaultValue": "products loved by our customers",
+                    "description": "you can use this to display the similar selling products subtitle on the home page."
+                }
+            ]
+        },
+        "checkoutPage": {
+            "name": "Checkout Page",
+            "description": "Configure the checkout page used by the theme",
+            "fields": [
+                {
+                    "id": "deliverTo",
+                    "name": "Deliver to:",
+                    "type": "text",
+                    "defaultValue": "Deliver To",
+                    "description": "You can use this to display the deliver to text on the checkout page."
+                },
+                {
+                    "id": "selectAddress",
+                    "name": "Select Address",
+                    "type": "text",
+                    "defaultValue": "Select Delivery Address",
+                    "description": "You can use this to display the select address text on the checkout page."
+                },
+                {
+                    "id": "deliveryAddressText",
+                    "name": "Delivery Address",
+                    "type": "text",
+                    "defaultValue": "Delivery Address",
+                    "description": "You can use this to display the delivery address text on the checkout page."
+                },
+                {
+                    "id": "orderSummaryText",
+                    "name": "Order Summary",
+                    "type": "text",
+                    "defaultValue": "Order Summary",
+                    "description": "You can use this to display the order summary text on the checkout page."
+                },
+                {
+                    "id": "yourItemsText",
+                    "name": "Your Items",
+                    "type": "text",
+                    "defaultValue": "Your Items",
+                    "description": "You can use this to display the your items text on the checkout page."
+                },
+                {
+                    "id": "priceDetails",
+                    "name": "Price Details",
+                    "type": "text",
+                    "defaultValue": "Price Details",
+                    "description": "You can use this to display the price details text on the checkout page."
+                },
+                {
+                    "id": "taxText",
+                    "name": "Tax Text",
+                    "type": "text",
+                    "defaultValue": "Tax",
+                    "description": "You can use this to display the tax text on the checkout page."
+                },
+                {
+                    "id": "additionalChargesText",
+                    "name": "Additional Charges Text",
+                    "type": "text",
+                    "defaultValue": "Additional Charges",
+                    "description": "You can use this to display the additional charges text on the checkout page."
+                },
+                {
+                    "id": "deliveryChargesText",
+                    "name": "Delivery Charges Text",
+                    "type": "text",
+                    "defaultValue": "Delivery Charges",
+                    "description": "You can use this to display the delivery charges text on the checkout page."
+                },
+                {
+                    "id": "totalAmountText",
+                    "name": "Total Amount Text",
+                    "type": "text",
+                    "defaultValue": "Total",
+                    "description": "You can use this to display the total amount text on the checkout page."
+                },
+                {
+                    "id": "deliveryTitle",
+                    "name": "Delivery Title",
+                    "type": "text",
+                    "defaultValue": "5-7 Business Days: Your Delivery Window",
+                    "description": "You can use this to display the delivery title text on the checkout page."
+                },
+                {
+                    "id": "deliveryDescription",
+                    "name": "Delivery Description",
+                    "type": "text",
+                    "defaultValue": "Expect your product to be delivered within a reliable window of 5 to 7 business days, ensuring your wait is well worth it.",
+                    "description": "You can use this to display the delivery description text on the checkout page."
+                },
+                {
+                    "id": "discountIcon",
+                    "name": "discount icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/30d1afd1-a567-4322-aa27-c4cb99257833.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "offerAppliedText",
+                    "name": "Offer Applied Text",
+                    "type": "text",
+                    "defaultValue": "Offer applied on the bill",
+                    "description": "You can use this to display the offer applied text on the checkout page."
+                },
+                {
+                    "id": "removeText",
+                    "name": "Remove Text",
+                    "type": "text",
+                    "defaultValue": "Remove",
+                    "description": "You can use this to display the remove text on the checkout page."
+                }
+            ]
+        },
+        "landingPageSEOConfig": {
+            "name": "Landing Page SEO",
+            "description": "Configure the landing page SEO used by the theme",
+            "fields": [
+                {
+                    "id": "metaTitle",
+                    "name": "Meta Title",
+                    "type": "text",
+                    "defaultValue": "Meta title used for SEO",
+                    "description": "Title used for SEO meta title"
+                },
+                {
+                    "id": "metaDescription",
+                    "name": "Meta Description",
+                    "type": "text",
+                    "defaultValue": "Meta description used for SEO",
+                    "description": "Description used for SEO meta description"
+                },
+                {
+                    "id": "metaKeywords",
+                    "name": "Meta Keywords",
+                    "type": "text",
+                    "defaultValue": "Meta keywords used for SEO",
+                    "description": "Keywords used for SEO meta keywords"
+                }
+            ]
+        },
+        "homePageSEOConfig": {
+            "name": "Home Page SEO",
+            "description": "Configure the home page SEO used by the theme",
+            "fields": [
+                {
+                    "id": "metaTitle",
+                    "name": "Meta Title",
+                    "type": "text",
+                    "defaultValue": "Meta title used for SEO",
+                    "description": "Title used for SEO meta title"
+                },
+                {
+                    "id": "metaDescription",
+                    "name": "Meta Description",
+                    "type": "text",
+                    "defaultValue": "Meta description used for SEO",
+                    "description": "Description used for SEO meta description"
+                },
+                {
+                    "id": "metaKeywords",
+                    "name": "Meta Keywords",
+                    "type": "text",
+                    "defaultValue": "Meta keywords used for SEO",
+                    "description": "Keywords used for SEO meta keywords"
+                }
+            ]
+        },
+        "browsePageSEOConfig": {
+            "name": "Browse Page SEO",
+            "description": "Configure the browse page SEO used by the theme",
+            "fields": [
+                {
+                    "id": "metaTitle",
+                    "name": "Meta Title",
+                    "type": "text",
+                    "defaultValue": "",
+                    "description": "Title used for SEO meta title"
+                },
+                {
+                    "id": "metaDescription",
+                    "name": "Meta Description",
+                    "type": "text",
+                    "defaultValue": "",
+                    "description": "Description used for SEO meta description"
+                },
+                {
+                    "id": "metaKeywords",
+                    "name": "Meta Keywords",
+                    "type": "text",
+                    "defaultValue": "",
+                    "description": "Keywords used for SEO meta keywords"
+                }
+            ]
+        },
+        "productDetailSEOConfig": {
+            "name": "Product detail Page SEO",
+            "description": "Configure the product detail page SEO used by the theme",
+            "fields": [
+                {
+                    "id": "metaTitle",
+                    "name": "Meta Title",
+                    "type": "text",
+                    "defaultValue": "",
+                    "description": "Title used for SEO meta title"
+                },
+                {
+                    "id": "metaDescription",
+                    "name": "Meta Description",
+                    "type": "text",
+                    "defaultValue": "",
+                    "description": "Description used for SEO meta description"
+                },
+                {
+                    "id": "metaKeywords",
+                    "name": "Meta Keywords",
+                    "type": "text",
+                    "defaultValue": "{{$exists(product.title) ? product.title & ', ' : ''}}",
+                    "description": "Keywords used for SEO meta keywords"
+                }
+            ]
+        },
+        "searchPageSEOConfig": {
+            "name": "Search Page SEO",
+            "description": "Configure the search page SEO used by the theme",
+            "fields": [
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "text",
+                    "defaultValue": "",
+                    "description": "Title used for SEO meta title"
+                },
+                {
+                    "id": "description",
+                    "name": "Description",
+                    "type": "text",
+                    "defaultValue": "",
+                    "description": "Description used for SEO meta description"
+                },
+                {
+                    "id": "keywords",
+                    "name": "Keywords",
+                    "type": "text",
+                    "defaultValue": "",
+                    "description": "Keywords used for SEO meta keywords"
+                }
+            ]
+        },
+        "bottomNavbarIcon": {
+            "name": "Bottom Navbar Icon",
+            "description": "Configure the bottom navbar icon used by the theme",
+            "fields": [
+                {
+                    "id": "homeIcon",
+                    "name": "Home Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/d3ca63b2-8a0e-42af-ab7a-80226f21e615.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "categoryIcon",
+                    "name": "Category Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/4101e81e-b3ec-4bb3-a308-ed3a2960c753.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "searchIcon",
+                    "name": "Search Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/1c9f2fbd-5eb2-48bc-bb4d-320f2a099d31.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "cartIcon",
+                    "name": "Cart Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/7629f0cf-c42b-4df6-acbc-d3f1a1c1d562.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "accountIcon",
+                    "name": "Account Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/563ea857-e664-4cd0-8731-7d3c0115bc83.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "homeIconUnselected",
+                    "name": "Home Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/c825b18f-1fc5-4146-8083-901e5e0a41b4.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "categoryIconUnselected",
+                    "name": "Category Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/4984875b-a6e6-4887-81fa-586dfd536892.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "searchIconUnselected",
+                    "name": "Search Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/1bb0dad7-b738-4a75-a934-1aa109055ab3.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "cartIconUnselected",
+                    "name": "Cart Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/e1f15473-4287-4593-a5a2-fb6c7ca4349c.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "accountIconUnselected",
+                    "name": "Account Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/fff61d72-ddca-49b8-9d72-bad986283ef3.svg",
+                    "description": "The logo used in the header"
+                }
+            ]
+        },
+        "mobileAccount": {
+            "name": "Mobile Account",
+            "description": "Configure the mobile account used by the theme",
+            "fields": [
+                {
+                    "id": "profileIcon",
+                    "name": "Profile Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/24fb9fdf-1265-48e6-8037-f50de5e33ed8.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "ordersIcon",
+                    "name": "Order Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/bd148e8a-c6af-4d5b-93a7-1429e7e67185.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "manageAddressIcon",
+                    "name": "Manage Address Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/623d42ab-de12-4036-9cc8-d21df94bcbc4.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "aboutUsIcon",
+                    "name": "About Us Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/72a5a0ed-b51d-4c53-bd77-6c68b1068af6.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "contactUsIcon",
+                    "name": "Contact Us Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/80359f2c-98cc-473a-af6f-eab52c174911.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "faqIcon",
+                    "name": "FAQ Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/598f0813-5473-4a52-9c0b-eec8143797c5.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "termsOfServiceIcon",
+                    "name": "Terms of Service Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/047ab5a1-d2a0-435a-b496-8b68eca64c25.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "returnPolicyIcon",
+                    "name": "Return Policy Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/b32610e1-aaf4-43f7-8a4b-0850ea887d37.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "privacyPolicyIcon",
+                    "name": "Privacy Policy Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/75a08c3d-b9d0-4325-9978-eadebbf6c64c.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "logoutIcon",
+                    "name": "Logout Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/c4828066-9f8f-44e9-81f6-4faa052545d1.svg",
+                    "description": "The logo used in the header"
+                }
+            ]
+        },
+        "common": {
+            "name": "Common",
+            "description": "Configure the common used by the theme",
+            "fields": [
+                {
+                    "id": "addIcon",
+                    "name": "Add Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/711c0c37-a8e3-45db-b8fd-26860eccddb2.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "locationIcon",
+                    "name": "Location Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/623d42ab-de12-4036-9cc8-d21df94bcbc4.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "currentLocationIcon",
+                    "name": "Current Location Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/cdd0dd19-7573-4499-8cdb-6491f3198521.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "selectIcon",
+                    "name": "Select Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/32409391-fa5a-4cf8-90f5-d2ffb6625c37.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "unSelectIcon",
+                    "name": "Unselect Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/b275bd62-7c1b-4b08-a610-0c84dd62917f.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "locationDrawerTitle",
+                    "name": "Location Drawer Title",
+                    "type": "text",
+                    "defaultValue": "Location Search Required: Please Utilize the Search Location Option",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "locationPlaceholderText",
+                    "name": "Location Placeholder Text",
+                    "type": "text",
+                    "defaultValue": "Enter your delivery location",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "deliveryUnavailableText",
+                    "name": "Delivery Unavailable Text",
+                    "type": "text",
+                    "defaultValue": "Delivery is currently unavailable in your area",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "deliveryUnavailableSubText",
+                    "name": "Delivery Unavailable Sub Text",
+                    "type": "text",
+                    "defaultValue": "Please try different location",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "userLocationText",
+                    "name": "User Location Text",
+                    "type": "text",
+                    "defaultValue": "Use my current location",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "footerCopyRightText",
+                    "name": "Footer Copy Right Text",
+                    "type": "text",
+                    "defaultValue": "© 2024 Brand Name Powered by Shopletzy.",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "locationDrawerCloseIcon",
+                    "name": "Location Drawer Close Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/1c9f2fbd-5eb2-48bc-bb4d-320f2a099d31.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "locationDrawerBackIcon",
+                    "name": "Location Drawer Back Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/1c9f2fbd-5eb2-48bc-bb4d-320f2a099d31.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "locationDrawerCurrentLocationIcon",
+                    "name": "Location Drawer Current Location Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/cdd0dd19-7573-4499-8cdb-6491f3198521.svg",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "locationDrawerSelectLocationIcon",
+                    "name": "Location Drawer Select Location Icon",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/32409391-fa5a-4cf8-90f5-d2ffb6625c37.svg",
+                    "description": "The logo used"
+                }
+            ]
+        },
+        "mobileCheckout": {
+            "name": "Mobile Checkout",
+            "description": "Configure the logo used by the theme",
+            "fields": [
+                {
+                    "id": "deliveryTitle",
+                    "name": "Delivery Title",
+                    "type": "text",
+                    "defaultValue": "How would you like to get your order?",
+                    "description": "The logo used in the header"
+                },
+                {
+                    "id": "logoWhite",
+                    "name": "Logo White",
+                    "type": "image",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/06cb4015-235b-4f29-9fe8-5c7443aef4ac.svg",
+                    "description": "The logo used in the header"
+                }
+            ]
+        },
+        "testimonials": {
+            "name": "Testimonials",
+            "description": "Configure the testimonials used by the theme",
+            "fields": [
+                {
+                    "id": "testimonial1",
+                    "name": "Testimonial 1",
+                    "type": "text",
+                    "defaultValue": "details of the testimonial",
+                    "description": "Testimonial 1"
+                },
+                {
+                    "id": "testimonial1Name",
+                    "name": "Testimonial 1",
+                    "type": "text",
+                    "defaultValue": "Reviewed by: {{Customer Name}}",
+                    "description": "Testimonial 1"
+                },
+                {
+                    "id": "testimonial1country",
+                    "name": "Testimonial 1 country",
+                    "type": "text",
+                    "defaultValue": "place",
+                    "description": "Testimonial 1 country"
+                },
+                {
+                    "id": "testimonial1Img",
+                    "name": "Testimonial 1 image",
+                    "type": "url",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/6769bc40-8cfb-4e4c-a572-7629abd39cd2/images/7e718989-10ae-453a-9e18-7477b9f404cd.png",
+                    "description": "Testimonial 1 image"
+                },
+                {
+                    "id": "testimonial2",
+                    "name": "Testimonial 2",
+                    "type": "text",
+                    "defaultValue": "details of the testimonial",
+                    "description": "Testimonial 2"
+                },
+                {
+                    "id": "testimonial2Name",
+                    "name": "Testimonial 2",
+                    "type": "text",
+                    "defaultValue": "Reviewed by: {{Customer Name}}",
+                    "description": "Testimonial 2"
+                },
+                {
+                    "id": "testimonial2country",
+                    "name": "Testimonial 2 country",
+                    "type": "text",
+                    "defaultValue": "place",
+                    "description": "Testimonial 2 country"
+                },
+                {
+                    "id": "testimonial2Img",
+                    "name": "Testimonial 2 image",
+                    "type": "url",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/6769bc40-8cfb-4e4c-a572-7629abd39cd2/images/7e718989-10ae-453a-9e18-7477b9f404cd.png",
+                    "description": "Testimonial 2 image"
+                },
+                {
+                    "id": "testimonial3",
+                    "name": "Testimonial 2",
+                    "type": "text",
+                    "defaultValue": "details of the testimonial",
+                    "description": "Testimonial 2"
+                },
+                {
+                    "id": "testimonial3Name",
+                    "name": "Testimonial 2",
+                    "type": "text",
+                    "defaultValue": "Reviewed by: {{Customer Name}}",
+                    "description": "Testimonial 2"
+                },
+                {
+                    "id": "testimonial3country",
+                    "name": "Testimonial 3 country",
+                    "type": "text",
+                    "defaultValue": "place",
+                    "description": "Testimonial 3 country"
+                },
+                {
+                    "id": "testimonial3Img",
+                    "name": "Testimonial 3 image",
+                    "type": "url",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/6769bc40-8cfb-4e4c-a572-7629abd39cd2/images/7e718989-10ae-453a-9e18-7477b9f404cd.png",
+                    "description": "Testimonial 3 image"
+                },
+                {
+                    "id": "testimonial4",
+                    "name": "Testimonial 4",
+                    "type": "text",
+                    "defaultValue": "details of the testimonial",
+                    "description": "Testimonial 4"
+                },
+                {
+                    "id": "testimonial4Name",
+                    "name": "Testimonial 2",
+                    "type": "text",
+                    "defaultValue": "Reviewed by: {{Customer Name}}",
+                    "description": "Testimonial 4"
+                },
+                {
+                    "id": "testimonial4country",
+                    "name": "Testimonial 4 country",
+                    "type": "text",
+                    "defaultValue": "place",
+                    "description": "Testimonial 4 country"
+                },
+                {
+                    "id": "testimonial4Img",
+                    "name": "Testimonial 4 image",
+                    "type": "url",
+                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/6769bc40-8cfb-4e4c-a572-7629abd39cd2/images/7e718989-10ae-453a-9e18-7477b9f404cd.png",
+                    "description": "Testimonial 4 image"
+                }
+            ]
+        },
+        "errorMessages": {
+            "name": "Error Messages",
+            "description": "Configure the error messages used by the theme",
+            "fields": [
+                {
+                    "id": "paymentErrorTitleText",
+                    "name": "Payment Error Text",
+                    "type": "text",
+                    "defaultValue": "Order Processing Interrupted",
+                    "description": "Payment Error Text"
+                },
+                {
+                    "id": "paymentErrorSubText",
+                    "name": "Payment Error Sub Text",
+                    "type": "text",
+                    "defaultValue": "We apologize for the delay, but we are currently unable to process your order. Rest assured, we're working to resolve this issue. Please try again later.",
+                    "description": "Payment Error Sub Text"
+                },
+                {
+                    "id": "paymentErrorButtonText",
+                    "name": "Payment Error Button Text",
+                    "type": "text",
+                    "defaultValue": "Back to Home",
+                    "description": "Payment Error Button Text"
+                },
+                {
+                    "id": "paymentErrorImage",
+                    "name": "Payment Error Image",
+                    "type": "image",
+                    "defaultValue": "https://lottie.host/9329dcd9-74cc-4e75-afda-6613321c58d4/zWAD45uFSP.json",
+                    "description": "Payment Error Image"
+                }
+            ]
+        },
+        "successMessages": {
+            "name": "Success Messages",
+            "description": "Configure the success messages used by the theme",
+            "fields": [
+                {
+                    "id": "paymentSuccessTitleText",
+                    "name": "Payment Success Text",
+                    "type": "text",
+                    "defaultValue": "Order Placed Successfully",
+                    "description": "Payment Success Text"
+                },
+                {
+                    "id": "paymentSuccessSubText",
+                    "name": "Payment Success Sub Text",
+                    "type": "text",
+                    "defaultValue": "Thank you for your order. Your order has been successfully placed and is being processed. You will receive an email confirmation shortly.",
+                    "description": "Payment Success Sub Text"
+                },
+                {
+                    "id": "paymentSuccessButtonText",
+                    "name": "Payment Success Button Text",
+                    "type": "text",
+                    "defaultValue": "Back to Home",
+                    "description": "Payment Success Button Text"
+                },
+                {
+                    "id": "paymentSuccessImage",
+                    "name": "Payment Success Image",
+                    "type": "image",
+                    "defaultValue": "https://lottie.host/31638443-0a48-4944-8d7c-1fa149958f80/Izy4WPOKfj.json",
+                    "description": "Payment Success Image"
+                }
+            ]
         }
-    }
+    },
+    "order": [
+        "colorScheme",
+        "font",
+        "logo",
+        "showLocationConfig",
+        "landingPage",
+        "homePage",
+        "browsePage",
+        "productDetailPage",
+        "checkoutPage",
+        "landingPageSEOConfig",
+        "homePageSEOConfig",
+        "browsePageSEOConfig",
+        "productDetailSEOConfig",
+        "searchPageSEOConfig",
+        "bottomNavbarIcon",
+        "mobileAccount",
+        "common",
+        "mobileCheckout",
+        "testimonials",
+        "errorMessages",
+        "successMessages"
+    ]
 }

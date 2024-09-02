@@ -1,0 +1,65 @@
+
+.bottom-tabs-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    background-color: var(--background-color);
+    /* backdrop-filter: blur(10px); */
+    width: 100%;
+    border-radius: 0px;
+    box-shadow: var(--primary-color) 0px 0px 10px 0.2;
+    border-top: 1px solid var(--stroke-color);
+    padding: 0px 20px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom-tabs-nav .menu {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    width: 36px;
+    height: 36px;
+    background-color: var(--background-color);
+
+}
+
+.bottom-tabs-nav .cartView{
+    display: flex;
+    align-items: center;
+}
+
+
+.bottom-tabs-nav .cartView .icon {
+
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    width: 30px;
+}
+
+.bottom-tabs-nav .cartView .title {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Noto Sans';
+    position: absolute;
+    color: var(--primary-text-color);
+    padding: 3px;
+    border-radius: 60%;
+    height: 20px;
+    width: 20px;
+    background: var(--select-color);
+    border: 1.5px solid var(--stroke-color);
+    margin-bottom: 15px;
+    margin-left: 12px;
+}

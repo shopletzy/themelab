@@ -1,0 +1,112 @@
+{
+    "sections": {
+        "deliverySlot": {
+            "type": "container",
+            "sections": {
+                "slotName": {
+                    "type": "text",
+                    "text": "{{deliverySlot.name}}{{deliverySlot.isClosed ? ' - Closed' : ''}}",
+                    "styleIf": [
+                        {
+                            "condition": "deliverySlot.isClosed",
+                            "style": {
+                                "fontFamily": "Noto Sans",
+                                "color": "#C70039",
+                                "fontWeight": "600",
+                                "fontSize": "14px",
+                                "padding": "5px 0px"
+                            }
+                        },
+                        {
+                            "condition": "deliverySlot.selected",
+                            "style": {
+                                "fontFamily": "Noto Sans",
+                                "color": "var(--primary-text-color)",
+                                "lineHeight": "1.75rem",
+                                "fontWeight": "300",
+                                "fontSize": "15px",
+                                "padding": "5px 0px"
+                            }
+                        },
+                        {
+                            "default": {
+                                "fontFamily": "Noto Sans",
+                                "lineHeight": "1.75rem",
+                                "color": "var(--primary-text-color)",
+                                "fontWeight": "300",
+                                "fontSize": "15px",
+                                "padding": "5px 0px"
+                            }
+                        }
+                    ]
+                }
+            },
+            "styleIf": [
+                {
+                    "condition": "deliverySlot.isClosed",
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "flexWrap": "wrap",
+                        "justifyContent": "flex-start",
+                        "alignItems": "center",
+                        "border": "1px solid var(--stroke-color)",
+                        "borderRadius": "8px",
+                        "padding": "15px 12px",
+                        "cursor": "not-allowed"
+                    }
+                },
+                {
+                    "condition": "deliverySlot.selected",
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "flexWrap": "wrap",
+                        "justifyContent": "flex-start",
+                        "alignItems": "center",
+                        "border": "1px solid #ffffff00",
+                        "borderRadius": "8px",
+                        "padding": "0px 0px",
+                        "boxShadow": "0px 3px 8px #00000020"
+                    }
+                },
+                {
+                    "default": {
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "flexWrap": "wrap",
+                        "justifyContent": "flex-start",
+                        "alignItems": "center",
+                        "border": "1px solid var(--stroke-color)",
+                        "borderRadius": "8px",
+                        "padding": "15px 12px"
+                    }
+                }
+            ],
+            "order": [
+                "slotName"
+            ]
+        },
+        "selected": {
+            "type": "image",
+            "url": "{{themeUrl}}/img/desktop/correct.png",
+            "showIf": "deliverySlot.selected",
+            "style": {
+                "marginLeft": "10px",
+                "width": "25px",
+                "height": "25px"
+            }
+        }
+    },
+    "style": {
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "overflow": "hidden",
+        "marginBottom": "10px",
+        "width": "100%"
+    },
+    "order": [
+        "deliverySlot"
+    ]
+}

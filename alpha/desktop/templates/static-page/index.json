@@ -1,0 +1,102 @@
+{
+    "imports": [
+        "common/header-checkout.json",
+        "common/header-checkout.css",
+        "common/footer.json",
+        "common/footer.css"
+    ],
+    "className": "staticPage",
+    "sections": {
+        "header": {
+            "type": "template",
+            "templateName": "header-checkout"
+        },
+        "fixedWidth": {
+            "type": "container",
+            "className": "fixedWidth",
+            "sections": {
+                "content": {
+                    "type": "container",
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "justifyContent": "center",
+                        "flexGrow": "1",
+                        "paddingTop": "50px",
+                        "paddingBottom": "50px",
+                        "overflowY": "auto",
+                        "fontWeight": 300,
+                        "color": "var(--primary-text-color)"
+                    },
+                    "sections": {
+                        "featureImage": {
+                            "type": "image",
+                            "url": "{{post.featureImage}}",
+                            "showIf": "$exists(post.featureImage) and post.featureImage != 'https://storage.googleapis.com/null' and post.featureImage != 'https://storage.googleapis.com/'",
+                            "style": {
+                                "width": "100%",
+                                "height": "250px",
+                                "objectFit": "cover",
+                                "marginBottom": "30px"
+                            }
+                        },
+                        "title": {
+                            "type": "heading",
+                            "level": "h1",
+                            "text": "{{post.title}}",
+                            "style": {
+                                "display": "flex",
+                                "marginLeft": "20px",
+                                "marginBottom": "20px",
+                                "justifyContent": "left",
+                                "alignItems": "center",
+                                "fontSize": "30px",
+                                "fontWeight": "bold",
+                                "fontFamily": "Noto Sans",
+                                "color": "var(--primary-text-color)"
+                            }
+                        },
+                        "blogPost": {
+                            "type": "post",
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "fontFamily": "Noto Sans",
+                                "flexGrow": "1",
+                                "marginLeft": "20px",
+                                "alignItems": "center",
+                                "marginRight": "20px",
+                                "overflowY": "auto"
+                            }
+                        }
+                    },
+                    "order": [
+                        "featureImage",
+                        "title",
+                        "blogPost"
+                    ]
+                }
+            },
+            "order": [
+                "content"
+            ],
+            "style": {
+                "margin": "auto",
+                "width": "65%"
+            }
+        },
+        "footer": {
+            "type": "template",
+            "className": "footerView",
+            "templateName": "footer"
+        }
+    },
+    "style": {
+        "height": "100vh"
+    },
+    "order": [
+        "header",
+        "fixedWidth",
+        "footer"
+    ]
+}

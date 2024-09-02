@@ -1,0 +1,61 @@
+{
+    "imports": [
+        "common/order.json",
+        "common/header.json",
+        "common/header.css",
+        "common/profileAddress.css",
+        "common/triggered/address-editor.json",
+        "common/address-profile-edit.json"
+    ],
+    "contentDisplay": {
+        "type": "drawer",
+        "placement": "right",
+        "trigger": "ui.showAddress"
+    },
+    "className": "slz-profile-address",
+    "type": "container",
+    "sections": {
+        "headerView": {
+            "type": "container",
+            "className": "headerView",
+            "sections": {
+                "title": {
+                    "type": "text",
+                    "className": "title",
+                    "text": "Manage Address"
+                },
+                "add": {
+                    "type": "button",
+                    "className": "add",
+                    "text": "Add New Address",
+                    "action": "setUiState",
+                    "actionParams": {
+                        "showAddressEditor": true
+                    }
+                }
+            },
+            "order": [
+                "title",
+                "add"
+            ]
+        },
+        "content": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "detailView": {
+                    "type": "address-list",
+                    "className": "detailView",
+                    "refTemplate": "address-profile-edit"
+                }
+            },
+            "order": [
+                "detailView"
+            ]
+        }
+    },
+    "order": [
+        "headerView",
+        "content"
+    ]
+}

@@ -1,0 +1,228 @@
+{
+    "imports": [
+        "common/delivery-slot-fixed.json",
+        "common/delivery-slot-flexible.json",
+        "common/header.json",
+        "common/footer.json",
+        "pages/checkout/choose-delivery/styles.css",
+        "common/address.json"
+    ],
+    "className": "delivery-slot-list",
+    "sections": {
+        "header": {
+            "type": "container",
+            "sections": {
+                "backBtn": {
+                    "type": "image",
+                    "url": "{{themeUrl}}/img/common/backArrow.svg",
+                    "className": "back-btn",
+                    "action": "goBack"
+                },
+                "cartTitle": {
+                    "type": "text",
+                    "text": "",
+                    "style": {
+                        "fontWeight": "600",
+                        "textTransform": "uppercase",
+                        "fontSize": "16px",
+                        "fontFamily": "Noto Sans",
+                        "color": "var(--primary-text-color)"
+                    }
+                },
+                "close": {
+                    "type": "text",
+                    "text": "Close",
+                    "style": {
+                        "color": "var(--primary-text-color)",
+                        "fontFamily": "Noto Sans",
+                        "textTransform": "capitalize",
+                        "fontSize": "14px",
+                        "fontWeight": "400"
+                    }
+                }
+            },
+            "order": [
+                "backBtn",
+                "cartTitle"
+            ],
+            "style": {
+                "display": "flex",
+                "flexShrink": "0",
+                "width": "100%",
+                "height": "65px",
+                "alignItems": "center",
+                "borderBottom": "0.75px solid var(--stroke-color)",
+                "color": "var(--primary-text-color)",
+                "paddingLeft": "15px",
+                "paddingRight": "15px",
+                "justifyContent": "space-between"
+            }
+        },
+        "content": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "col-left": {
+                    "type": "container",
+                    "className": "col-left",
+                    "sections": {
+                        "login": {
+                            "type": "container",
+                            "className": "login",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Login",
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "fontWeight": "600",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "var(--primary-text-color)"
+                                    }
+                                },
+                                "description": {
+                                    "type": "text",
+                                    "text": "{{customer.fullName}} | {{customer.email}}",
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "fontWeight": "400",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "var(--secondary-text-color)",
+                                        "padding": "8px 0px 0px 0px"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "description"
+                            ]
+                        },
+                        "deliveryAddress": {
+                            "type": "container",
+                            "className": "deliveryAddress",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Delivery Address",
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "fontWeight": "600",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "var(--primary-text-color)"
+                                    }
+                                },
+                                "description": {
+                                    "type": "button",
+                                    "text": "Change",
+                                    "action": "navigateTo",
+                                    "actionParams": {
+                                        "url": "'/checkout/address'"
+                                    },
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "fontWeight": "400",
+                                        "fontFamily": "Noto Sans",
+                                        "textAlign": "center",
+                                        "color": "var(--primary-text-color)",
+                                        "background": "transparent",
+                                        "borderRadius": "4px",
+                                        "padding": "8px 12px",
+                                        "cursor": "pointer",
+                                        "border": "1px solid var(--stroke-color)"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "description"
+                            ]
+                        },
+                        "slot": {
+                            "type": "container",
+                            "className": "login",
+                            "sections": {
+                                "expressDelivery": {
+                                    "type": "container",
+                                    "className": "expressDelivery",
+                                    "showIf": "$exists(deliverySlots.flexibleSlots[slotType = 'flexible'])",
+                                    "sections": {
+                                        "title": {
+                                            "type": "text",
+                                            "text": "{{themeConfig.checkoutPage.deliveryTitle}}",
+                                            "className": "title",
+                                            "style": {
+                                                "fontSize": "16px",
+                                                "fontWeight": "600",
+                                                "fontFamily": "Noto Sans",
+                                                "color": "var(--primary-text-color)",
+                                                "marginRight": "10px"
+                                            }
+                                        }
+                                    },
+                                    "order": [
+                                        "title"
+                                    ],
+                                    "style": {
+                                        "display": "flex",
+                                        "justifyContent": "flex-start",
+                                        "alignItems": "center",
+                                        "flexDirection": "row",
+                                        "width": "100%",
+                                        "height": "40px",
+                                        "background": "transparent",
+                                        "marginTop": "0px",
+                                        "marginBottom": "10px"
+                                    }
+                                },
+                                "flexibleSlots": {
+                                    "type": "delivery-slot-list",
+                                    "slotType": "flexible",
+                                    "className": "addressInfo"
+                                }
+                            },
+                            "order": [
+                                "expressDelivery",
+                                "flexibleSlots"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "login",
+                        "deliveryAddress",
+                        "slot"
+                    ]
+                }
+            },
+            "order": [
+                "col-left"
+            ]
+        },
+        "btn": {
+            "type": "button",
+            "className": "btn",
+            "text": "Continue",
+            "disabled": "$exists(deliverySlots.error) or $not($exists(checkout.selectedDeliverySlot))",
+            "action": "chooseDeliverySlot",
+            "style": {
+                "width": "100%",
+                "height": "55px",
+                "padding": "15px 24px",
+                "borderRadius": "0px",
+                "background": "var(--primary-color)",
+                "fontSize": "15px",
+                "color": "var(--white-text-color)",
+                "fontFamily": "Noto Sans",
+                "fontWeight": "500",
+                "outline": "none",
+                "border": "none",
+                "position": "fixed",
+                "bottom": "0px"
+            }
+        }
+    },
+    "order": [
+        "header",
+        "content",
+        "btn"
+    ]
+}

@@ -1,0 +1,298 @@
+.address-list {
+    display:flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    overflow: hidden;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+}
+
+.address-list .main {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 90%;
+    height: auto;
+    background-color: var(--background-color);
+}
+
+.address-list .main .col-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 65%;
+    padding: 0px 15px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    background-color: var(--background-color);
+}
+
+
+.address-list .main .col-left .login {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 75px;
+    background-color: var(--background-color);
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--stroke-color);
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.address-list .main .col-left .login .title{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Noto Sans;
+    color: var(--primary-text-color);
+}
+
+
+.address-list .main .col-left .login .description{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Noto Sans;
+    color: var(--primary-text-color);
+    padding: 8px 0px 0px 0px;
+}
+
+
+.address-list .main .col-left .addressList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    background-color: var(--background-color);
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--stroke-color);
+    margin-bottom: 12px;
+}
+
+.address-list .main .col-left .addressList .address-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.address-list .main .col-left .addressList .address-card .view1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    border-bottom: 1px dashed var(--stroke-color);
+    margin-bottom: 15px;
+}
+
+.address-list .main .col-left .addressList .address-card  .view1 .title {
+  
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Noto Sans;
+
+    color: var(--primary-text-color);
+   
+}
+
+.address-list .main .col-left .addressList .address-card  .view1 .addNewAddress {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 175px;
+    height: 44px;
+    background-color: var(--btn-primary-background-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Noto Sans";
+    font-size: 14px;
+    font-weight: 400;
+}
+.address-list .main .col-left .addressList .address-card  .view1 .addNewAddress .addNewAddressText {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Noto Sans";
+    color: var(--btn-secondary-text-color);
+    text-align: center;
+
+}
+
+.address-list .main .col-left .addressList .address-card .address-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+.address-list .main .col-left .addressList .address-card .address-detail .addressInfo {
+    margin-bottom: 30px;
+    margin-top: 0px;
+    width: 100%;
+}
+
+
+
+
+.address-list .main .col-left .addressList .address-card .address-detail .addNewAddress .addNewAddressText {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Noto Sans";
+    color: var(--btn-secondary-text-color);
+    text-align: center;
+}
+
+/* column Right */
+
+.address-list .main .col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 35%;
+    height: auto;
+    background-color: var(--background-color);
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--stroke-color);
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.address-list .main .col-right .offer-card-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 180px;
+    color: var(--primary-text-color);
+    padding: 10px 28px;
+    margin-top: 8px;
+    background: #FFE6F5;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.24);
+    background-image: url('{{themeUrl}}/img/common/8.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.address-list .main .col-right .priceDetails {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Noto Sans";
+    text-transform: uppercase;
+    width: 100%;
+    color: var(--primary-text-color);
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--stroke-color);
+}
+
+.address-list .main .col-right .orderWarning {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Noto Sans";
+    color: var(--error-text-color);
+    margin-top: 5px;
+}
+
+.address-list .main .col-right .cartList {
+    width: 100%;
+}
+
+.address-list .main .col-right .subTotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.address-list .main .col-right .subTotal .title {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Noto Sans";
+    color: var(--primary-text-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.address-list .main .col-right .subTotal .amount {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Noto Sans";
+    color: var(--primary-text-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.address-list .main .col-right .subTotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.address-list .main .col-right .total .title {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Noto Sans";
+    color: var(--primary-text-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.address-list .main .col-right .total .totalAmount {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Noto Sans";
+    color: var(--primary-text-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.placeOrderBtn {
+
+    width: 100%;
+    height: 44px;
+    text-align: center;
+    border-radius: 0px;
+    background: var(--btn-primary-background-color);
+    font-size: 14px;
+    color: var(--btn-secondary-text-color);
+    font-family: "Noto Sans";
+    font-weight: 500;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}

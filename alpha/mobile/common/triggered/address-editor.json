@@ -1,0 +1,811 @@
+{
+    "imports": [
+        "common/address-location-selector.json"
+    ],
+    "style": {
+        "background": "var(--background-color)",
+        "flexDirection": "column",
+        "display": "flex",
+        "width": "100%",
+        "height": "100%",
+        "justifyContent": "space-between",
+        "bottom": "0px",
+        "right": "0px",
+        "left": "0px",
+        "zIndex": "10000"
+    },
+    "contentDisplay": {
+        "type": "drawer",
+        "placement": "bottom",
+        "trigger": "ui.showAddressEditor"
+    },
+    "showIf": "ui.showAddressEditor = true",
+    "sections": {
+        "header": {
+            "type": "container",
+            "sections": {
+                "cartTitle": {
+                    "type": "text",
+                    "text": "Add Your Address",
+                    "style": {
+                        "fontWeight": "600",
+                        "fontSize": "16px",
+                        "fontFamily": "Noto Sans",
+                        "color": "var(--primary-text-color)",
+                        "padding": "25px 0px"
+                    }
+                },
+                "close": {
+                    "type": "button",
+                    "text": "Cancel",
+                    "action": "setUiState",
+                    "actionParams": {
+                        "showAddressEditor": "false"
+                    },
+                    "style": {
+                        "border": "none",
+                        "background": "none",
+                        "cursor": "pointer",
+                        "fontWeight": "400",
+                        "fontSize": "15px",
+                        "fontFamily": "Noto Sans",
+                        "color": "var(--primary-text-color)",
+                        "padding": "25px 0px",
+                        "textTransform": "capitalize"
+                    }
+                }
+            },
+            "order": [
+                "cartTitle",
+                "close"
+            ],
+            "style": {
+                "display": "flex",
+                "flexShrink": "0",
+                "height": "64px",
+                "alignItems": "center",
+                "color": "var(--primary-text-color)",
+                "borderBottom": "1px solid var(--stroke-color)",
+                "padding": "25px 18px",
+                "justifyContent": "space-between"
+            }
+        },
+        "content": {
+            "type": "container",
+            "sections": {
+                "addressEditor": {
+                    "type": "address-editor",
+                    "sections": {
+                        "title": {
+                            "type": "container",
+                            "sections": {
+                                "titleText": {
+                                    "type": "text",
+                                    "text": "{{themeConfig.common.locationDrawerTitle}}",
+                                    "style": {
+                                        "marginBottom": "10px",
+                                        "fontSize": "14px",
+                                        "color": "var(--primary-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "400"
+                                    }
+                                },
+                                "star": {
+                                    "type": "text",
+                                    "text": "*",
+                                    "style": {
+                                        "marginBottom": "10px",
+                                        "fontSize": "14px",
+                                        "color": "red",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "300"
+                                    }
+                                }
+                            },
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "alignItems": "center",
+                                "justifyContent": "flex-start"
+                            },
+                            "order": [
+                                "titleText"
+                            ]
+                        },
+                        "address": {
+                            "type": "container",
+                            "sections": {
+                                "deliveryLocation": {
+                                    "type": "location-selector",
+                                    "refTemplate": "address-location-selector",
+                                    "bind": "addressEditor.placeDetails",
+                                    "mode": "placeDetails"
+                                },
+                                "address-container": {
+                                    "type": "container",
+                                    "showIf": "addressEditor.placeDetails",
+                                    "sections": {
+                                        "fullName": {
+                                            "type": "container",
+                                            "sections": {
+                                                "title": {
+                                                    "type": "container",
+                                                    "sections": {
+                                                        "titleText": {
+                                                            "type": "text",
+                                                            "text": "Full Name",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "var(--primary-text-color)",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        },
+                                                        "star": {
+                                                            "type": "text",
+                                                            "text": "*",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "red",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        }
+                                                    },
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "row",
+                                                        "alignItems": "center",
+                                                        "justifyContent": "flex-start"
+                                                    },
+                                                    "order": [
+                                                        "titleText",
+                                                        "star"
+                                                    ]
+                                                },
+                                                "inputField": {
+                                                    "type": "input",
+                                                    "bind": "addressEditor.fullName",
+                                                    "placeholder": "Your Full Name",
+                                                    "style": {
+                                                        "marginTop": "0px",
+                                                        "marginBottom": "0px",
+                                                        "background": "var(--background-color)",
+                                                        "border": "1px solid var(--stroke-color)",
+                                                        "borderRadius": "5px",
+                                                        "padding": "15px 10px",
+                                                        "fontSize": "16px",
+                                                        "color": "var(--primary-text-color)",
+                                                        "fontFamily": "Noto Sans",
+                                                        "fontWeight": "300"
+                                                    }
+                                                }
+                                            },
+                                            "order": [
+                                                "title",
+                                                "inputField"
+                                            ],
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "marginTop": "20px"
+                                            }
+                                        },
+                                        "houseName": {
+                                            "type": "container",
+                                            "sections": {
+                                                "title": {
+                                                    "type": "container",
+                                                    "sections": {
+                                                        "titleText": {
+                                                            "type": "text",
+                                                            "text": "House Name",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "var(--primary-text-color)",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        },
+                                                        "star": {
+                                                            "type": "text",
+                                                            "text": "*",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "red",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        }
+                                                    },
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "row",
+                                                        "alignItems": "center",
+                                                        "justifyContent": "flex-start"
+                                                    },
+                                                    "order": [
+                                                        "titleText",
+                                                        "star"
+                                                    ]
+                                                },
+                                                "inputField": {
+                                                    "type": "input",
+                                                    "bind": "addressEditor.houseName",
+                                                    "placeholder": "House Name",
+                                                    "style": {
+                                                        "marginBottom": "0px",
+                                                        "background": "var(--background-color)",
+                                                        "border": "1px solid var(--stroke-color)",
+                                                        "borderRadius": "5px",
+                                                        "padding": "15px 10px",
+                                                        "fontSize": "16px",
+                                                        "color": "var(--primary-text-color)",
+                                                        "fontFamily": "Noto Sans",
+                                                        "fontWeight": "300"
+                                                    }
+                                                }
+                                            },
+                                            "order": [
+                                                "title",
+                                                "inputField"
+                                            ],
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "marginTop": "20px"
+                                            }
+                                        },
+                                        "addressLine": {
+                                            "type": "container",
+                                            "sections": {
+                                                "title": {
+                                                    "type": "container",
+                                                    "sections": {
+                                                        "titleText": {
+                                                            "type": "text",
+                                                            "text": "Address Line",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "var(--primary-text-color)",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        },
+                                                        "star": {
+                                                            "type": "text",
+                                                            "text": "*",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "red",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        }
+                                                    },
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "row",
+                                                        "alignItems": "center",
+                                                        "justifyContent": "flex-start"
+                                                    },
+                                                    "order": [
+                                                        "titleText",
+                                                        "star"
+                                                    ]
+                                                },
+                                                "inputField": {
+                                                    "type": "input",
+                                                    "bind": "addressEditor.addressLine",
+                                                    "placeholder": "Address Line",
+                                                    "style": {
+                                                        "marginBottom": "0px",
+                                                        "background": "var(--background-color)",
+                                                        "border": "1px solid var(--stroke-color)",
+                                                        "borderRadius": "5px",
+                                                        "padding": "15px 10px",
+                                                        "fontSize": "16px",
+                                                        "color": "var(--primary-text-color)",
+                                                        "fontFamily": "Noto Sans",
+                                                        "fontWeight": "300"
+                                                    }
+                                                }
+                                            },
+                                            "order": [
+                                                "title",
+                                                "inputField"
+                                            ],
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "marginTop": "20px"
+                                            }
+                                        },
+                                        "landmark": {
+                                            "type": "container",
+                                            "sections": {
+                                                "title": {
+                                                    "type": "container",
+                                                    "sections": {
+                                                        "titleText": {
+                                                            "type": "text",
+                                                            "text": "Landmark",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "var(--primary-text-color)",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        },
+                                                        "star": {
+                                                            "type": "text",
+                                                            "text": "(optional)",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "var(--primary-text-color)",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        }
+                                                    },
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "row",
+                                                        "alignItems": "center",
+                                                        "justifyContent": "flex-start"
+                                                    },
+                                                    "order": [
+                                                        "titleText",
+                                                        "star"
+                                                    ]
+                                                },
+                                                "inputField": {
+                                                    "type": "input",
+                                                    "bind": "addressEditor.landmark",
+                                                    "placeholder": "Landmark",
+                                                    "style": {
+                                                        "marginBottom": "0px",
+                                                        "background": "var(--background-color)",
+                                                        "border": "1px solid var(--stroke-color)",
+                                                        "borderRadius": "5px",
+                                                        "padding": "15px 10px",
+                                                        "fontSize": "16px",
+                                                        "color": "var(--primary-text-color)",
+                                                        "fontFamily": "Noto Sans",
+                                                        "fontWeight": "300"
+                                                    }
+                                                }
+                                            },
+                                            "order": [
+                                                "title",
+                                                "inputField"
+                                            ],
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "marginTop": "20px"
+                                            }
+                                        },
+                                        "area": {
+                                            "type": "container",
+                                            "sections": {
+                                                "title": {
+                                                    "type": "container",
+                                                    "sections": {
+                                                        "titleText": {
+                                                            "type": "text",
+                                                            "text": "Area",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "var(--primary-text-color)",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        },
+                                                        "star": {
+                                                            "type": "text",
+                                                            "text": "*",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "red",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        }
+                                                    },
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "row",
+                                                        "alignItems": "center",
+                                                        "justifyContent": "flex-start"
+                                                    },
+                                                    "order": [
+                                                        "titleText",
+                                                        "star"
+                                                    ]
+                                                },
+                                                "inputField": {
+                                                    "type": "input",
+                                                    "bind": "addressEditor.area",
+                                                    "placeholder": "Area",
+                                                    "style": {
+                                                        "marginBottom": "0px",
+                                                        "background": "var(--background-color)",
+                                                        "border": "1px solid var(--stroke-color)",
+                                                        "borderRadius": "5px",
+                                                        "padding": "15px 10px",
+                                                        "fontSize": "16px",
+                                                        "color": "var(--primary-text-color)",
+                                                        "fontFamily": "Noto Sans",
+                                                        "fontWeight": "300"
+                                                    }
+                                                }
+                                            },
+                                            "order": [
+                                                "title",
+                                                "inputField"
+                                            ],
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "marginTop": "20px"
+                                            }
+                                        },
+                                        "city": {
+                                            "type": "container",
+                                            "sections": {
+                                                "title": {
+                                                    "type": "container",
+                                                    "sections": {
+                                                        "titleText": {
+                                                            "type": "text",
+                                                            "text": "City",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "var(--primary-text-color)",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        },
+                                                        "star": {
+                                                            "type": "text",
+                                                            "text": "*",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "red",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        }
+                                                    },
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "row",
+                                                        "alignItems": "center",
+                                                        "justifyContent": "flex-start"
+                                                    },
+                                                    "order": [
+                                                        "titleText",
+                                                        "star"
+                                                    ]
+                                                },
+                                                "inputField": {
+                                                    "type": "input",
+                                                    "bind": "addressEditor.city",
+                                                    "placeholder": "City",
+                                                    "style": {
+                                                        "marginBottom": "0px",
+                                                        "background": "var(--background-color)",
+                                                        "border": "1px solid var(--stroke-color)",
+                                                        "borderRadius": "5px",
+                                                        "padding": "15px 10px",
+                                                        "fontSize": "16px",
+                                                        "color": "var(--primary-text-color)",
+                                                        "fontFamily": "Noto Sans",
+                                                        "fontWeight": "300"
+                                                    }
+                                                }
+                                            },
+                                            "order": [
+                                                "title",
+                                                "inputField"
+                                            ],
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "marginTop": "20px"
+                                            }
+                                        },
+                                        "pincode": {
+                                            "type": "container",
+                                            "sections": {
+                                                "title": {
+                                                    "type": "container",
+                                                    "sections": {
+                                                        "titleText": {
+                                                            "type": "text",
+                                                            "text": "Pincode",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "var(--primary-text-color)",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        },
+                                                        "star": {
+                                                            "type": "text",
+                                                            "text": "*",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "red",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        }
+                                                    },
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "row",
+                                                        "alignItems": "center",
+                                                        "justifyContent": "flex-start"
+                                                    },
+                                                    "order": [
+                                                        "titleText",
+                                                        "star"
+                                                    ]
+                                                },
+                                                "inputField": {
+                                                    "type": "input",
+                                                    "bind": "addressEditor.zipcode",
+                                                    "placeholder": "Pincode",
+                                                    "style": {
+                                                        "marginBottom": "0px",
+                                                        "background": "var(--background-color)",
+                                                        "border": "1px solid var(--stroke-color)",
+                                                        "borderRadius": "5px",
+                                                        "padding": "15px 10px",
+                                                        "fontSize": "16px",
+                                                        "color": "var(--primary-text-color)",
+                                                        "fontFamily": "Noto Sans",
+                                                        "fontWeight": "300"
+                                                    }
+                                                }
+                                            },
+                                            "order": [
+                                                "title",
+                                                "inputField"
+                                            ],
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "marginTop": "20px"
+                                            }
+                                        },
+                                        "state": {
+                                            "type": "container",
+                                            "sections": {
+                                                "title": {
+                                                    "type": "container",
+                                                    "sections": {
+                                                        "titleText": {
+                                                            "type": "text",
+                                                            "text": "State",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "var(--primary-text-color)",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        },
+                                                        "star": {
+                                                            "type": "text",
+                                                            "text": "*",
+                                                            "style": {
+                                                                "marginBottom": "10px",
+                                                                "fontSize": "14px",
+                                                                "color": "red",
+                                                                "fontFamily": "Noto Sans",
+                                                                "fontWeight": "300"
+                                                            }
+                                                        }
+                                                    },
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "row",
+                                                        "alignItems": "center",
+                                                        "justifyContent": "flex-start"
+                                                    },
+                                                    "order": [
+                                                        "titleText",
+                                                        "star"
+                                                    ]
+                                                },
+                                                "inputField": {
+                                                    "type": "input",
+                                                    "bind": "addressEditor.state",
+                                                    "placeholder": "State",
+                                                    "style": {
+                                                        "marginBottom": "0px",
+                                                        "background": "var(--background-color)",
+                                                        "border": "1px solid var(--stroke-color)",
+                                                        "borderRadius": "5px",
+                                                        "padding": "15px 10px",
+                                                        "fontSize": "16px",
+                                                        "color": "var(--primary-text-color)",
+                                                        "fontFamily": "Noto Sans",
+                                                        "fontWeight": "300"
+                                                    }
+                                                }
+                                            },
+                                            "order": [
+                                                "title",
+                                                "inputField"
+                                            ],
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "marginTop": "20px"
+                                            }
+                                        }
+                                    },
+                                    "order": [
+                                        "fullName",
+                                        "houseName",
+                                        "addressLine",
+                                        "landmark",
+                                        "area",
+                                        "city",
+                                        "pincode",
+                                        "state"
+                                    ],
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "column"
+                                    }
+                                }
+                            },
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column"
+                            },
+                            "order": [
+                                "deliveryLocation",
+                                "address-container"
+                            ]
+                        },
+                        "saveAddress1": {
+                            "type": "button",
+                            "text": "Save Address",
+                            "disabled": "$not(addressEditor.valid)",
+                            "styleIf": [
+                                {
+                                    "condition": "$not(addressEditor.valid)",
+                                    "style": {
+                                        "marginTop": "40px",
+                                        "width": "100%",
+                                        "height": "44px",
+                                        "marginBottom": "10px",
+                                        "background": "var(--background-color-secondary)",
+                                        "color": "var(--primary-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "400",
+                                        "fontSize": "14px",
+                                        "borderRadius": "5px",
+                                        "border": "none",
+                                        "cursor": "not-allowed"
+                                    }
+                                },
+                                {
+                                    "default": {
+                                        "marginTop": "40px",
+                                        "width": "100%",
+                                        "height": "44px",
+                                        "marginBottom": "10px",
+                                        "background": "var(--primary-color)",
+                                        "color": "var(--white-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "400",
+                                        "fontSize": "14px",
+                                        "borderRadius": "5px",
+                                        "border": "none",
+                                        "cursor": "pointer"
+                                    }
+                                }
+                            ],
+                            "action": "saveAddress"
+                        }
+                    },
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "width": "100%",
+                        "background": "var(--background-color)",
+                        "padding": "15px",
+                        "borderRadius": "5px",
+                        "marginTop": "10px"
+                    },
+                    "order": [
+                        "title",
+                        "address",
+                        "saveAddress1"
+                    ]
+                }
+            },
+            "style": {
+                "display": "flex",
+                "alignItems": "center",
+                "flexDirection": "column",
+                "overflowY": "auto",
+                "flexGrow": 1,
+                "width": "100%",
+                "marginBottom": "100px"
+            },
+            "order": [
+                "addressEditor"
+            ]
+        },
+        "saveAddress": {
+            "type": "button",
+            "text": "Save Address",
+            "disabled": "$not(addressEditor.valid)",
+            "styleIf": [
+                {
+                    "condition": "$not(addressEditor.valid)",
+                    "style": {
+                        "width": "100%",
+                        "height": "55px",
+                        "background": "var(--background-color-secondary)",
+                        "color": "var(--primary-text-color)",
+                        "fontFamily": "Noto Sans",
+                        "fontWeight": "400",
+                        "fontSize": "14px",
+                        "borderRadius": "5px",
+                        "border": "none",
+                        "cursor": "not-allowed",
+                        "position": "fixed",
+                        "bottom": "0px"
+                    }
+                },
+                {
+                    "default": {
+                        "width": "100%",
+                        "height": "55px",
+                        "background": "var(--primary-color)",
+                        "color": "var(--white-text-color)",
+                        "fontFamily": "Noto Sans",
+                        "fontWeight": "300",
+                        "fontSize": "14px",
+                        "borderRadius": "5px",
+                        "border": "none",
+                        "cursor": "pointer",
+                        "position": "fixed",
+                        "bottom": "0px"
+                    }
+                }
+            ],
+            "action": "saveAddress",
+            "actionParams": {
+                "showAddressEditor": false
+            }
+        }
+    },
+    "order": [
+        "header",
+        "content"
+    ]
+}

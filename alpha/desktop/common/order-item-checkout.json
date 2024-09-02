@@ -1,0 +1,167 @@
+{
+    "sections": {
+        "pImage": {
+            "type": "product-image",
+            "url": "{{orderItem.images[0]}}",
+            "style": {
+                "width": "80px",
+                "height": "80px",
+                "overflow": "hidden",
+                "borderRadius": "4px",
+                "marginRight": "10px"
+            }
+        },
+        "titleCard": {
+            "type": "container",
+            "sections": {
+                "pTitle": {
+                    "type": "text",
+                    "text": "{{orderItem.title}}",
+                    "style": {
+                        "color": "var(--primary-text-color)",
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "lineClamp": 1,
+                        "fontSize": "15px",
+                        "fontWeight": "600",
+                        "fontFamily": "Noto Sans"
+                    }
+                },
+                "pSubTitle": {
+                    "type": "text",
+                    "text": "{{orderItem.subtitle}}",
+                    "style": {
+                        "color": "var(--secondary-text-color)",
+                        "fontSize": "13px",
+                        "fontFamily": "Noto Sans"
+                    }
+                },
+                "pCustomizations": {
+                    "type": "text",
+                    "text": "{{orderItem.customizations}}",
+                    "style": {
+                        "color": "var(--secondary-text-color)",
+                        "fontSize": "13px",
+                        "fontFamily": "Noto Sans"
+                    }
+                },
+                "qty": {
+                    "type": "container",
+                    "sections": {
+                        "qtyOffer": {
+                            "type": "container",
+                            "sections": {
+                                "quantity": {
+                                    "type": "text",
+                                    "text": "Qty: {{orderItem.quantity}} | Price: ₹{{$boolean(orderItem.salePrice) ? orderItem.salePrice : orderItem.price}}   ",
+                                    "style": {
+                                        "color": "var(--primary-text-color)",
+                                        "fontSize": "13px",
+                                        "fontWeight": "400",
+                                        "fontFamily": "Noto Sans"
+                                    }
+                                },
+                                "offer-label": {
+                                    "type": "text",
+                                    "text": "{{$round((orderItem.price - orderItem.salePrice ) / orderItem.price * 100)}}% Offer",
+                                    "showIf": "$boolean(orderItem.salePrice) = true",
+                                    "className": "offer-label",
+                                    "style": {
+                                        "color": "var(--white-text-color)",
+                                        "fontSize": "12px",
+                                        "fontWeight": "400",
+                                        "fontFamily": "Noto Sans",
+                                        "padding": "4px 4px",
+                                        "borderRadius": "4px",
+                                        "background": "var(--select-color)",
+                                        "marginLeft": "10px"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "quantity",
+                                "offer-label"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "padding": "10px 0px"
+                            }
+                        },
+                        "pPrice": {
+                            "type": "text",
+                            "text": "₹{{orderItem.quantity * ($boolean(orderItem.salePrice) ? orderItem.salePrice : orderItem.price)}}",
+                            "style": {
+                                "color": "var(--primary-text-color)",
+                                "fontSize": "13px",
+                                "marginLeft": "0px",
+                                "fontWeight": "600",
+                                "fontFamily": "Noto Sans"
+                            }
+                        },
+                        "pSalePrice": {
+                            "type": "text",
+                            "text": "₹{{$boolean(orderItem.salePrice) ? orderItem.salePrice : orderItem.price}}",
+                            "style": {
+                                "color": "var(--primary-text-color)",
+                                "fontSize": "14px",
+                                "fontWeight": "600",
+                                "fontFamily": "Noto Sans"
+                            }
+                        }
+                    },
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "justifyContent": "space-between",
+                        "padding": "10px 0px",
+                        "width": "100%"
+                    },
+                    "order": [
+                        "qtyOffer",
+                        "pPrice"
+                    ]
+                },
+                "subtotal": {
+                    "type": "text",
+                    "text": "₹{{orderItem.quantity * orderItem.price}}",
+                    "style": {
+                        "color": "var(--primary-text-color)",
+                        "fontSize": "16px",
+                        "fontWeight": "600",
+                        "fontFamily": "Noto Sans"
+                    }
+                }
+            },
+            "order": [
+                "pTitle",
+                "pCustomizations",
+                "qty"
+            ],
+            "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "padding:": "5px",
+                "width": "100%"
+            }
+        }
+    },
+    "style": {
+        "width": "100%",
+        "alignItems": "center",
+        "borderBottom": "1px solid var(--stroke-color)",
+        "background": "transparent",
+        "marginBottom": "10px",
+        "padding": "10px 0px",
+        "overflow": "hidden",
+        "display": "flex",
+        "flexDirection": "row"
+    },
+    "order": [
+        "pImage",
+        "titleCard"
+    ]
+}

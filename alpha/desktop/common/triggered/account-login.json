@@ -1,0 +1,599 @@
+{
+    "imports": [
+        "common/account-login.css"
+    ],
+    "className": "account-login",
+    "contentDisplay": {
+        "type": "drawer",
+        "placement": "left",
+        "trigger": "ui.showLogin"
+    },
+    "sections": {
+        "header": {
+            "type": "container",
+            "className": "header",
+            "sections": {
+                "close": {
+                    "type": "text",
+                    "text": "Close",
+                    "action": "setUiState",
+                    "actionParams": {
+                        "showLogin": "false"
+                    },
+                    "style": {
+                        "cursor": "pointer",
+                        "fontFamily": "Noto Sans",
+                        "fontWeight": "600",
+                        "fontSize": "15px"
+                    }
+                }
+            },
+            "order": [
+                "close"
+            ]
+        },
+        "content": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "logo": {
+                    "className": "logo",
+                    "type": "image",
+                    "url": "{{themeConfig.logo.logoBlack}}"
+                },
+                "login": {
+                    "type": "account-login",
+                    "className": "login",
+                    "eventActions": {
+                        "onCustomerLogin": {
+                            "action": "setUiState",
+                            "actionParams": {
+                                "showLogin": "false"
+                            }
+                        }
+                    },
+                    "sections": {
+                        "header": {
+                            "type": "container",
+                            "className": "header",
+                            "sections": {
+                                "titleEmail": {
+                                    "type": "text",
+                                    "className": "titleEmail",
+                                    "text": "Login",
+                                    "showIf": "login.step = 'init'"
+                                },
+                                "titleVerifyOtp": {
+                                    "type": "text",
+                                    "className": "titleVerifyOtp",
+                                    "text": "Verify OTP",
+                                    "showIf": "login.step = 'verify-login-otp'"
+                                },
+                                "signUp": {
+                                    "type": "text",
+                                    "className": "signUp",
+                                    "text": "Sign Up",
+                                    "showIf": "login.step = 'signup'"
+                                },
+                                "titleVerifyMobile": {
+                                    "type": "text",
+                                    "className": "titleVerifyMobile",
+                                    "text": "Verify Mobile Number",
+                                    "showIf": "login.step = 'send-mobile-otp'"
+                                }
+                            },
+                            "order": [
+                                "titleEmail",
+                                "titleVerifyOtp",
+                                "signUp",
+                                "titleVerifyMobile"
+                            ]
+                        },
+                        "header2": {
+                            "type": "container",
+                            "className": "header2",
+                            "sections": {
+                                "subTitleEmail": {
+                                    "type": "text",
+                                    "className": "subTitleEmail",
+                                    "text": "We have sent you an OTP on your email address /mobile number",
+                                    "showIf": "login.step = 'verify-login-otp'"
+                                },
+                                "subTitleMobile": {
+                                    "type": "text",
+                                    "className": "subTitleEmail",
+                                    "text": "We have sent you an OTP on your mobile number.",
+                                    "showIf": "login.step = 'verify-mobile-otp'"
+                                }
+                            },
+                            "order": [
+                                "subTitleEmail",
+                                "subTitleMobile"
+                            ]
+                        },
+                        "init": {
+                            "type": "container",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Login",
+                                    "style": {
+                                        "fontWeight": "700"
+                                    }
+                                },
+                                "loginWithEmail": {
+                                    "type": "button",
+                                    "text": "Login",
+                                    "action": "loginWithOTP",
+                                    "style": {
+                                        "cursor": "pointer"
+                                    }
+                                },
+                                "signup": {
+                                    "type": "button",
+                                    "text": "Register new account",
+                                    "action": "signup",
+                                    "style": {
+                                        "cursor": "pointer"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "loginWithEmail",
+                                "signup"
+                            ]
+                        },
+                        "login": {
+                            "type": "container",
+                            "className": "login-container",
+                            "sections": {
+                                "loginId": {
+                                    "type": "input",
+                                    "className": "inputField",
+                                    "bind": "login.email",
+                                    "placeholder": "Your email address / mobile number"
+                                },
+                                "error": {
+                                    "type": "text",
+                                    "className": "errorView",
+                                    "text": "{{login.error.message}}",
+                                    "showIf": "login.error"
+                                },
+                                "submit": {
+                                    "type": "button",
+                                    "className": "submitBtn",
+                                    "text": "{{login.loading = 'pending' ? 'loading...' : 'Send OTP'}}",
+                                    "action": "sendLoginOTP",
+                                    "disabled": "login.loading = 'pending' or $not(login.email.valid)"
+                                },
+                                "or": {
+                                    "type": "text",
+                                    "text": "OR",
+                                    "className": "or"
+                                },
+                                "signup": {
+                                    "type": "button",
+                                    "className": "signupBtn",
+                                    "text": "Create New Account",
+                                    "action": "signup"
+                                }
+                            },
+                            "order": [
+                                "loginId",
+                                "error",
+                                "submit",
+                                "or",
+                                "signup"
+                            ],
+                            "showIf": "login.step = 'init'"
+                        },
+                        "signup": {
+                            "type": "container",
+                            "className": "signup-container",
+                            "sections": {
+                                "Loading...": {
+                                    "type": "text",
+                                    "text": "Loading...",
+                                    "style": {
+                                        "color": "var(--primary-text-color)"
+                                    },
+                                    "showIf": "login.loading = 'pending'"
+                                },
+                                "fullname": {
+                                    "type": "input",
+                                    "bind": "login.signupFullName",
+                                    "placeholder": "Enter Full Name",
+                                    "className": "inputField"
+                                },
+                                "email": {
+                                    "type": "input",
+                                    "bind": "login.signupEmail",
+                                    "placeholder": "Enter Email",
+                                    "styleIf": [
+                                        {
+                                            "condition": "login.signupEmail.error",
+                                            "style": {
+                                                "marginTop": "20px",
+                                                "padding": "10px 0px",
+                                                "borderLeft": "none",
+                                                "borderRight": "none",
+                                                "borderTop": "none",
+                                                "borderBottom": "1px solid var(--error-text-color)",
+                                                "background": "var(--background-color)",
+                                                "height": "40px",
+                                                "outline": "none",
+                                                "fontSize": "13px",
+                                                "color": "var(--primary-text-color)",
+                                                "fontFamily": "Noto Sans",
+                                                "fontWeight": "400"
+                                            }
+                                        },
+                                        {
+                                            "default": {
+                                                "marginTop": "20px",
+                                                "padding": "10px 0px",
+                                                "borderLeft": "none",
+                                                "borderRight": "none",
+                                                "borderTop": "none",
+                                                "borderBottom": "1px solid var(--stroke-color)",
+                                                "background": "var(--background-color)",
+                                                "height": "40px",
+                                                "outline": "none",
+                                                "fontSize": "15px",
+                                                "color": "var(--primary-text-color)",
+                                                "fontFamily": "Noto Sans",
+                                                "fontWeight": "400"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "error": {
+                                    "type": "text",
+                                    "text": "{{login.error.message}}",
+                                    "style": {
+                                        "color": "var(--error-text-color)",
+                                        "fontSize": "14px",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "400"
+                                    },
+                                    "showIf": "login.error"
+                                },
+                                "goback": {
+                                    "type": "button",
+                                    "text": "Go back",
+                                    "action": "goStepBack",
+                                    "style": {
+                                        "cursor": "pointer",
+                                        "marginBottom": "20px",
+                                        "padding": "15px",
+                                        "borderRadius": "5px",
+                                        "background": "transparent",
+                                        "lineHeight": "1.75rem",
+                                        "fontSize": "15px",
+                                        "color": "var(--primary-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "400",
+                                        "textDecorationLine": "underline",
+                                        "outline": "none",
+                                        "border": "none"
+                                    }
+                                },
+                                "submit": {
+                                    "type": "button",
+                                    "text": "{{login.loading = 'pending' ? 'loading...' : 'Send OTP'}}",
+                                    "action": "sendSignupOTP",
+                                    "disabled": "login.loading = 'pending' or $not(login.signupFullName.valid and login.signupEmail.valid)",
+                                    "style": {
+                                        "cursor": "pointer",
+                                        "marginTop": "40px",
+                                        "marginBottom": "20px",
+                                        "padding": "15px",
+                                        "width": "100%",
+                                        "borderRadius": "5px",
+                                        "background": "var(--primary-color)",
+                                        "fontSize": "15px",
+                                        "color": "var(--white-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "500",
+                                        "outline": "none",
+                                        "border": "none"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "fullname",
+                                "email",
+                                "error",
+                                "submit",
+                                "goback"
+                            ],
+                            "showIf": "login.step = 'signup'"
+                        },
+                        "verifyLoginOTP": {
+                            "type": "container",
+                            "sections": {
+                                "loginId": {
+                                    "type": "input",
+                                    "bind": "login.loginOTP",
+                                    "placeholder": "Enter OTP",
+                                    "style": {
+                                        "marginTop": "20px",
+                                        "padding": "10px 0px",
+                                        "borderLeft": "none",
+                                        "borderRight": "none",
+                                        "borderTop": "none",
+                                        "borderBottom": "1px solid var(--stroke-color)",
+                                        "background": "var(--background-color)",
+                                        "height": "40px",
+                                        "outline": "none",
+                                        "fontSize": "15px",
+                                        "color": "var(--primary-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "400"
+                                    }
+                                },
+                                "error": {
+                                    "type": "text",
+                                    "text": "{{login.error.message}}",
+                                    "style": {
+                                        "color": "var(--error-text-color)",
+                                        "fontSize": "14px",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "400",
+                                        "paddingBottom": "5px"
+                                    },
+                                    "showIf": "login.error"
+                                },
+                                "goback": {
+                                    "type": "button",
+                                    "text": "Go back",
+                                    "action": "goStepBack",
+                                    "style": {
+                                        "cursor": "pointer",
+                                        "marginBottom": "20px",
+                                        "padding": "15px",
+                                        "borderRadius": "5px",
+                                        "background": "transparent",
+                                        "lineHeight": "1.75rem",
+                                        "fontSize": "15px",
+                                        "color": "var(--primary-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "400",
+                                        "textDecorationLine": "underline",
+                                        "outline": "none",
+                                        "border": "none"
+                                    }
+                                },
+                                "submit": {
+                                    "type": "button",
+                                    "text": "Verify OTP",
+                                    "action": "veryifyLoginOTP",
+                                    "style": {
+                                        "cursor": "pointer",
+                                        "marginTop": "40px",
+                                        "marginBottom": "20px",
+                                        "padding": "15px",
+                                        "width": "100%",
+                                        "borderRadius": "5px",
+                                        "background": "var(--primary-color)",
+                                        "fontSize": "15px",
+                                        "color": "var(--white-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "500",
+                                        "outline": "none",
+                                        "border": "none"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "loginId",
+                                "error",
+                                "submit",
+                                "goback"
+                            ],
+                            "showIf": "login.step = 'verify-login-otp'",
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "background": "transparent",
+                                "width": "100%"
+                            }
+                        },
+                        "mobileOTP": {
+                            "type": "container",
+                            "sections": {
+                                "loginId": {
+                                    "type": "input",
+                                    "bind": "login.signupMobile",
+                                    "placeholder": "Enter Mobile Number",
+                                    "style": {
+                                        "marginTop": "20px",
+                                        "padding": "10px 0px",
+                                        "borderLeft": "none",
+                                        "borderRight": "none",
+                                        "borderTop": "none",
+                                        "borderBottom": "1px solid var(--stroke-color)",
+                                        "background": "var(--background-color)",
+                                        "height": "40px",
+                                        "outline": "none",
+                                        "fontSize": "15px",
+                                        "color": "var(--primary-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "400"
+                                    }
+                                },
+                                "error": {
+                                    "type": "text",
+                                    "text": "{{login.error.message}}",
+                                    "style": {
+                                        "color": "var(--error-text-color)",
+                                        "fontSize": "14px",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "400"
+                                    },
+                                    "showIf": "login.error"
+                                },
+                                "submit": {
+                                    "type": "button",
+                                    "text": "Send OTP",
+                                    "action": "sendMobileOTP",
+                                    "style": {
+                                        "cursor": "pointer",
+                                        "marginTop": "40px",
+                                        "marginBottom": "20px",
+                                        "padding": "15px",
+                                        "width": "100%",
+                                        "borderRadius": "5px",
+                                        "background": "var(--primary-color)",
+                                        "fontSize": "15px",
+                                        "color": "var(--white-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "500",
+                                        "outline": "none",
+                                        "border": "none"
+                                    }
+                                }
+                            },
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "background": "#ff000000",
+                                "width": "100%"
+                            },
+                            "order": [
+                                "loginId",
+                                "error",
+                                "submit"
+                            ],
+                            "showIf": "login.step = 'send-mobile-otp'"
+                        },
+                        "verifyMobileOTP": {
+                            "type": "container",
+                            "sections": {
+                                "loginId": {
+                                    "type": "input",
+                                    "bind": "login.signupMobileOTP",
+                                    "placeholder": "Enter Mobile OTP",
+                                    "style": {
+                                        "marginTop": "20px",
+                                        "padding": "10px 0px",
+                                        "borderLeft": "none",
+                                        "borderRight": "none",
+                                        "borderTop": "none",
+                                        "borderBottom": "1px solid var(--stroke-color)",
+                                        "background": "var(--background-color)",
+                                        "height": "40px",
+                                        "outline": "none",
+                                        "fontSize": "15px",
+                                        "color": "var(--primary-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "400"
+                                    }
+                                },
+                                "error": {
+                                    "type": "text",
+                                    "text": "{{login.error.message}}",
+                                    "style": {
+                                        "color": "var(--error-text-color)",
+                                        "fontSize": "14px",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "400"
+                                    },
+                                    "showIf": "login.error"
+                                },
+                                "submit": {
+                                    "type": "button",
+                                    "text": "Verify",
+                                    "action": "verifyMobileOTP",
+                                    "style": {
+                                        "cursor": "pointer",
+                                        "marginTop": "40px",
+                                        "marginBottom": "20px",
+                                        "padding": "15px",
+                                        "width": "100%",
+                                        "borderRadius": "5px",
+                                        "background": "var(--primary-color)",
+                                        "fontSize": "15px",
+                                        "color": "var(--white-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "500",
+                                        "outline": "none",
+                                        "border": "none"
+                                    }
+                                },
+                                "goback": {
+                                    "type": "button",
+                                    "text": "Go back",
+                                    "action": "goStepBack",
+                                    "style": {
+                                        "cursor": "pointer",
+                                        "marginBottom": "20px",
+                                        "padding": "15px",
+                                        "borderRadius": "5px",
+                                        "background": "transparent",
+                                        "lineHeight": "1.75rem",
+                                        "fontSize": "15px",
+                                        "color": "var(--primary-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "400",
+                                        "textDecorationLine": "underline",
+                                        "outline": "none",
+                                        "border": "none"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "loginId",
+                                "error",
+                                "submit",
+                                "goback"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "background": "transparent",
+                                "width": "100%"
+                            },
+                            "showIf": "login.step = 'verify-mobile-otp'"
+                        },
+                        "loggedIn": {
+                            "type": "container",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Logged In",
+                                    "style": {
+                                        "fontWeight": "700"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "title"
+                            ],
+                            "showIf": "login.step = 'logged-in'"
+                        }
+                    },
+                    "order": [
+                        "header",
+                        "header2",
+                        "login",
+                        "signup",
+                        "verifyLoginOTP",
+                        "mobileOTP",
+                        "verifyMobileOTP",
+                        "loggedIn"
+                    ]
+                }
+            },
+            "order": [
+                "logo",
+                "login"
+            ]
+        }
+    },
+    "order": [
+        "header",
+        "content"
+    ]
+}

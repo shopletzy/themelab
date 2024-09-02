@@ -1,0 +1,83 @@
+.slz-userInfo {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.slz-userInfo .headerView {
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slz-userInfo .headerView .title {
+    font-size: 20px;
+    font-family: 'Noto Sans';
+    font-weight: 700;
+    color: var(--primary-text-color);
+}
+
+.slz-userInfo .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.slz-userInfo .content .detailView {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0px;
+    background-color: transparent;
+}
+
+.slz-userInfo .content .detailView .view-1 {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px 0px;
+    background-color: transparent;
+}
+
+.slz-userInfo .content .detailView .view-1 .firstNameLabel {
+    font-size: 14px;
+    font-family: 'Noto Sans';
+    font-weight: 400;
+    color: var(--primary-text-color);
+    padding-bottom: 5px;
+}
+
+.slz-userInfo .content .detailView .view-1 .firstName {
+    font-size: 16px;
+    width: 100%;
+    height: 44px;
+    font-family: 'Noto Sans';
+    font-weight: 500;
+    color: var(--primary-text-color);
+    border-radius: 8px;
+    border: 0px solid var(--stroke-color);
+    background: var(--background-color-secondary);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 10px;
+}

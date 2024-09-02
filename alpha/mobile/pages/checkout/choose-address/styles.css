@@ -1,0 +1,147 @@
+.address-list {
+    background-color: var(--background-color);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.address-list .header {
+    display: flex;
+    width: 100%;
+
+}
+
+.address-list .content {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    margin-bottom: 100px;
+}
+.address-list .content .col-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0px 5px;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.address-list .content .col-left .login {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    background-color: var(--background-color);
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--stroke-color);
+    /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); */
+    margin-bottom: 12px;
+}
+.address-list .content .col-left .addressList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    background-color: var(--background-color);
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--stroke-color);
+    /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); */
+    margin-bottom: 12px;
+}
+
+.address-list .content .col-left .addNewAddress {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: var(--select-color);
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--stroke-color);
+    /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); */
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.address-list .content .col-left .addressList .address-card {
+    width: 100%;
+}
+
+.address-list .content .col-left .addressList .address-card .address-detail {
+
+    margin-top: 10px;
+    background-color: var(--background-color);
+}
+
+.address-list .content .col-left .addressList .address-card .delivery-or-pickup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font-family: 'Noto Sans';
+    padding-bottom: 15px;
+}
+
+.address-list .content .col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 30%;
+    height: 375px;
+    background-color: var(--background-color);
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--stroke-color);
+    /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); */
+}
+
+
+/* CSS media query for screens larger than 768px */
+@media (max-width: 768px) {
+   
+    .address-list .content {
+       width: 95%; 
+   }
+}
+
+@media (min-width: 1024px) {
+    .address-list .content{
+       width: 85%; 
+   }
+}
+
+@media (min-width: 1440px) {
+    .address-list .content{
+       width: 85%; 
+   }
+}
+
+@media (min-width: 1600px) {
+    .address-list .content{
+       width: 65%; 
+   }
+}

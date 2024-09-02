@@ -1,0 +1,16 @@
+.ltr {
+    text-align: left;
+}
+
+.rtl {
+    text-align: right;
+}
+
+.editor-paragraph {
+    margin: 0 0 5px 0;
+    position: relative;
+}
+
+.editor-heading-h1 {
+    margin-bottom: 15px;
+}

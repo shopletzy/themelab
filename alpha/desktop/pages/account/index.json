@@ -1,0 +1,260 @@
+{
+    "imports": [
+        "common/order.json",
+        "common/address.json",
+        "common/header-checkout.json",
+        "common/header-checkout.css",
+        "common/userInfo.json",
+        "common/userInfo.css",
+        "common/profileOrders.json",
+        "common/profileOrders.css",
+        "common/profileAddress.json",
+        "common/profileAddress.css",
+        "common/triggered/address-editor.json",
+        "common/address-editor.json"
+    ],
+    "className": "slz-account",
+    "initialUiState": {
+        "showProfile": true,
+        "showAddress": false,
+        "showOrders": false,
+        "showFarm": false
+    },
+    "sections": {
+        "header": {
+            "className": "header",
+            "type": "template",
+            "templateName": "header-checkout"
+        },
+        "customerDetails": {
+            "type": "container",
+            "className": "customer-details",
+            "sections": {
+                "customerCard": {
+                    "type": "container",
+                    "className": "customer-card",
+                    "sections": {
+                        "userView": {
+                            "type": "container",
+                            "className": "user-view",
+                            "sections": {
+                                "userIcon": {
+                                    "type": "text",
+                                    "className": "userIcon",
+                                    "text": "{{$substring(customer.fullName, 0, 1)}}",
+                                    "showIf": "customer.id"
+                                },
+                                "personalInfo": {
+                                    "type": "container",
+                                    "className": "personal-info",
+                                    "sections": {
+                                        "title": {
+                                            "type": "text",
+                                            "className": "title",
+                                            "text": "{{customer.fullName}}"
+                                        },
+                                        "mobileNumber": {
+                                            "type": "text",
+                                            "className": "mobile-number",
+                                            "text": "{{customer.email}} | {{customer.mobileNo}}"
+                                        }
+                                    },
+                                    "order": [
+                                        "title",
+                                        "mobileNumber"
+                                    ]
+                                }
+                            },
+                            "order": [
+                                "userIcon",
+                                "personalInfo"
+                            ]
+                        },
+                        "logout": {
+                            "type": "button",
+                            "className": "logout",
+                            "action": "logout",
+                            "text": "Sign Out"
+                        }
+                    },
+                    "order": [
+                        "userView",
+                        "logout"
+                    ]
+                }
+            },
+            "order": [
+                "customerCard"
+            ]
+        },
+        "content": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "content-body": {
+                    "type": "container",
+                    "className": "content-body",
+                    "sections": {
+                        "col-left": {
+                            "type": "container",
+                            "className": "col-left",
+                            "sections": {
+                                "menuView": {
+                                    "type": "container",
+                                    "className": "menu-view",
+                                    "sections": {
+                                        "profile": {
+                                            "type": "button",
+                                            "text": "Profile",
+                                            "className": "profile",
+                                            "action": "setUiState",
+                                            "actionParams": {
+                                                "showAddress": "false",
+                                                "showProfile": "true",
+                                                "showOrders": "false"
+                                            },
+                                            "classNameIf": [
+                                                {
+                                                    "condition": "ui.showProfile = true",
+                                                    "className": "profileActive"
+                                                },
+                                                {
+                                                    "condition": "ui.showProfile = false",
+                                                    "className": "profile"
+                                                }
+                                            ]
+                                        },
+                                        "orders": {
+                                            "type": "button",
+                                            "className": "profile",
+                                            "text": "Orders",
+                                            "action": "setUiState",
+                                            "actionParams": {
+                                                "showAddress": "false",
+                                                "showProfile": "false",
+                                                "showOrders": "true"
+                                            },
+                                            "classNameIf": [
+                                                {
+                                                    "condition": "ui.showOrders = true",
+                                                    "className": "profileActive"
+                                                },
+                                                {
+                                                    "condition": "ui.showOrders = false",
+                                                    "className": "profile"
+                                                }
+                                            ]
+                                        },
+                                        "address": {
+                                            "type": "button",
+                                            "className": "profile",
+                                            "text": "Manage Address",
+                                            "action": "setUiState",
+                                            "actionParams": {
+                                                "showAddress": "true",
+                                                "showProfile": "false",
+                                                "showOrders": "false"
+                                            },
+                                            "classNameIf": [
+                                                {
+                                                    "condition": "ui.showAddress = true",
+                                                    "className": "profileActive"
+                                                },
+                                                {
+                                                    "condition": "ui.showAddress = false",
+                                                    "className": "profile"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "order": [
+                                        "profile",
+                                        "orders",
+                                        "address"
+                                    ]
+                                }
+                            },
+                            "order": [
+                                "menuView"
+                            ]
+                        },
+                        "col-right": {
+                            "type": "container",
+                            "className": "col-right",
+                            "sections": {
+                                "detailView": {
+                                    "type": "container",
+                                    "className": "detail-view",
+                                    "sections": {
+                                        "profileView": {
+                                            "type": "container",
+                                            "className": "profile-view",
+                                            "showIf": "ui.showProfile = true",
+                                            "sections": {
+                                                "content": {
+                                                    "type": "template",
+                                                    "templateName": "userInfo"
+                                                }
+                                            },
+                                            "order": [
+                                                "content"
+                                            ]
+                                        },
+                                        "addressView": {
+                                            "type": "container",
+                                            "className": "address-view",
+                                            "showIf": "ui.showAddress = true",
+                                            "sections": {
+                                                "content": {
+                                                    "type": "template",
+                                                    "templateName": "profileAddress"
+                                                }
+                                            },
+                                            "order": [
+                                                "content"
+                                            ]
+                                        },
+                                        "ordersView": {
+                                            "type": "container",
+                                            "className": "orders-view",
+                                            "showIf": "ui.showOrders = true",
+                                            "sections": {
+                                                "content": {
+                                                    "type": "template",
+                                                    "templateName": "profileOrders"
+                                                }
+                                            },
+                                            "order": [
+                                                "content"
+                                            ]
+                                        }
+                                    },
+                                    "order": [
+                                        "profileView",
+                                        "addressView",
+                                        "ordersView"
+                                    ]
+                                }
+                            },
+                            "order": [
+                                "detailView"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "col-left",
+                        "col-right"
+                    ]
+                }
+            },
+            "order": [
+                "content-body"
+            ]
+        }
+    },
+    "order": [
+        "header",
+        "customerDetails",
+        "content"
+    ]
+}

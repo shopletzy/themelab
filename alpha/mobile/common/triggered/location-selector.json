@@ -1,0 +1,60 @@
+{
+    "style": {
+        "background": "#fff",
+        "flexDirection": "column",
+        "display": "flex",
+        "width": "450px",
+        "height": "100vh",
+        "justifyContent": "space-between",
+        "top": "0px",
+        "left": "10px",
+        "zIndex": "10000"
+    },
+    "contentDisplay": {
+        "type": "drawer",
+        "placement": "left",
+        "trigger": "ui.showLocation"
+    },
+    "sections": {
+        "header": {
+            "type": "container",
+            "sections": {
+                "cartTitle": {
+                    "type": "text",
+                    "text": "Choose your delivery location",
+                    "style": {
+                        "fontWeight": "700"
+                    }
+                },
+                "close": {
+                    "type": "text",
+                    "text": "Close",
+                    "action": "setUiState",
+                    "actionParams": {
+                        "showLocation": false
+                    },
+                    "style": {
+                        "cursor": "pointer"
+                    }
+                }
+            },
+            "order": [
+                "cartTitle",
+                "close"
+            ],
+            "style": {
+                "display": "flex",
+                "flexShrink": "0",
+                "height": "50px",
+                "alignItems": "center",
+                "color": "#202020",
+                "paddingLeft": "20px",
+                "paddingRight": "20px",
+                "justifyContent": "space-between"
+            }
+        }
+    },
+    "order": [
+        "header"
+    ]
+}

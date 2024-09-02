@@ -1,0 +1,44 @@
+{
+    "imports": ["common/location-selector.json"],
+    "className": "slz-landing",
+    "sections": {
+        "main": {
+            "type": "container",
+            "sections": {
+                "contain": {
+                    "type": "container",
+                    "sections": {
+                        "logo": {
+                            "type": "image",
+                            "url": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/622c39caaa9ff2820baf2e5f/images/e79c6ab4-400a-4fd3-b125-232609d962ef.png",
+                            "style": {
+                                "height": 110,
+                                "marginBottom": 60
+                            }
+                        },
+                        "locationSelector": {
+                            "type": "location-selector"
+                        }
+                    },
+                    "order": ["logo", "locationSelector"],
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "alignItems": "center",
+                        "justifyContent": "center"
+                    }
+                }
+            },
+            "order": ["contain"],
+            "style": {
+                "height": "100vh",
+                "width": "100vw",
+                "display": "flex",
+                "alignItems": "end",
+
+                "justifyContent": "center"
+            }
+        }
+    },
+    "order": ["main"]
+}

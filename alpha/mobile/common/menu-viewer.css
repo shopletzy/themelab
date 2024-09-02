@@ -1,0 +1,439 @@
+.slz-menu {
+    
+    background: var(--background-color);
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    position: fixed;
+    justify-content: flex-start;
+    align-items: center;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    overflow-x: hidden;
+    left: 0px;
+    bottom: 0px;
+    
+}
+
+.slz-menu .header-view {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 15px;
+    background-color: var(--primary-color);
+}
+
+.slz-menu .header-view .back-btn {
+    height: 28px;
+}
+.slz-menu .header-view .account {
+    text-align: center;
+    color: #000;
+    font-size: 24px;
+    font-family: "Noto Sans";
+    font-weight: 700;
+    margin-left: 10px;
+}
+.slz-menu .customer-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+   
+}
+
+.slz-menu .customer-details .customer-card {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.slz-menu .customer-details .customer-card .title {
+    height: 28px;
+    padding: 0px 0px;
+    margin-bottom: 20px;
+}
+
+.slz-menu .customer-details .customer-card .subtitle {
+    color: #fff;
+    font-size: 17px;
+    font-family: "Noto Sans";
+    font-weight: 300;
+    padding: 0px 0px;
+    line-height: 1.5rem;
+
+    margin-bottom: 15px;
+}
+
+.slz-menu .customer-details .customer-card .loginBtn {
+    width: 100%;
+    height: 44px;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: var(--dark-primary-color);
+    font-size: 14px;
+    font-family: "Noto Sans";
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.slz-menu .customer-details .customer-card .user-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 0px;
+}
+
+.slz-menu .customer-details .customer-card .user-view .userIcon {
+    width: 75px;
+    height: 75px;
+    border-radius: calc(75px / 2);
+    border: 0px solid #323a4a;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    color: var(--dark-primary-color);
+    font-size: 30px;
+    font-family: "Noto Sans";
+    font-weight: 700;
+}
+
+.slz-menu .customer-details .customer-card .user-view .personal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.slz-menu .customer-details .customer-card .user-view .personal-info .title {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    font-size: 28px;
+    font-family: "Noto Sans";
+    font-weight: 500;
+    color: var(--dark-primary-color);
+    margin-left: 15px;
+}
+
+.slz-menu .customer-details .customer-card .user-view .personal-info .mobile-number {
+    display: flex;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 15px;
+    margin-top: 2px;
+    font-size: 15px;
+    font-family: "Noto Sans";
+    font-weight: 500;
+    color: 646464;
+}
+
+.slz-menu .customer-details .customer-card .logout {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: "Noto Sans";
+    color: var(--dark-primary-color);
+    border: 1px solid var(--secondary-color);
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.slz-menu .content {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+    background-color: var(--primary-color);
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.slz-menu .content .content-body {
+    display: flex;
+    width: 100%;
+    background-color: #faf00000;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.slz-menu .content .col-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+
+    background-color: #7779ff00;
+    padding: 10px;
+}
+
+.slz-menu .content .col-left .menu-view {
+    width: 100%;
+    background-color: #ffffff00;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.slz-menu .content .col-left .menu-view .profile-view {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 0px solid rgba(217, 217, 217, 0.2);
+    padding-left: 10px;
+}
+
+.slz-menu .content .col-left .menu-view .menu-container {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.slz-menu .content .col-left .menu-view .menu-container .profileImg {
+    width: 32px;
+    height: 32px;
+}
+
+.slz-menu .content .col-left .menu-view .menu-container .profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    font-weight: 300;
+    font-size: 16px;
+    padding-left: 10px;
+    font-family: "Noto Sans";
+    border: none;
+    color: var(--dark-primary-color);
+
+    background: #ffffff00;
+    cursor: pointer;
+}
+
+.slz-menu .content .col-left .menu-view .profile-view .contact {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    padding-left: 10px;
+    font-family: "Noto Sans";
+    border: none;
+    color: var(--dark-primary-color);
+
+    background: #ffffff00;
+    cursor: pointer;
+}
+
+.slz-menu .content .col-left .menu-view .profile-view .profileImg {
+    width: 32px;
+    height: 32px;
+}
+
+.slz-menu .content .col-left .menu-view .profile-view .profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    font-weight: 300;
+    font-size: 16px;
+    padding-left: 10px;
+    font-family: "Noto Sans";
+    border: none;
+    color: var(--dark-primary-color);
+
+    background: #ffffff00;
+    cursor: pointer;
+}
+.slz-menu .content .col-left .menu-view .logout {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Noto Sans";
+    color: var(--dark-primary-color);
+    border: none;
+    padding-left: 20px;
+    background: #ffffff00;
+    cursor: pointer;
+}
+
+.slz-menu .content .col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 100%;
+    background-color: #0dbdac00;
+    padding: 10px 10px 10px 0px;
+}
+
+.slz-menu .content .col-right .detail-view {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 0px solid rgba(217, 217, 217, 0.2);
+
+}
+
+.slz-menu .content .col-right .detail-view .profile-view {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    padding: 10px;
+}
+
+.slz-menu .content .col-right .detail-view .address-view {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    padding: 10px;
+}
+
+.slz-menu .content .col-right .detail-view .orders-view {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    padding: 10px;
+}
+
+
+.slz-menu .bottom-tabs-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    background-color: var(--background-color);
+    /* backdrop-filter: blur(10px); */
+    width: 100%;
+    border-radius: 0px;
+    box-shadow: var(--primary-color) 0px 0px 10px 0.2;
+    border-top: 1px solid var(--stroke-color);
+    padding: 0px 20px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.slz-menu .bottom-tabs-nav .menu {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    width: 36px;
+    height: 36px;
+    background-color: var(--background-color);
+
+}
+
+.slz-menu .bottom-tabs-nav .cartView{
+    display: flex;
+    align-items: center;
+}
+
+
+.slz-menu .bottom-tabs-nav .cartView .icon {
+
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    width: 30px;
+}
+
+.slz-menu .bottom-tabs-nav .cartView .title {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Noto Sans';
+    position: absolute;
+    color: var(--primary-text-color);
+    padding: 3px;
+    border-radius: 60%;
+    height: 20px;
+    width: 20px;
+    background: var(--select-color);
+    border: 1.5px solid var(--stroke-color);
+    margin-bottom: 15px;
+    margin-left: 12px;
+}
+
+/* CSS media query for screens larger than 768px */
+@media (max-width: 768px) {
+    .slz-menu .customer-details,
+    .slz-menu .content .content-content-body {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .slz-menu .customer-details,
+    .slz-menu .content .content-body {
+        width: 85%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .slz-menu .customer-details,
+    .slz-menu .content .content-body {
+        width: 85%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .slz-menu .customer-details,
+    .slz-menu .content .content-body {
+        width: 65%;
+    }
+}

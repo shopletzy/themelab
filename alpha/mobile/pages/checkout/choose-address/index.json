@@ -1,0 +1,705 @@
+{
+    "imports": [
+        "common/address.json",
+        "pages/checkout/choose-address/styles.css",
+        "common/cart-item-address.json",
+        "common/triggered/address-editor.json",
+        "common/address-editor.json"
+    ],
+    "className": "address-list",
+    "initialUiState": {
+        "outletPickup": false,
+        "showAddressEditor": false
+    },
+    "sections": {
+        "header": {
+            "type": "container",
+            "sections": {
+                "backBtn": {
+                    "type": "image",
+                    "url": "{{themeUrl}}/img/common/backArrow.svg",
+                    "className": "back-btn",
+                    "action": "goBack"
+                },
+                "cartTitle": {
+                    "type": "text",
+                    "text": "Choose Address",
+                    "style": {
+                        "fontWeight": "600",
+                        "textTransform": "uppercase",
+                        "fontSize": "16px",
+                        "color": "var(--primary-text-color)",
+                        "fontFamily": "Noto Sans"
+                    }
+                },
+                "close": {
+                    "type": "text",
+                    "text": "close",
+                    "style": {
+                        "color": "var(--primary-text-color)",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "fontFamily": "Noto Sans"
+                    }
+                }
+            },
+            "order": [
+                "backBtn",
+                "cartTitle"
+            ],
+            "style": {
+                "display": "flex",
+                "flexShrink": "0",
+                "width": "100%",
+                "height": "65px",
+                "alignItems": "center",
+                "borderBottom": "0.75px solid var(--stroke-color)",
+                "color": "var(--primary-text-color)",
+                "paddingLeft": "15px",
+                "paddingRight": "15px",
+                "justifyContent": "space-between"
+            }
+        },
+        "content": {
+            "type": "container",
+            "className": "content",
+            "sections": {
+                "col-left": {
+                    "type": "container",
+                    "className": "col-left",
+                    "sections": {
+                        "login": {
+                            "type": "container",
+                            "className": "login",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Login",
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "fontWeight": "600",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "var(--primary-text-color)"
+                                    }
+                                },
+                                "description": {
+                                    "type": "text",
+                                    "text": "{{customer.fullName}} | {{customer.email}}",
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "fontWeight": "400",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "var(--secondary-text-color)",
+                                        "padding": "8px 0px 0px 0px"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "description"
+                            ]
+                        },
+                        "addressList": {
+                            "className": "addressList",
+                            "type": "container",
+                            "sections": {
+                                "address-card": {
+                                    "type": "container",
+                                    "className": "address-card",
+                                    "sections": {
+                                        "title": {
+                                            "type": "text",
+                                            "text": "{{themeConfig.mobileCheckout.deliveryTitle}}",
+                                            "style": {
+                                                "fontSize": "16px",
+                                                "fontWeight": "400",
+                                                "fontFamily": "Noto Sans",
+                                                "marginBottom": "20px",
+                                                "color": "var(--primary-text-color)"
+                                            }
+                                        },
+                                        "deliveryOrPickup": {
+                                            "type": "container",
+                                            "className": "delivery-or-pickup",
+                                            "sections": {
+                                                "delivery": {
+                                                    "type": "container",
+                                                    "className": "card",
+                                                    "sections": {
+                                                        "title": {
+                                                            "type": "text",
+                                                            "text": "I'd like it delivered",
+                                                            "className": "title",
+                                                            "styleIf": [
+                                                                {
+                                                                    "condition": "ui.outletPickup = false",
+                                                                    "style": {
+                                                                        "fontSize": "16px",
+                                                                        "fontWeight": "500",
+                                                                        "fontFamily": "Noto Sans",
+                                                                        "color": "var(--secondary-color)"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "default": {
+                                                                        "fontSize": "16px",
+                                                                        "fontWeight": "400",
+                                                                        "fontFamily": "Noto Sans",
+                                                                        "color": "#fff"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    "order": [
+                                                        "title"
+                                                    ],
+                                                    "action": "setUiState",
+                                                    "actionParams": {
+                                                        "outletPickup": "false"
+                                                    },
+                                                    "styleIf": [
+                                                        {
+                                                            "condition": "ui.outletPickup = false",
+                                                            "style": {
+                                                                "width": "50%",
+                                                                "height": "44px",
+                                                                "textAlign": "center",
+                                                                "fontFamily": "Noto Sans",
+                                                                "cursor": "pointer",
+                                                                "borderBottom": "1px solid var(--secondary-color)"
+                                                            }
+                                                        },
+                                                        {
+                                                            "default": {
+                                                                "width": "50%",
+                                                                "height": "44px",
+                                                                "fontFamily": "Noto Sans",
+                                                                "textAlign": "center",
+                                                                "cursor": "pointer",
+                                                                "borderBottom": "1px solid #ffffff30"
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "pickup": {
+                                                    "type": "container",
+                                                    "className": "card",
+                                                    "sections": {
+                                                        "title": {
+                                                            "type": "text",
+                                                            "text": "I'll pick it up",
+                                                            "className": "title",
+                                                            "styleIf": [
+                                                                {
+                                                                    "condition": "ui.outletPickup = true",
+                                                                    "style": {
+                                                                        "fontSize": "16px",
+                                                                        "fontWeight": "500",
+                                                                        "fontFamily": "Noto Sans",
+                                                                        "color": "var(--secondary-color)"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "default": {
+                                                                        "fontSize": "16px",
+                                                                        "fontWeight": "400",
+                                                                        "fontFamily": "Noto Sans",
+                                                                        "color": "#fff"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    "order": [
+                                                        "title"
+                                                    ],
+                                                    "action": "setUiState",
+                                                    "actionParams": {
+                                                        "outletPickup": "true"
+                                                    },
+                                                    "styleIf": [
+                                                        {
+                                                            "condition": "ui.outletPickup = true",
+                                                            "style": {
+                                                                "width": "50%",
+                                                                "height": "44px",
+                                                                "textAlign": "center",
+                                                                "fontFamily": "Noto Sans",
+                                                                "cursor": "pointer",
+                                                                "borderBottom": "1px solid var(--secondary-color)"
+                                                            }
+                                                        },
+                                                        {
+                                                            "default": {
+                                                                "width": "50%",
+                                                                "height": "44px",
+                                                                "fontFamily": "Noto Sans",
+                                                                "textAlign": "center",
+                                                                "cursor": "pointer",
+                                                                "borderBottom": "1px solid #ffffff30"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "order": [
+                                                "delivery",
+                                                "pickup"
+                                            ]
+                                        },
+                                        "outlet-address": {
+                                            "type": "container",
+                                            "showIf": "ui.outletPickup = true",
+                                            "sections": {
+                                                "title": {
+                                                    "type": "text",
+                                                    "text": "Out of Service",
+                                                    "className": "title",
+                                                    "style": {
+                                                        "fontSize": "24px",
+                                                        "fontWeight": "400",
+                                                        "color": "#ff4800",
+                                                        "marginBottom": "10px",
+                                                        "marginTop": "10px"
+                                                    }
+                                                },
+                                                "description": {
+                                                    "type": "text",
+                                                    "text": "At the moment, our store pickup service is not available.",
+                                                    "style": {
+                                                        "fontSize": "18px",
+                                                        "fontWeight": "300",
+                                                        "color": "#ffffff70",
+                                                        "textAlign": "center",
+                                                        "marginBottom": "10px",
+                                                        "marginTop": "10px"
+                                                    }
+                                                }
+                                            },
+                                            "order": [
+                                                "title",
+                                                "description"
+                                            ],
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "justifyContent": "center",
+                                                "alignItems": "center",
+                                                "padding": "20px 10px"
+                                            }
+                                        },
+                                        "address-detail": {
+                                            "type": "container",
+                                            "className": "address-detail",
+                                            "showIf": "ui.outletPickup = false",
+                                            "sections": {
+                                                "titleCard": {
+                                                    "type": "container",
+                                                    "className": "titleCard",
+                                                    "sections": {
+                                                        "titleDetails": {
+                                                            "type": "container",
+                                                            "className": "titleDetails",
+                                                            "sections": {
+                                                                "title": {
+                                                                    "type": "text",
+                                                                    "text": "Select Your Location",
+                                                                    "className": "title",
+                                                                    "style": {
+                                                                        "marginTop": 10,
+                                                                        "marginBottom": 10,
+                                                                        "fontSize": "18px",
+                                                                        "fontFamily": "Noto Sans",
+                                                                        "fontWeight": "400",
+                                                                        "color": "var(--primary-text-color)"
+                                                                    }
+                                                                },
+                                                                "subTitle": {
+                                                                    "type": "text",
+                                                                    "text": "Multiple addresses in this location",
+                                                                    "className": "subTitle",
+                                                                    "style": {
+                                                                        "marginTop": 10,
+                                                                        "marginBottom": 10,
+                                                                        "fontSize": "14px",
+                                                                        "fontFamily": "Noto Sans",
+                                                                        "fontWeight": "300",
+                                                                        "color": "var(--secondary-text-color)"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "order": [
+                                                                "title",
+                                                                "subTitle"
+                                                            ]
+                                                        }
+                                                    },
+                                                    "order": [
+                                                        "titleDetails"
+                                                    ]
+                                                },
+                                                "addressInfo": {
+                                                    "type": "address-list",
+                                                    "className": "addressInfo",
+                                                    "mode": "select",
+                                                    "style": {
+                                                        "marginTop": "30px",
+                                                        "marginBottom": "30px"
+                                                    }
+                                                }
+                                            },
+                                            "order": [
+                                                "titleCard",
+                                                "addressInfo"
+                                            ]
+                                        }
+                                    },
+                                    "order": [
+                                        "outlet-address",
+                                        "address-detail"
+                                    ]
+                                }
+                            },
+                            "order": [
+                                "address-card"
+                            ]
+                        },
+                        "addNewAddress": {
+                            "type": "container",
+                            "className": "addNewAddress",
+                            "showIf": "ui.outletPickup = false",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "+ Add New Address",
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "fontWeight": "400",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "var(--primary-text-color)",
+                                        "textAlign": "center"
+                                    }
+                                },
+                                "description": {
+                                    "type": "text",
+                                    "text": "{{customer.fullName}} | {{customer.email}}",
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "fontWeight": "400",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "var(--primary-text-color)",
+                                        "padding": "8px 0px 0px 0px"
+                                    }
+                                }
+                            },
+                            "action": "setUiState",
+                            "actionParams": {
+                                "showAddressEditor": true
+                            },
+                            "order": [
+                                "title"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "login",
+                        "addNewAddress",
+                        "addressList"
+                    ]
+                },
+                "col-right": {
+                    "type": "container",
+                    "className": "col-right",
+                    "sections": {
+                        "heading": {
+                            "type": "text",
+                            "text": "Price Details",
+                            "style": {
+                                "display": "flex",
+                                "justifyContent": "flex-start",
+                                "alignItems": "center",
+                                "fontSize": "16px",
+                                "fontWeight": "600",
+                                "fontFamily": "Noto Sans",
+                                "textTransform": "uppercase",
+                                "width": "100%",
+                                "color": "#ffffff80",
+                                "paddingTop": "10px",
+                                "paddingBottom": "20px",
+                                "borderBottom": "1px solid #ffffff30"
+                            }
+                        },
+                        "subTotal": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Sub Total ({{cart.itemCount}} items)",
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "fontWeight": "400",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "#ffffff80",
+                                        "paddingTop": "10px",
+                                        "paddingBottom": "10px"
+                                    }
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "₹{{cart.subTotal}}",
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "fontWeight": "500",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "#ffffff",
+                                        "paddingTop": "10px",
+                                        "paddingBottom": "10px"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "amount"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "width": "100%"
+                            }
+                        },
+                        "discount": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Additional Discount",
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "fontWeight": "400",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "#ffffff80",
+                                        "paddingTop": "10px",
+                                        "paddingBottom": "10px"
+                                    }
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "5%",
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "fontWeight": "500",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "#ffffff",
+                                        "paddingTop": "10px",
+                                        "paddingBottom": "10px"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "amount"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "width": "100%"
+                            }
+                        },
+                        "deliveryCharge": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Delivery Charges",
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "fontWeight": "400",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "#ffffff80",
+                                        "paddingTop": "10px",
+                                        "paddingBottom": "10px"
+                                    }
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "Free",
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "fontWeight": "500",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "var(--secondary-color)",
+                                        "paddingTop": "10px",
+                                        "paddingBottom": "10px"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "amount"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "width": "100%"
+                            }
+                        },
+                        "total": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Total",
+                                    "style": {
+                                        "fontSize": "18px",
+                                        "fontWeight": "600",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "#ffffff",
+                                        "paddingTop": "20px",
+                                        "paddingBottom": "20px"
+                                    }
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "₹{{cart.subTotal - (cart.subTotal * 5 / 100)}}",
+                                    "style": {
+                                        "fontSize": "18px",
+                                        "fontWeight": "600",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "#ffffff",
+                                        "paddingTop": "20px",
+                                        "paddingBottom": "20px"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "title",
+                                "amount"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "width": "100%",
+                                "borderTop": "1px dashed #ffffff30",
+                                "borderBottom": "1px solid #ffffff30"
+                            }
+                        },
+                        "saving": {
+                            "type": "container",
+                            "className": "subTotal",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "Your Total Savings on this order ₹{{(cart.subTotal * 5 / 100)}}",
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "fontWeight": "400",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "#0cca14",
+                                        "paddingTop": "20px",
+                                        "paddingBottom": "20px"
+                                    }
+                                },
+                                "amount": {
+                                    "type": "text",
+                                    "text": "₹{{(cart.subTotal * 5 / 100)}}",
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "fontWeight": "300",
+                                        "fontFamily": "Noto Sans",
+                                        "color": "#0cca14",
+                                        "paddingTop": "20px",
+                                        "paddingBottom": "20px"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "title"
+                            ],
+                            "style": {
+                                "display": "flex",
+                                "justifyContent": "space-between",
+                                "alignItems": "center",
+                                "width": "100%",
+                                "borderTop": "0px dashed #ffffff30",
+                                "borderBottom": "0px solid #ffffff30"
+                            }
+                        }
+                    },
+                    "order": [
+                        "heading",
+                        "subTotal",
+                        "discount",
+                        "deliveryCharge",
+                        "total",
+                        "saving"
+                    ]
+                }
+            },
+            "order": [
+                "col-left"
+            ]
+        },
+        "deliverBtn": {
+            "type": "container",
+            "className": "deliver-here",
+            "showIf": "ui.outletPickup = false",
+            "sections": {
+                "btn": {
+                    "type": "button",
+                    "className": "btn",
+                    "text": "Deliver Here",
+                    "disabled": "$not($exists(checkout.selectedAddress) or $boolean(ui.outletPickup))",
+                    "action": "chooseDeliveryLocation",
+                    "styleIf": [
+                        {
+                            "condition": "$not($exists(checkout.selectedAddress) or $boolean(ui.outletPickup))",
+                            "style": {
+                                "display": "none"
+                            }
+                        },
+                        {
+                            "default": {
+                                "width": "100%",
+                                "height": "55px",
+                                "padding": "15px 24px",
+                                "borderRadius": "0px",
+                                "background": "var(--primary-color)",
+                                "fontSize": "15px",
+                                "color": "var(--white-text-color)",
+                                "fontFamily": "Noto Sans",
+                                "fontWeight": "500",
+                                "outline": "none",
+                                "border": "none",
+                                "zIndex": 999
+                            }
+                        }
+                    ]
+                }
+            },
+            "order": [
+                "btn"
+            ],
+            "style": {
+                "width": "100%",
+                "height": "55px",
+                "display": "flex",
+                "position": "fixed",
+                "bottom": "0px"
+            }
+        }
+    },
+    "order": [
+        "header",
+        "content",
+        "deliverBtn"
+    ]
+}

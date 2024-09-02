@@ -1,0 +1,398 @@
+{
+    "imports": [
+        "common/category.json",
+        "pages/home/location-selector.json",
+        "pages/home/category.json",
+        "common/location-selector.json",
+        "common/triggered/location-selector-viewer.json",
+        "common/product.json",
+        "common/product.css",
+        "common/signin.json",
+        "common/triggered/cart-viewer.json",
+        "common/triggered/menu-viewer.json",
+        "common/triggered/collection-list.json",
+        "common/triggered/account-login.json",
+        "common/triggered/addon-selector.json",
+        "common/triggered/addon-selections.json",
+        "common/triggered/profileOrders.json",
+        "common/triggered/profileAddress.json",
+        "common/triggered/userInfo.json",
+        "common/layouts/footer.json"
+    ],
+    "initialUiState": {
+        "showLocation": false,
+        "showAddonSelector": false,
+        "showAddonSelections": false,
+        "showLogin": false,
+        "showMenu": false,
+        "showProfile": false,
+        "showAddress": false,
+        "showOrders": false,
+        "showFarm": false,
+        "showAddressEditor": false,
+        "showCollectionList": false
+    },
+    "meta": {
+        "title": "{{themeConfig.homePageSEOConfig.metaTitle}}",
+        "description": "{{themeConfig.homePageSEOConfig.metaDescription}}",
+        "keywords": "{{themeConfig.homePageSEOConfig.metaKeywords}}"
+    },
+    "sections": {
+        "logo": {
+            "type": "image",
+            "url": "{{themeConfig.logo.logoBlack}}",
+            "className": "logo"
+        },
+        "center": {
+            "type": "container",
+            "className": "header-center",
+            "sections": {
+                "search": {
+                    "type": "search-products",
+                    "className": "header-search",
+                    "sections": {
+                        "searchIcon": {
+                            "type": "image",
+                            "url": "{{themeUrl}}/img/common/search.svg",
+                            "className": "header-search-icon"
+                        },
+                        "searchInput": {
+                            "type": "input",
+                            "className": "header-search-input",
+                            "placeholder": "Search for products",
+                            "bind": "searchProducts",
+                            "action": "searchProducts"
+                        }
+                    },
+                    "order": [
+                        "searchIcon",
+                        "searchInput"
+                    ]
+                }
+            },
+            "order": [
+                "search"
+            ]
+        },
+        "headerBanner": {
+            "type": "container",
+            "className": "headerBanner",
+            "sections": {
+                "content": {
+                    "type": "image",
+                    "className": "content",
+                    "url": "{{themeConfig.homePage.bannerImg1}}",
+                    "action": "navigateTo",
+                    "actionParams": {
+                        "url": "''"
+                    },
+                    "sections": {
+                        "title": {
+                            "type": "text",
+                            "className": "title",
+                            "text": "{{themeConfig.homePage.bannerTitle}}"
+                        },
+                        "description": {
+                            "type": "text",
+                            "className": "description",
+                            "text": "{{themeConfig.homePage.bannerDescription}}"
+                        }
+                    },
+                    "order": []
+                }
+            },
+            "order": [
+                "content"
+            ]
+        },
+        "category-view": {
+            "type": "category-collection",
+            "className": "category-view",
+            "refTemplate": "home/category"
+        },
+        "topProducts": {
+            "type": "container",
+            "className": "topProductsContainer",
+            "sections": {
+                "titleContainer": {
+                    "type": "container",
+                    "className": "titleContainer",
+                    "sections": {
+                        "title": {
+                            "type": "text",
+                            "className": "title",
+                            "text": "{{themeConfig.homePage.topProductsTitle}}"
+                        }
+                    },
+                    "order": [
+                        "title"
+                    ]
+                },
+                "productContainer": {
+                    "type": "product-collection",
+                    "highlightKey": "Top Picks",
+                    "className": "productContainer"
+                }
+            },
+            "order": [
+                "titleContainer",
+                "productContainer"
+            ]
+        },
+        "card-1": {
+            "type": "container",
+            "className": "card-1",
+            "sections": {
+                "img-view": {
+                    "type": "image",
+                    "url": "{{themeConfig.homePage.offerBannerImg1}}",
+                    "className": "img-view"
+                },
+                "content": {
+                    "type": "container",
+                    "className": "content",
+                    "sections": {
+                        "title": {
+                            "type": "text",
+                            "text": "{{themeConfig.homePage.offerBannerTitle}}",
+                            "className": "title"
+                        },
+                        "btn": {
+                            "type": "button",
+                            "text": "{{i18n.buttons.shop_now}}",
+                            "className": "btn",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "''"
+                            }
+                        }
+                    },
+                    "order": [
+                        "title",
+                        "btn"
+                    ]
+                }
+            },
+            "action": "navigateTo",
+            "actionParams": {
+                "url": "/c/desserts"
+            },
+            "order": [
+                "img-view",
+                "content"
+            ]
+        },
+        "bannerOffer": {
+            "type": "container",
+            "className": "card-1",
+            "sections": {
+                "content": {
+                    "type": "container",
+                    "className": "content",
+                    "sections": {
+                        "title": {
+                            "type": "text",
+                            "className": "title",
+                            "text": ""
+                        },
+                        "btn": {
+                            "type": "button",
+                            "className": "btn",
+                            "text": "Shop Now",
+                            "action": "navigateTo",
+                            "actionParams": {
+                                "url": "''"
+                            }
+                        }
+                    },
+                    "order": []
+                }
+            },
+            "order": [
+                "content"
+            ]
+        },
+        "bestProducts": {
+            "type": "container",
+            "className": "topProductsContainer",
+            "sections": {
+                "titleContainer": {
+                    "type": "container",
+                    "className": "titleContainer",
+                    "sections": {
+                        "title": {
+                            "type": "text",
+                            "className": "title",
+                            "text": "{{themeConfig.homePage.bestProductsTitle}}"
+                        }
+                    },
+                    "order": [
+                        "title"
+                    ]
+                },
+                "productContainer": {
+                    "type": "product-collection",
+                    "highlightKey": "Best Sellers",
+                    "className": "productContainer"
+                }
+            },
+            "order": [
+                "titleContainer",
+                "productContainer"
+            ]
+        },
+        "slogan": {
+            "type": "container",
+            "className": "slogan",
+            "sections": {
+                "img": {
+                    "type": "image",
+                    "url": "{{themeConfig.logo.logoBlack}}",
+                    "className": "img"
+                },
+                "title": {
+                    "type": "text",
+                    "text": "{{i18n.mobile.homePage.slogan}}",
+                    "className": "title"
+                }
+            },
+            "order": [
+                "img",
+                "title"
+            ]
+        },
+        "offerBanner2": {
+            "type": "container",
+            "className": "offerBanner2",
+            "sections": {
+                "banner1": {
+                    "type": "image",
+                    "className": "banner1",
+                    "url": "{{themeUrl}}/img/web/banner/bannerPlaceholder.svg",
+                    "action": "navigateTo",
+                    "actionParams": {
+                        "url": "''"
+                    }
+                }
+            },
+            "order": [
+                "banner1"
+            ]
+        },
+        "bottom-tabs-nav": {
+            "type": "container",
+            "className": "bottom-tabs-nav",
+            "sections": {
+                "home": {
+                    "type": "image-button",
+                    "url": "{{themeConfig.bottomNavbarIcon.homeIcon}}",
+                    "action": "home",
+                    "className": "menu",
+                    "style": {
+                        "height": "20px",
+                        "width": "20px",
+                        "objectFit": "contain",
+                        "background": "transparent"
+                    }
+                },
+                "collection": {
+                    "type": "image-button",
+                    "url": "{{themeConfig.bottomNavbarIcon.categoryIconUnselected}}",
+                    "action": "setUiState",
+                    "actionParams": {
+                        "showCollectionList": "true"
+                    },
+                    "className": "menu",
+                    "style": {
+                        "height": "20px",
+                        "width": "20px",
+                        "objectFit": "contain",
+                        "background": "transparent"
+                    }
+                },
+                "search": {
+                    "type": "image-button",
+                    "url": "{{themeConfig.bottomNavbarIcon.searchIconUnselected}}",
+                    "action": "navigateTo",
+                    "actionParams": {
+                        "url": "'/search'"
+                    },
+                    "className": "menu",
+                    "style": {
+                        "height": "20px",
+                        "width": "20px",
+                        "objectFit": "contain",
+                        "background": "transparent"
+                    }
+                },
+                "cart": {
+                    "type": "container",
+                    "className": "cartView",
+                    "action": "toggleCartViewer",
+                    "sections": {
+                        "icon": {
+                            "type": "image-button",
+                            "url": "{{themeConfig.bottomNavbarIcon.cartIconUnselected}}",
+                            "className": "icon",
+                            "style": {
+                                "height": "20px",
+                                "width": "20px",
+                                "objectFit": "contain",
+                                "background": "transparent"
+                            }
+                        },
+                        "title": {
+                            "type": "text",
+                            "className": "title",
+                            "showIf": "cart.itemCount > 0",
+                            "text": "{{$not(cart.itemCount > 0) ? '0': cart.itemCount}}"
+                        }
+                    },
+                    "order": [
+                        "icon",
+                        "title"
+                    ]
+                },
+                "goToAccount": {
+                    "className": "userText",
+                    "type": "image",
+                    "url": "{{themeConfig.bottomNavbarIcon.accountIconUnselected}}",
+                    "action": "setUiState",
+                    "actionParams": {
+                        "showMenu": "true"
+                    },
+                    "style": {
+                        "height": "20px",
+                        "width": "20px",
+                        "objectFit": "contain",
+                        "background": "transparent"
+                    }
+                }
+            },
+            "order": [
+                "home",
+                "collection",
+                "search",
+                "cart",
+                "goToAccount"
+            ]
+        }
+    },
+    "style": {
+        "height": "100vh",
+        "width": "100vw"
+    },
+    "className": "slz-home",
+    "order": [
+        "logo",
+        "center",
+        "headerBanner",
+        "category-view",
+        "topProducts",
+        "card-1",
+        "bestProducts",
+        "offerBanner2",
+        "slogan",
+        "bottom-tabs-nav"
+    ]
+}

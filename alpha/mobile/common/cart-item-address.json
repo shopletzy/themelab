@@ -1,0 +1,252 @@
+{
+    "imports": [
+        "common/triggered/addon-selections.json"
+    ],
+    "sections": {
+        "pImage": {
+            "type": "product-image",
+            "url": "{{product.images[0]}}",
+            "style": {
+                "width": "64px",
+                "height": "64px"
+            }
+        },
+        "titleCard": {
+            "type": "container",
+            "sections": {
+                "content": {
+                    "type": "container",
+                    "sections": {
+                        "pTitle": {
+                            "type": "text",
+                            "text": "{{product.title}}",
+                            "style": {
+                                "color": "var(--primary-text-color)",
+                                "width": "100%",
+                                "fontSize": "15px",
+                                "fontWeight": "400",
+                                "fontFamily": "Noto Sans",
+                                "whiteSpace": "nowrap",
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis"
+                            }
+                        },
+                        "pSubTitle": {
+                            "type": "text",
+                            "text": "{{product.subtitle}}",
+                            "style": {
+                                "color": "var(--primary-text-color)",
+                                "width": "100%",
+                                "fontSize": "14px",
+                                "fontWeight": "500",
+                                "padding": "6px 0px",
+                                "fontFamily": "Noto Sans"
+                            }
+                        },
+                        "priceView": {
+                            "type": "container",
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "justifyContent": "start",
+                                "alignItems": "center",
+                                "marginTop": "10px"
+                            },
+                            "sections": {
+                                "pPrice": {
+                                    "type": "text",
+                                    "text": "₹{{product.price }}",
+                                    "showIf": "$boolean(product.salePrice) = true",
+                                    "style": {
+                                        "color": "var(--secondary-text-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontSize": "14px",
+                                        "textDecorationLine": "line-through",
+                                        "marginRight": "0px",
+                                        "background": "transparent"
+                                    }
+                                },
+                                "pSalePrice": {
+                                    "type": "text",
+                                    "text": "₹{{$boolean(product.salePrice) ? product.salePrice : product.price}}",
+                                    "style": {
+                                        "color": "var(--secondary-color)",
+                                        "fontFamily": "Noto Sans",
+                                        "fontWeight": "600",
+                                        "fontSize": "14px",
+                                        "paddingRight": "0px",
+                                        "marginRight": "10px",
+                                        "background": "transparent"
+                                    }
+                                }
+                            },
+                            "order": [
+                                "pSalePrice",
+                                "pPrice"
+                            ]
+                        },
+                        "pCustomizations": {
+                            "type": "text",
+                            "text": "{{product.customizations}}",
+                            "style": {
+                                "color": "var(--secondary-text-color)",
+                                "fontWeight": "400",
+                                "padding": "0px 0px",
+                                "width": "100%",
+                                "display": "flex",
+                                "flexWra": "wrap",
+                                "lineHeight": "1.25rem",
+                                "fontFamily": "Noto Sans",
+                                "fontSize": "13px"
+                            }
+                        }
+                    },
+                    "order": [
+                        "pTitle",
+                        "priceView",
+                        "pCustomizations"
+                    ],
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "background": "transparent",
+                        "width": "60%"
+                    }
+                },
+                "addToCart": {
+                    "type": "container",
+                    "sections": {
+                        "add-to-cart": {
+                            "type": "add-to-cart",
+                            "embeddedTemplates": {
+                                "cartEmpty": {
+                                    "type": "button",
+                                    "text": "ADD",
+                                    "action": "addToCart",
+                                    "style": {
+                                        "color": "var(--secondary-color)",
+                                        "width": "70px",
+                                        "height": "34px",
+                                        "cursor": "pointer",
+                                        "border": "1px solid var(--stroke-color)",
+                                        "borderRadius": "4px",
+                                        "fontFamily": "Noto Sans",
+                                        "fontSize": "13px",
+                                        "fontWeight": "600",
+                                        "background": "transparent",
+                                        "boxShadow": "0 3px 8px #e9e9eb",
+                                        "marginTop": "-25px"
+                                    }
+                                },
+                                "cartNotEmpty": {
+                                    "type": "container",
+                                    "sections": {
+                                        "minus": {
+                                            "type": "text",
+                                            "text": "-",
+                                            "action": "removeFromCart",
+                                            "style": {
+                                                "width": "26px",
+                                                "height": "26px",
+                                                "fontSize": "14px",
+                                                "cursor": "pointer",
+                                                "display": "flex",
+                                                "alignItems": "center",
+                                                "justifyContent": "center",
+                                                "fontFamily": "Noto Sans",
+                                                "background": "transparent",
+                                                "color": "var(--primary-text-color)"
+                                            }
+                                        },
+                                        "items": {
+                                            "type": "text",
+                                            "text": "{{product.quantity}}",
+                                            "style": {
+                                                "padding": "0px 12px",
+                                                "margin": "0px 0px",
+                                                "borderRadius": "2px",
+                                                "alignItems": "center",
+                                                "justifyContent": "center",
+                                                "fontFamily": "Noto Sans",
+                                                "color": "var(--primary-text-color)",
+                                                "fontSize": "14px"
+                                            }
+                                        },
+                                        "plus": {
+                                            "type": "text",
+                                            "text": "+",
+                                            "action": "addToCart",
+                                            "style": {
+                                                "width": "26px",
+                                                "height": "26px",
+                                                "fontFamily": "Noto Sans",
+                                                "fontSize": "14px",
+                                                "cursor": "pointer",
+                                                "display": "flex",
+                                                "alignItems": "center",
+                                                "justifyContent": "center",
+                                                "color": "var(--primary-text-color)",
+                                                "background": "transparent"
+                                            }
+                                        }
+                                    },
+                                    "style": {
+                                        "color": "var(--secondary-color)",
+                                        "width": "70px",
+                                        "height": "34px",
+                                        "cursor": "pointer",
+                                        "border": "1px solid var(--stroke-color)",
+                                        "borderRadius": "4px",
+                                        "fontFamily": "Noto Sans",
+                                        "fontSize": "13px",
+                                        "fontWeight": "600",
+                                        "background": "transparent",
+                                        "marginRight": "0px",
+                                        "display": "flex",
+                                        "alignItems": "center",
+                                        "justifyContent": "center"
+                                    },
+                                    "order": [
+                                        "minus",
+                                        "items",
+                                        "plus"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "order": [
+                        "add-to-cart"
+                    ]
+                }
+            },
+            "order": [
+                "content",
+                "addToCart"
+            ],
+            "style": {
+                "display": "flex",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "justifyContent": "space-between",
+                "background": "transparent",
+                "width": "100%",
+                "marginTop": "20px",
+                "marginBottom": "20px"
+            }
+        }
+    },
+    "style": {
+        "alignItems": "center",
+        "overflow": "hidden",
+        "display": "flex",
+        "minHeight": "50px",
+        "flexDirection": "row",
+        "justifyContent": "start",
+        "borderBottom": "1px solid var(--stroke-color)",
+        "background": "transparent"
+    },
+    "order": [
+        "titleCard"
+    ]
+}

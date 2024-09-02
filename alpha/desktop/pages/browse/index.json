@@ -1,0 +1,83 @@
+{
+    "imports": [
+        "common/header.json",
+        "common/product.json",
+        "common/product.css",
+        "common/footer.json",
+        "pages/browse/styles.css"     
+    ],
+    "className": "slz-browse",
+    "initialUiState": {
+        "showGeneral": true,
+        "showDelivery": false,
+        "showQuality": false,
+        "showPayments": false
+    },
+    "meta": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+    },
+    "sections": {
+        "header": {
+            "type": "template",
+            "templateName": "header",
+            "className": "header"
+        },
+        "main": {
+            "type": "container",
+            "className": "main",
+            "sections": {
+                "header-view": {
+                    "type": "container",
+                    "className": "header-view",
+                    "sections": {
+                        "title": {
+                            "type": "heading",
+                            "level": "h1",
+                            "text": "{{themeConfig.browsePage.browsePageTitle}}",
+                            "className": "title"
+                        },
+                        "description": {
+                            "type": "text",
+                            "text": "{{themeConfig.browsePage.browsePageDescription}}",
+                            "className": "description"
+                        }
+                    },
+                    "order": [
+                        "title",
+                        "description"
+                    ]
+                },
+                "fold-1": {
+                    "type": "container",
+                    "className": "fold-1",
+                    "sections": {
+                        "products": {
+                            "type": "product-collection",
+                            "className": "products"
+                        }
+                    },
+                    "order": [
+                        "products"
+                    ]
+                }
+               
+            },
+            "order": [
+                "header-view",
+                "fold-1"
+               
+            ]
+        },
+        "footer": {
+            "type": "template",
+            "templateName": "footer"
+        }
+    },
+    "order": [
+        "header",
+        "main",
+        "footer"
+    ]
+}

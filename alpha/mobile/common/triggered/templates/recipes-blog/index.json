@@ -1,0 +1,101 @@
+{
+    "imports": [
+        "common/header.json"
+    ],
+    "sections": {
+        "header": {
+            "type": "template",
+            "templateName": "header"
+        },
+        "content": {
+            "type": "container",
+            "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "flexGrow": "1",
+                "paddingTop": "25px",
+                "paddingBottom": "25px",
+                "overflowY": "auto",
+                "color": "#202020"
+            },
+            "sections": {
+                "title": {
+                    "type": "text",
+                    "text": "{{blog.title}}",
+                    "style": {
+                        "fontSize": "20px",
+                        "fontWeight": "bold",
+                        "marginLeft": "20px"
+                    }
+                },
+                "featuredPosts": {
+                    "type": "post-collection",
+                    "collection": "featuredPosts",
+                    "embeddedTemplates": {
+                        "post": {
+                            "type": "container",
+                            "sections": {
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{post.title}} How are you hjkahsd aksdhjashjd",
+                                    "style": {
+                                        "fontSize": "15px",
+                                        "paddingTop": "20px",
+                                        "paddingBottom": "10px",
+                                        "paddingLeft": "20px",
+                                        "paddingRight": "20px"
+                                    }
+                                },
+                                "featureImage": {
+                                    "type": "image",
+                                    "url": "https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg",
+                                    "style": {
+                                        "width": "150px",
+                                        "height": "150px",
+                                        "objectFit": "cover"
+                                    }
+                                }
+                            },
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "justifyContent": "space-around",
+                                "height": "150px",
+                                "marginLeft": "15px",
+                                "marginRight": "15px",
+                                "marginTop": "15px",
+                                "overflowY": "auto",
+                                "background": "#fff",
+                                "borderRadius": "5px",
+                                "boxShadow": "rgba(0, 0, 0, 0.16) 0px 1px 4px"
+                            },
+                            "order": [
+                                "title",
+                                "featureImage"
+                            ]
+                        }
+                    },
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "flexWrap": "wrap",
+                        "justifyContent": "center",
+                        "marginBottom": "20px"
+                    }
+                }
+            },
+            "order": [
+                "title",
+                "featuredPosts"
+            ]
+        }
+    },
+    "style": {
+        "height": "100vh"
+    },
+    "order": [
+        "header",
+        "content"
+    ]
+}

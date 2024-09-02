@@ -1,0 +1,97 @@
+{
+    "imports": [
+        "common/layouts/footer.css"
+    ],
+    "type": "container",
+    "className": "bottom-tabs-nav",
+    "sections": {
+        "home": {
+            "type": "image-button",
+            "url": "{{$boolean(pathname = '/home') ? themeConfig.bottomNavbarIcon.homeIcon : themeConfig.bottomNavbarIcon.homeIconUnselected}}",
+            "action": "navigateToHome",
+            "className": "menu",
+            "style": {
+                "height": "20px",
+                "width": "20px",
+                "objectFit": "contain"
+            }
+        },
+        "collection": {
+            "type": "image-button",
+            "url": "{{themeConfig.bottomNavbarIcon.categoryIconUnselected}}",
+            "action": "setUiState",
+            "actionParams": {
+                "showCollectionList": "true"
+            },
+            "className": "menu",
+            "style": {
+                "height": "20px",
+                "width": "20px",
+                "objectFit": "contain",
+                "background": "transparent"
+            }
+        },
+        "search": {
+            "type": "image-button",
+            "url": "{{$boolean(pathname = '/search') ? themeConfig.bottomNavbarIcon.searchIcon : themeConfig.bottomNavbarIcon.searchIconUnselected}}",
+            "action": "navigateTo",
+            "actionParams": {
+                "url": "'/search'"
+            },
+            "className": "menu",
+            "style": {
+                "height": "20px",
+                "width": "20px",
+                "objectFit": "contain"
+            }
+        },
+        "cart": {
+            "type": "container",
+            "className": "cartView",
+            "action": "toggleCartViewer",
+            "sections": {
+                "icon": {
+                    "type": "image-button",
+                    "url": "{{themeConfig.bottomNavbarIcon.cartIconUnselected}}",
+                    "className": "icon",
+                    "style": {
+                        "height": "20px",
+                        "width": "20px",
+                        "objectFit": "contain"
+                    }
+                },
+                "title": {
+                    "type": "text",
+                    "className": "title",
+                    "showIf": "cart.itemCount > 0",
+                    "text": "{{$not(cart.itemCount > 0) ? '0': cart.itemCount}}"
+                }
+            },
+            "order": [
+                "icon",
+                "title"
+            ]
+        },
+        "goToAccount": {
+            "className": "userText",
+            "type": "image",
+            "url": "{{$boolean(pathname = '/account') ? themeConfig.bottomNavbarIcon.accountIcon : themeConfig.bottomNavbarIcon.accountIconUnselected}}",
+            "action": "navigateTo",
+            "actionParams": {
+                "url": "'/account'"
+            },
+            "style": {
+                "height": "20px",
+                "width": "20px",
+                "objectFit": "contain"
+            }
+        }
+    },
+    "order": [
+        "home",
+        "collection",
+        "search",
+        "cart",
+        "goToAccount"
+    ]
+}

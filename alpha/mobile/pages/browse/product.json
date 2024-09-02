@@ -1,0 +1,230 @@
+{
+    "imports": [
+        "common/triggered/addon-selector.json",
+        "common/triggered/addon-selections.json"
+    ],
+    "type": "container",
+    "sections": {
+        "product-main-container": {
+            "type": "container",
+            "className": "product-main-container",
+            "sections": {
+                "productDetails": {
+                    "type": "container",
+                    "className": "productDetails",
+                    "sections": {
+                        "groupTitle": {
+                            "type": "container",
+                            "className": "groupTitle",
+                            "sections": {
+                                "pTitle": {
+                                    "className": "pTitle",
+                                    "type": "text",
+                                    "text": "{{product.title}}"
+                                },
+                                "groupPrice": {
+                                    "className": "groupPrice",
+                                    "type": "container",
+                                    "sections": {
+                                        "priceDetail": {
+                                            "type": "container",
+                                            "sections": {
+                                                "pPrice": {
+                                                    "type": "text",
+                                                    "text": "₹{{product.price }}",
+                                                    "showIf": "$boolean(product.salePrice) = true",
+                                                    "style": {
+                                                        "color": "#808080",
+                                                        "fontSize": "16px",
+                                                        "fontFamily": "Noto Sans",
+                                                        "textDecorationLine": "line-through",
+                                                        "fontWeight": "600"
+                                                    }
+                                                },
+                                                "pSalePrice": {
+                                                    "type": "text",
+                                                    "text": "₹{{$boolean(product.salePrice) ? product.salePrice : product.price}}",
+                                                    "style": {
+                                                        "color": "#196cb0",
+                                                        "fontFamily": "Noto Sans",
+                                                        "fontSize": "16px",
+                                                        "paddingRight": "10px",
+                                                        "fontWeight": "600"
+                                                    }
+                                                }
+                                            },
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "row",
+                                                "alignItems": "center",
+                                                "justifyContent": "end"
+                                            },
+                                            "order": [
+                                                "pSalePrice",
+                                                "pPrice"
+                                            ]
+                                        },
+                                        "duration": {
+                                            "type": "text",
+                                            "className": "duration",
+                                            "text": "24 MINS"
+                                        }
+                                    },
+                                    "order": [
+                                        "priceDetail"
+                                    ],
+                                    "style": {
+                                        "display": "flex",
+                                        "alignItems": "center",
+                                        "justifyContent": "space-between",
+                                        "paddingTop": "10px"
+                                    }
+                                },
+                                "pDesc": {
+                                    "className": "pDesc",
+                                    "type": "markdown",
+                                    "text": "{{product.description}}"
+                                }
+                            },
+                            "order": [
+                                "pTitle",
+                                "groupPrice",
+                                "pDesc"
+                            ]
+                        },
+                        "groupImg": {
+                            "type": "container",
+                            "className": "groupImg",
+                            "sections": {
+                                "productImg": {
+                                    "type": "product-image",
+                                    "className": "productImg",
+                                    "url": "{{product.images[0]}}",
+                                    "style": {
+                                        "width": "100px",
+                                        "objectFit": "contain"
+                                    }
+                                },
+                                "add-to-cart": {
+                                    "type": "add-to-cart",
+                                    "embeddedTemplates": {
+                                        "cartEmpty": {
+                                            "type": "button",
+                                            "text": "ADD",
+                                            "action": "addToCart",
+                                            "style": {
+                                                "color": "#196cb0",
+                                                "width": "77%",
+                                                "height": "36px",
+                                                "cursor": "pointer",
+                                                "border": "1px solid #d4d5d9",
+                                                "borderRadius": "4px",
+                                                "fontFamily": "Noto Sans",
+                                                "fontSize": "13px",
+                                                "fontWeight": "600",
+                                                "background": "#fff",
+                                                "boxShadow": "0 3px 8px #e9e9eb",
+                                                "marginTop": "-25px"
+                                            }
+                                        },
+                                        "cartNotEmpty": {
+                                            "type": "container",
+                                            "sections": {
+                                                "minus": {
+                                                    "type": "text",
+                                                    "text": "-",
+                                                    "action": "removeFromCart",
+                                                    "style": {
+                                                        "width": "35%",
+                                                        "height": "100%",
+                                                        "fontSize": "16px",
+                                                        "cursor": "pointer",
+                                                        "display": "flex",
+                                                        "alignItems": "center",
+                                                        "justifyContent": "center",
+                                                        "fontFamily": "Noto Sans",
+                                                        "background": "#FFF",
+                                                        "color": "#b8b8b8"
+                                                    }
+                                                },
+                                                "items": {
+                                                    "type": "text",
+                                                    "text": "{{product.quantity}}",
+                                                    "style": {
+                                                        "padding": "0px 12px",
+                                                        "margin": "0px 0px",
+                                                        "borderRadius": "2px",
+                                                        "alignItems": "center",
+                                                        "justifyContent": "center",
+                                                        "fontFamily": "Noto Sans",
+                                                        "color": "#196cb0",
+                                                        "fontSize": "14px"
+                                                    }
+                                                },
+                                                "plus": {
+                                                    "type": "text",
+                                                    "text": "+",
+                                                    "url": "http://localhost:3000/themes/elementary/img/circlePlus.svg",
+                                                    "action": "addToCart",
+                                                    "style": {
+                                                        "width": "35%",
+                                                        "height": "100%",
+                                                        "fontFamily": "Noto Sans",
+                                                        "fontSize": "16px",
+                                                        "cursor": "pointer",
+                                                        "display": "flex",
+                                                        "alignItems": "center",
+                                                        "justifyContent": "center",
+                                                        "color": "#196cb0",
+                                                        "background": "#FFF"
+                                                    }
+                                                }
+                                            },
+                                            "style": {
+                                                "color": "#196cb0",
+                                                "width": "100%",
+                                                "height": "36px",
+                                                "cursor": "pointer",
+                                                "border": "1px solid #d4d5d9",
+                                                "borderRadius": "4px",
+                                                "fontFamily": "Noto Sans",
+                                                "fontSize": "13px",
+                                                "fontWeight": "600",
+                                                "background": "#FFF",
+                                                "boxShadow": "0 3px 8px #e9e9eb",
+                                                "marginTop": "-25px",
+                                                "display": "flex",
+                                                "alignItems": "center",
+                                                "justifyContent": "center"
+                                            },
+                                            "order": [
+                                                "minus",
+                                                "items",
+                                                "plus"
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            "order": [
+                                "productImg",
+                                "add-to-cart"
+                            ]
+                        }
+                    },
+                    "order": [
+                        "groupTitle",
+                        "groupImg"
+                    ]
+                }
+            },
+            "order": [
+                "productDetails"
+            ]
+        }
+    },
+    "order": [
+        "product-main-container"
+    ],
+    "className": "slz-browse-product"
+}

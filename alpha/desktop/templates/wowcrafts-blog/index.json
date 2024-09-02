@@ -1,0 +1,112 @@
+{
+    "imports": [
+        "common/header-blog.json",
+        "common/header-blog.css",
+        "common/footer.json",
+        "common/footer.css"
+    ],
+    "sections": {
+        "header": {
+            "type": "template",
+            "templateName": "header-blog"
+        },
+        "content": {
+            "type": "container",
+            "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "flexGrow": "1",
+                "paddingTop": "25px",
+                "paddingBottom": "25px",
+                "overflowY": "auto",
+                "color": "var(--primary-text-color)"
+            },
+            "sections": {
+                "title": {
+                    "type": "text",
+                    "text": "{{blog.title}}",
+                    "style": {
+                        "fontSize": "25px",
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                        "marginBottom": "20px",
+                        "fontFamily": "Noto Sans",
+                        "color": "var(--primary-text-color)"
+                    }
+                },
+                "featuredPosts": {
+                    "type": "post-collection",
+                    "collection": "featuredPosts",
+                    "embeddedTemplates": {
+                        "post": {
+                            "type": "container",
+                            "sections": {
+                                "featureImage": {
+                                    "type": "image",
+                                    "url": "{{post.featureImage}}",
+                                    "style": {
+                                        "width": "100%",
+                                        "height": "100%",
+                                        "objectFit": "cover",
+                                        "overflow": "hidden"
+                                    }
+                                },
+                                "title": {
+                                    "type": "text",
+                                    "text": "{{post.title}}",
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "fontFamily": "Noto Sans",
+                                        "paddingTop": "25px",
+                                        "paddingBottom": "10px",
+                                        "paddingLeft": "0px",
+                                        "paddingRight": "0px",
+                                        "overflow": "hidden",
+                                        "fontWeight": "600",
+                                        "color": "var(--primary-text-color)"
+                                    }
+                                }
+                            },
+                            "style": {
+                                "display": "flex",
+                                "cursor": "pointer",
+                                "flexDirection": "column",
+                                "justifyContent": "space-around",
+                                "width": "300px",
+                                "height": "360px",
+                                "margin": "15px",
+                                "overflowY": "auto",
+                                "background": "var(--background-color)",
+                                "borderRadius": "15px",
+                                "padding": "15px",
+                                "boxShadow": "rgba(0, 0, 0, 0.16) 0px 1px 4px"
+                            },
+                            "order": [
+                                "featureImage",
+                                "title"
+                            ]
+                        }
+                    },
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "flexWrap": "wrap",
+                        "justifyContent": "center"
+                    }
+                }
+            },
+            "order": [
+                "title",
+                "featuredPosts"
+            ]
+        }
+    },
+    "style": {
+        "height": "100vh"
+    },
+    "order": [
+        "header",
+        "content"
+    ]
+}
