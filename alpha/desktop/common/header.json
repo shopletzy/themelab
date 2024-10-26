@@ -15,7 +15,6 @@
         "showLocation": false
     },
     "sections": {
-       
         "logo": {
             "type": "container",
             "className": "header-logo",
@@ -30,7 +29,7 @@
                             "className": "header-logo-image",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/'"
+                                "url": "/"
                             }
                         }
                     },
@@ -100,7 +99,7 @@
                                     "showIf": "customer.id",
                                     "action": "navigateTo",
                                     "actionParams": {
-                                        "url": "'/account'"
+                                        "url": "/account"
                                     },
                                     "order": [
                                         "name"
@@ -177,7 +176,6 @@
         }
     },
     "order": [
-      
         "logo",
         "categories"
     ]

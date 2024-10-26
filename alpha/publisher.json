@@ -1,0 +1,27 @@
+{
+    "name": "alpha",
+    "title": "Alpha",
+    "description": "A modern alpha theme for shopletzy",
+    "version": "1.0.1",
+    "author": "Shopletzy",
+    "price": "free",
+    "isPaid": false,
+    "presets": [
+        {
+            "name": "BitterSweet",
+            "displayName": "Bitter Sweet",
+            "color": "red",
+            "images": [
+                "img/presets/bittersweet/01.webp"
+            ]
+        },
+        {
+            "name": "DeepSea",
+            "displayName": "Deep Sea",
+            "color": "red",
+            "images": [
+                "img/presets/deepSea/01.webp"
+            ]
+        }
+    ]
+}

@@ -120,7 +120,7 @@
                                             "text": "Change",
                                             "action": "navigateTo",
                                             "actionParams": {
-                                                "url": "'/checkout/address'"
+                                                "url": "/checkout/address"
                                             },
                                             "style": {
                                                 "fontSize": "14px",

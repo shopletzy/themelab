@@ -25,7 +25,7 @@
                             "text": "Category 1",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "''"
+                                "url": ""
                             }
                         },
                         "f_3dPaperCraft": {
@@ -34,7 +34,7 @@
                             "text": "Category 2",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "''"
+                                "url": ""
                             }
                         },
                         "f_3dOrigami": {
@@ -43,7 +43,7 @@
                             "text": "Category 3",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "''"
+                                "url": ""
                             }
                         },
                         "f_faceStringArt": {
@@ -52,7 +52,7 @@
                             "text": "Category 4",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "''"
+                                "url": ""
                             }
                         },
                         "f_silkThreadBangles": {
@@ -61,7 +61,7 @@
                             "text": "Category 5",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "''"
+                                "url": ""
                             }
                         }
                     },
@@ -88,7 +88,7 @@
                             "text": "About Us",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/pages/about-us'"
+                                "url": "/pages/about-us"
                             }
                         },
                         "f_blogs": {
@@ -97,7 +97,7 @@
                             "text": "Blogs",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/blog/'"
+                                "url": "/blog/"
                             }
                         }
                     },
@@ -122,7 +122,7 @@
                             "text": "FAQ",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/pages/frequently-asked-questions'"
+                                "url": "/pages/frequently-asked-questions"
                             }
                         },
                         "f_partner": {
@@ -131,7 +131,7 @@
                             "text": "Contact Us",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/pages/contact-us'"
+                                "url": "/pages/contact-us"
                             }
                         }
                     },
@@ -156,7 +156,7 @@
                             "text": "Terms of service",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/pages/terms-of-service'"
+                                "url": "/pages/terms-of-service"
                             }
                         },
                         "f_refund": {
@@ -165,7 +165,7 @@
                             "text": "Return Policy",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/pages/return-policy'"
+                                "url": "/pages/return-policy"
                             }
                         },
                         "f_privacy": {
@@ -174,7 +174,7 @@
                             "text": "Privacy Policy",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/pages/privacy-policy'"
+                                "url": "/pages/privacy-policy"
                             }
                         }
                     },
@@ -196,7 +196,7 @@
                             "action": "navigateTo",
                             "actionParams": {
                                 "newTab": "true",
-                                "url": "'https://apps.apple.com/us/app'"
+                                "url": "https://apps.apple.com/us/app"
                             }
                         },
                         "title2": {
@@ -206,7 +206,7 @@
                             "action": "navigateTo",
                             "actionParams": {
                                 "newTab": "true",
-                                "url": "'https://play.google.com/store/apps'"
+                                "url": "https://play.google.com/store/apps"
                             }
                         }
                     },
@@ -272,7 +272,7 @@
                     "url": "{{themeUrl}}/img/logo/logo-white.svg",
                     "action": "navigateTo",
                     "actionParams": {
-                        "url": "'/'"
+                        "url": "/"
                     }
                 },
                 "col-1": {
@@ -294,7 +294,7 @@
                             "action": "navigateTo",
                             "actionParams": {
                                 "newTab": "true",
-                                "url": "'https://www.facebook.com/'"
+                                "url": "https://www.facebook.com/"
                             }
                         },
                         "icon3": {
@@ -304,7 +304,7 @@
                             "action": "navigateTo",
                             "actionParams": {
                                 "newTab": "true",
-                                "url": "'https://www.instagram.com/'"
+                                "url": "https://www.instagram.com/"
                             }
                         }
                     },

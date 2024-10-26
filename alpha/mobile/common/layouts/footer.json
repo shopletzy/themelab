@@ -36,7 +36,7 @@
             "url": "{{$boolean(pathname = '/search') ? themeConfig.bottomNavbarIcon.searchIcon : themeConfig.bottomNavbarIcon.searchIconUnselected}}",
             "action": "navigateTo",
             "actionParams": {
-                "url": "'/search'"
+                "url": "/search"
             },
             "className": "menu",
             "style": {
@@ -78,7 +78,7 @@
             "url": "{{$boolean(pathname = '/account') ? themeConfig.bottomNavbarIcon.accountIcon : themeConfig.bottomNavbarIcon.accountIconUnselected}}",
             "action": "navigateTo",
             "actionParams": {
-                "url": "'/account'"
+                "url": "/account"
             },
             "style": {
                 "height": "20px",

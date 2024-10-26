@@ -1,8 +1,4 @@
 {
-    "name": "Alpha",
-    "description": "A modern theme for shopletzy",
-    "version": "1.0.1",
-    "author": "Shopletzy",
     "defaultTemplates": {
         "blog": "templates/elite-blog",
         "post": "templates/static-page"
@@ -147,7 +143,7 @@
                     "id": "buttonPrimaryTextColor",
                     "name": "Primary Text Color",
                     "type": "color",
-                    "defaultValue": "#006d77",
+                    "defaultValue": "#00bdff",
                     "cssVar": "btn-primary-text-color",
                     "description": "Primary text color used for buttons."
                 },
@@ -155,7 +151,7 @@
                     "id": "buttonPrimaryBackgroundColor",
                     "name": "Primary Background Color",
                     "type": "color",
-                    "defaultValue": "#006d77",
+                    "defaultValue": "#00bdff",
                     "cssVar": "btn-primary-background-color",
                     "description": "Primary background color used for buttons."
                 },
@@ -163,7 +159,7 @@
                     "id": "buttonPrimaryHoverBackgroundColor",
                     "name": "Primary Hover Background Color",
                     "type": "color",
-                    "defaultValue": "#006d77",
+                    "defaultValue": "#00bdff",
                     "cssVar": "btn-primary-hover-background-color",
                     "description": "Primary hover background color used for buttons."
                 },
@@ -399,27 +395,6 @@
                     "type": "text",
                     "defaultValue": "What our customers say",
                     "description": "You can use this to display the testimonial subtitle on the home page."
-                },
-                {
-                    "id": "mobileOfferBannerImg2",
-                    "name": "Offer Banner Image 4",
-                    "type": "image",
-                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/c3f31d91-2f0d-496b-9349-e0764953a823.png",
-                    "description": "The logo used in the header"
-                },
-                {
-                    "id": "mobileOfferBannerImg3",
-                    "name": "Offer Banner Image 4",
-                    "type": "image",
-                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/f66e1f43-2586-47bf-b08f-c6a596556782.png",
-                    "description": "The logo used in the header"
-                },
-                {
-                    "id": "mobileOfferBannerImg4",
-                    "name": "Offer Banner Image 4",
-                    "type": "image",
-                    "defaultValue": "https://storage.googleapis.com/slz-dev-uploads-asia-southeast1/cac75800-418e-4cb1-81ab-f35ebf7b4824/images/91182f88-6066-4062-8d2a-560ebba472b6.png",
-                    "description": "The logo used in the header"
                 }
             ]
         },
@@ -1182,6 +1157,7 @@
     "order": [
         "colorScheme",
         "font",
+        "buttons",
         "logo",
         "showLocationConfig",
         "landingPage",

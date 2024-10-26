@@ -103,7 +103,7 @@
                             "text": "Back to Home",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/'"
+                                "url": "/"
                             },
                             "style": {
                                 "display": "flex",

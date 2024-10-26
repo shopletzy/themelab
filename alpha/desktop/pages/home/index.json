@@ -48,7 +48,7 @@
                             "text": "{{i18n.buttons.shop_now}}",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "''"
+                                "url": ""
                             }
                         }
                     },
@@ -137,7 +137,7 @@
                                             "text": "{{i18n.buttons.shop_now}}",
                                             "action": "navigateTo",
                                             "actionParams": {
-                                                "url": "''"
+                                                "url": ""
                                             }
                                         }
                                     },
@@ -175,7 +175,7 @@
                                             "text": "{{i18n.buttons.shop_now}}",
                                             "action": "navigateTo",
                                             "actionParams": {
-                                                "url": "''"
+                                                "url": ""
                                             }
                                         }
                                     },
@@ -213,7 +213,7 @@
                                             "text": "{{i18n.buttons.shop_now}}",
                                             "action": "navigateTo",
                                             "actionParams": {
-                                                "url": "''"
+                                                "url": ""
                                             }
                                         }
                                     },
@@ -288,7 +288,7 @@
                                     "text": "{{i18n.buttons.shop_now}}",
                                     "action": "navigateTo",
                                     "actionParams": {
-                                        "url": "''"
+                                        "url": ""
                                     }
                                 }
                             },

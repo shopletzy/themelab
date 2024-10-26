@@ -84,7 +84,7 @@
             "newArrivals": "New Arrivals",
             "featured": "Featured Products",
             "bestSellers": "Best Sellers"
-
+            
         },
         "menuViewer": {
             "loginTitle": "Manage orders, addresses, and more seamlessly.",
@@ -99,7 +99,7 @@
                 "returnPolicy": "Return Policy",
                 "privacyPolicy": "Privacy Policy",
                 "signOut": "Sign Out",
-                "blog": "Exploring Alpha Blog"
+                "blog": "Exploring Elite Blog"
             }
         },
         "buttons": {

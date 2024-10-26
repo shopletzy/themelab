@@ -84,7 +84,7 @@
                     "url": "{{themeConfig.homePage.bannerImg1}}",
                     "action": "navigateTo",
                     "actionParams": {
-                        "url": "''"
+                        "url": ""
                     },
                     "sections": {
                         "title": {
@@ -163,7 +163,7 @@
                             "className": "btn",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "''"
+                                "url": ""
                             }
                         }
                     },
@@ -201,7 +201,7 @@
                             "text": "Shop Now",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "''"
+                                "url": ""
                             }
                         }
                     },
@@ -271,7 +271,7 @@
                     "url": "{{themeUrl}}/img/web/banner/bannerPlaceholder.svg",
                     "action": "navigateTo",
                     "actionParams": {
-                        "url": "''"
+                        "url": ""
                     }
                 }
             },
@@ -315,7 +315,7 @@
                     "url": "{{themeConfig.bottomNavbarIcon.searchIconUnselected}}",
                     "action": "navigateTo",
                     "actionParams": {
-                        "url": "'/search'"
+                        "url": "/search"
                     },
                     "className": "menu",
                     "style": {

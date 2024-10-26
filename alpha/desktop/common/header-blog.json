@@ -43,7 +43,7 @@
                             "className": "header-logo-image",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/'"
+                                "url": "/"
                             }
                         }
                     },
@@ -113,7 +113,7 @@
                                     "showIf": "customer.id",
                                     "action": "navigateTo",
                                     "actionParams": {
-                                        "url": "'/account'"
+                                        "url": "/account"
                                     },
                                     "order": [
                                         "name"
@@ -192,7 +192,7 @@
                             "text": "Blogs",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/blog/'"
+                                "url": "/blog/"
                             }
                         },
                         "f_contact": {
@@ -201,7 +201,7 @@
                             "text": "Contact Us",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/pages/contact-us'"
+                                "url": "/pages/contact-us"
                             }
                         },
                         "download-android-app": {
@@ -210,7 +210,7 @@
                             "action": "navigateTo",
                             "actionParams": {
                                 "newTab": "true",
-                                "url": "'https://play.google.com/store/apps'"
+                                "url": "https://play.google.com/store/apps"
                             },
                             "sections": {
                                 "icon": {

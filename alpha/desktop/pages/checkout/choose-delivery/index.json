@@ -67,7 +67,7 @@
                                     "action": "navigateTo",
                                     "className": "changeBtn",
                                     "actionParams": {
-                                        "url": "'/checkout/address'"
+                                        "url": "/checkout/address"
                                     }
                                 }
                             },
@@ -269,7 +269,6 @@
                     },
                     "order": [
                         "heading",
-                        
                         "subtitle",
                         "tax",
                         "additionalChargesSubtotal",

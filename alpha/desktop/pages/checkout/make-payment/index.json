@@ -72,7 +72,7 @@
                                             "text": "{{i18n.buttons.change_address}}",
                                             "action": "navigateTo",
                                             "actionParams": {
-                                                "url": "'/checkout/address'"
+                                                "url": "/checkout/address"
                                             },
                                             "className": "changeBtn"
                                         }
@@ -564,7 +564,6 @@
                                 "borderBottom": "1px solid #ffffff30"
                             }
                         },
-                      
                         "btn": {
                             "type": "button",
                             "text": "{{i18n.buttons.place_order}}",

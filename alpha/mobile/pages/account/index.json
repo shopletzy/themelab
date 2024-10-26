@@ -297,7 +297,7 @@
                                             ],
                                             "action": "navigateTo",
                                             "actionParams": {
-                                                "url": "'/pages/about-us'"
+                                                "url": "/pages/about-us"
                                             }
                                         },
                                         "contact": {
@@ -321,7 +321,7 @@
                                             ],
                                             "action": "navigateTo",
                                             "actionParams": {
-                                                "url": "'/pages/contact-us'"
+                                                "url": "/pages/contact-us"
                                             }
                                         },
                                         "faq": {
@@ -345,7 +345,7 @@
                                             ],
                                             "action": "navigateTo",
                                             "actionParams": {
-                                                "url": "'/pages/frequently-asked-questions'"
+                                                "url": "/pages/frequently-asked-questions"
                                             }
                                         },
                                         "Terms": {
@@ -369,7 +369,7 @@
                                             ],
                                             "action": "navigateTo",
                                             "actionParams": {
-                                                "url": "'/pages/terms-of-service'"
+                                                "url": "/pages/terms-of-service"
                                             }
                                         },
                                         "returnPolicy": {
@@ -393,7 +393,7 @@
                                             ],
                                             "action": "navigateTo",
                                             "actionParams": {
-                                                "url": "'/pages/return-policy'"
+                                                "url": "/pages/return-policy"
                                             }
                                         },
                                         "privacy": {
@@ -417,7 +417,7 @@
                                             ],
                                             "action": "navigateTo",
                                             "actionParams": {
-                                                "url": "'/pages/privacy-policy'"
+                                                "url": "/pages/privacy-policy"
                                             }
                                         },
                                         "logout": {
@@ -505,7 +505,7 @@
                                             ],
                                             "action": "navigateTo",
                                             "actionParams": {
-                                                "url": "'/blog/exploring-Elite'"
+                                                "url": "/blog/exploring-Elite"
                                             }
                                         }
                                     },

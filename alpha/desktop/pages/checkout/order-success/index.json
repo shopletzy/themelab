@@ -79,7 +79,7 @@
                             "text": "{{themeConfig.successMessages.paymentSuccessButtonText}}",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/'"
+                                "url": "/"
                             },
                             "style": {
                                 "display": "flex",

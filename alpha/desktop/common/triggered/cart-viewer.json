@@ -136,7 +136,7 @@
                                     "text": "{{i18n.buttons.continue_shopping}}",
                                     "action": "navigateTo",
                                     "actionParams": {
-                                        "url": "'/'"
+                                        "url": "/"
                                     },
                                     "style": {
                                         "cursor": "pointer",
@@ -263,7 +263,6 @@
             },
             "order": [
                 "header",
-                
                 "cart-list",
                 "footer"
             ],

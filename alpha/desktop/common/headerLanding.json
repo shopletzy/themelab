@@ -36,7 +36,7 @@
                             "className": "header-logo-image",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/'"
+                                "url": "/"
                             }
                         }
                     },

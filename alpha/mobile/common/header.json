@@ -23,7 +23,7 @@
                             "type": "image",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/'"
+                                "url": "/"
                             },
                             "url": "{{themeConfig.logo.logoBlack}}",
                             "style": {

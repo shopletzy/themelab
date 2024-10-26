@@ -65,7 +65,7 @@
                             "text": "{{themeConfig.errorMessages.paymentErrorButtonText}}",
                             "action": "navigateTo",
                             "actionParams": {
-                                "url": "'/'"
+                                "url": "/"
                             },
                             "style": {
                                 "display": "flex",
